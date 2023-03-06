@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.hashers import make_password
 
 # >>>>>>>>>>>>>>>>> for cerate superuser by email<<<<<<<<<<<<<<<<<
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
@@ -40,6 +40,7 @@ class MyUserManager(BaseUserManager):
     
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, null=False)
+    password = models.CharField(max_length=120)
     user_rol = (
         ('Staff','Staff'),
         ('Factory','Factory'),
@@ -60,6 +61,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=True,
         help_text = gettext_lazy("designates Whether this user should be creates as active. unselect this instad of deleting accounts")
     )
+    
+    # def save(self, *args, **kwargs):
+    #     # Hash the password before saving the object
+        
+    #         self.password = make_password(self.password)
+    #         super().save(*args, **kwargs)
+    
+    
     
     USERNAME_FIELD = 'email'
     objects = MyUserManager()
