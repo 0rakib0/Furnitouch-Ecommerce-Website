@@ -6,6 +6,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 # Create your views here.
 
+
+def Account(request):
+    return render(request, 'accounts/register.html')
+
+
 def Regitration(request):
     if request.method=='POST':
         email = request.POST.get('email')
@@ -25,32 +30,30 @@ def Regitration(request):
                 password = mk_pass
             )
             user.save()
-            messages.success(request, 'Account successfully created!')
-            return redirect('accounts:register')
-    return render(request, 'accounts/register.html')
+            messages.success(request, 'Your Account Successfylly Created!')
+            return redirect('accounts:accounts')
+ 
+    return redirect('accounts:accounts')
+    
 
 
 def User_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-
-        # password = check_password(password, password)
-        
-        user = User.objects.get(email=email)
-        if user:
-            if check_password(password, user.password):
-                return redirect('Home:home')
+        user = authenticate(username=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('Home:home')
         else:
-            messages.error(request, 'Email and password Not match!')
+            messages.error(request, 'Email or password not valid!')
             return redirect('accounts:register')
-       
-        # user = authenticate(email=email, password=check_password(password, password))
-        # if user:
-        #     login(request, user)
-        #     return redirect('Home:home')
-        # else:
-        #     messages.error(request, 'Login Not success!')
-        #     return redirect('accounts:register')
-       
-    return render(request, 'accounts/register.html')
+    return redirect('accounts:accounts')   
+
+def User_logout(request):
+    logout(request)
+    return redirect('Home:home')
+
+
+def Profile(request):
+    return render(request, 'accounts/profile.html')

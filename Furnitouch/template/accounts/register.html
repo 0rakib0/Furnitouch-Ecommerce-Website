@@ -8,6 +8,7 @@
 <div class="breadcrumb-area">
     <div class="container">
         <div class="breadcrumb-content">
+            {% include "include/message.html" %}
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li class="active">Login Register</li>
@@ -54,8 +55,7 @@
                 </form>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                <form method="POST">
-                    {% include "include/message.html" %}
+                <form action='{% url "accounts:register" %}' method="POST">
                     {% csrf_token %}
                     <div class="login-form">
                         <h4 class="login-title">Register</h4>

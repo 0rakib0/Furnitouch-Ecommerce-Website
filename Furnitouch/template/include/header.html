@@ -18,16 +18,22 @@
                     <div class="header-top-right">
                         <ul class="ht-menu">
                             <!-- Begin Setting Area -->
+                            {% if user.is_authenticated %}
                             <li>
                                 <div class="ht-setting-trigger"><span>Profile</span></div>
                                 <div class="setting ht-setting">
                                     <ul class="ht-setting-list">
-                                        <li><a href="login-register.html">My Account</a></li>
+                                        <li><a href="{% url 'accounts:profile' %}">My Account</a></li>
                                         <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login-register.html">Sign In</a></li>
+                                        <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                                     </ul>
                                 </div>
                             </li>
+                            {% else %}
+                            <li>
+                                <div><a href="{% url 'accounts:accounts' %}">Login/Register</a></div>
+                            </li>
+                            {% endif %}
                             <!-- Setting Area End Here -->
                             <!-- Begin Currency Area -->
                             <li>
