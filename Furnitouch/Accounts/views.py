@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import User
+from .models import User, Profile
 from django.contrib import messages
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.decorators import login_required
@@ -55,5 +55,32 @@ def User_logout(request):
     return redirect('Home:home')
 
 
-def Profile(request):
-    return render(request, 'accounts/profile.html')
+def User_Profile(request):
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        fullname = request.POST.get('fullname')
+        addresd1 = request.POST.get('addresd1')
+        city = request.POST.get('city')
+        zip_code = request.POST.get('zip_code')
+        country = request.POST.get('country')
+        phone = request.POST.get('phone')
+        
+        profile = Profile.objects.get(user=user)
+      
+        profile.username = username
+        profile.full_name = fullname
+        profile.address_1 = addresd1
+        profile.city = city
+        profile.zipcode = zip_code
+        profile.country = country
+        profile.phone = phone
+        profile.save()
+        messages.success(request, 'Profile successfully updated!')
+        return redirect('accounts:profile')    
+        
+    context = {
+        'profile':profile,
+    }
+    return render(request, 'accounts/profile.html', context)

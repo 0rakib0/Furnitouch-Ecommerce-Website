@@ -24,7 +24,7 @@
             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 mb-30">
                 
                 <!-- Login Form s-->
-                <form action='{% url "accounts:login" %}' method='POST' >
+                <form action='{% url "accounts:profile" %}' method='POST' >
                     {% csrf_token %}
                     <div class="login-form">
                         <h4 class="login-title">Profile</h4>
@@ -36,32 +36,37 @@
                             </div>
                             <div class="col-12 mb-20">
                                 <label>Username</label>
-                                <input class="mb-0" name='username' type="text" placeholder="username">
+                                <input class="mb-0" name='username' value="{{profile.username}}" type="text" placeholder="username">
                             </div>
                             <div class="col-12 mb-20">
                                 <label>Full Name</label>
-                                <input class="mb-0" name='fullname' type="text" placeholder="full name">
+                                <input class="mb-0" name='fullname' value="{{profile.full_name}}" type="text" placeholder="full name">
                             </div>
                             <div class="col-12 mb-20">
                                 <label>address 1</label>
-                                <input class="mb-0" name='addresd1' type="text" placeholder="address1">
+                                <input class="mb-0" value="{{profile.address_1}}" name='addresd1' type="text" placeholder="address1">
                             </div>
                             <div class="col-12 mb-20">
                                 <label>City</label>
-                                <input class="mb-0" name='city' type="city" placeholder="city">
+                                <input class="mb-0" name='city' value="{{profile.city}}" type="city" placeholder="city">
                             </div>
                             <div class="col-12 mb-20">
                                 <label>Zip Code</label>
-                                <input class="mb-0" name='zip_code' type="text" placeholder="Zip Code">
+                                <input class="mb-0" name='zip_code' value="{{profile.zipcode}}" type="text" placeholder="Zip Code">
                             </div>
                             <div class="col-12 mb-20">
                                 <label>Country</label>
-                                <input class="mb-0" name='country' type="text" placeholder="Country">
+                                <input class="mb-0" name='country' value="{{profile.country}}" type="text" placeholder="Country">
+                            </div>
+
+                            <div class="col-12 mb-20">
+                                <label>Phone Number</label>
+                                <input class="mb-0" name='phone' value="{{profile.phone}}" type="text" placeholder="phone">
                             </div>
 
                             <div class="col-12 mb-20">
                                 <label>join Date</label>
-                                <input class="mb-0" name='join_date' type="date">
+                                "{{profile.create_at}}"
                             </div>
                             
                             <div class="col-md-12">

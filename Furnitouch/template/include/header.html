@@ -20,10 +20,17 @@
                             <!-- Begin Setting Area -->
                             {% if user.is_authenticated %}
                             <li>
+                                {% if profile.is_fully_filed %}
                                 <div class="ht-setting-trigger"><span>Profile</span></div>
+                                {% else %}
+                                {% endif %}
                                 <div class="setting ht-setting">
                                     <ul class="ht-setting-list">
+                                        {% if profile.is_fully_filed %}
                                         <li><a href="{% url 'accounts:profile' %}">My Account</a></li>
+                                        {% else %}
+                                        <li><a href="{% url 'accounts:profile' %}">Not Complate</a></li>
+                                        {% endif %}
                                         <li><a href="checkout.html">Checkout</a></li>
                                         <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                                     </ul>
