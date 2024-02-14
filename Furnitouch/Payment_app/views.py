@@ -21,6 +21,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 @login_required
 def Checkout(request):
+    print('Hello Bangladesh----------------------')
+    if not request.user.profile.is_fully_filed():
+        messages.warning(request, 'Please complate profile details!')
+        return redirect('accounts:profile')
     if request.method == 'POST':
         address_1 = request.POST.get('address_1')
         address_2 = request.POST.get('address_2')
@@ -48,7 +52,8 @@ def Checkout(request):
     order_qs = Order.objects.filter(user = request.user, ordered = False)
     order_items = order_qs[0].order_item.all()
     order_total = order_qs[0].get_totals()
-    save_billing_address = Billing_address.objects.get(user=request.user)
+    save_billing_address = Billing_address.objects.get_or_create(user=request.user)
+    
     context = {
         'category':category,
         'cub_category':cub_category,
@@ -64,13 +69,15 @@ def Checkout(request):
 @login_required
 def Make_Payment(request):
     save_adress = Billing_address.objects.get(user=request.user)
+      
+    if not request.user.profile.is_fully_filed():
+        messages.warning(request, 'Please complate profile details!')
+        return redirect('accounts:profile')
+    
     if not save_adress.is_fully_filled():
         messages.warning(request, 'Please complate shipping address!')
         return redirect('payment_app:checkout')
 
-    if not request.user.profile.is_fully_filed():
-        messages.warning(request, 'Please complate profile details!')
-        return redirect('accounts:profile')
     
     stor_id = 'furni64836bd635daa'
     API_Key = 'furni64836bd635daa@ssl'
@@ -115,7 +122,7 @@ def Complate(request):
         if status == 'VALID':
             val_id = payment_data['val_id']
             tran_id = payment_data['tran_id']
-            messages.success(request, 'Your Paymant Complate Successfully! page will be redirected!')
+            messages.success(request, 'Your Payment Successfully Complate')
             return HttpResponseRedirect(reverse('payment_app:purchas', kwargs={'tran_id':tran_id, 'val_id':val_id},))
 
         if status == 'FAILED':

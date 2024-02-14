@@ -17,7 +17,6 @@ class Billing_address(models.Model):
     def is_fully_filled(self):
         Field_name = [f.name for f in self._meta.get_fields()]
 
-
         for field_name in Field_name:
             value = getattr(self, field_name)
 
