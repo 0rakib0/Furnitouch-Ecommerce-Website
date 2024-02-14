@@ -26,6 +26,7 @@ class Main_Category(models.Model):
 class Category(models.Model):
     main_category = models.ForeignKey(Main_Category, on_delete=models.CASCADE, related_name='main_cat')
     category_name       = models.CharField(max_length=100)
+    category_image      = models.ImageField(upload_to='category_Pic')
     slug                = models.SlugField(unique=True, null=True, blank=True)
     created_at          = models.DateTimeField(auto_now_add=True)
     updated_at          = models.DateTimeField(auto_now=True)

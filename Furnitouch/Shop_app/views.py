@@ -5,6 +5,7 @@ from Home.models import ProductPageBanner
 from Order_App.models import Shoping_Card, Order
 from django.template import TemplateDoesNotExist
 from django.contrib import messages
+from .models import ProductMoreImage
 # Create your views here.
 
 
@@ -55,15 +56,18 @@ def Single_Product(request, slug):
     cub_category = SubCategory.objects.all()
     releted_product = Product.objects.filter()
     product = Product.objects.get(slug=slug)
+    productImages = ProductMoreImage.objects.filter(product=product.id)
     category_id = product.product_category.id
     releted_product = Product.objects.filter(product_category=category_id).order_by('-id')
     releted_product_count = Product.objects.filter(product_category=category_id).count()
+    
 
     context = {
         'category':category,
         'cub_category':cub_category,
         'main_category':main_category,
         'product':product,
+        'productImages':productImages,
         'releted_product':releted_product,
         'releted_product_count':releted_product_count,
     }
