@@ -4,37 +4,37 @@
     <!-- Begin Header Top Area -->
     <div class="py-1" style="background-color: rgb(236, 236, 236);">
         <div class="container">
-           
 
 
-                <div class="d-flex justify-content-between px-2">
-                    <!-- Begin Header Top Left Area -->
+
+            <div class="d-flex justify-content-between px-2">
+                <!-- Begin Header Top Left Area -->
+                <div class="">
                     <div class="">
-                        <div class="">
-                            <ul class="phone-wrap">
-                                <li><span>Phone </span><a href="#">+88 01748463524</a></li>
-                            </ul>
-                        </div>
+                        <ul class="phone-wrap">
+                            <li><span>Phone </span><a href="#">+88 01748463524</a></li>
+                        </ul>
                     </div>
-                    <!-- Header Top Left Area End Here -->
-                    <!-- Begin Header Top Right Area -->
-                    <div class="">
-                        <div class="header-top-right">
-                            <ul class="ht-menu">
-                                <!-- Begin Setting Area -->
-                                {% if user.is_authenticated %}
-                                <a href="{% url 'accounts:logout' %}" class="text-black">Logout</a>
-                                {% else %}
-                                <li>
-                                    <div><a href="{% url 'accounts:accounts' %}">Login/Register</a></div>
-                                </li>
-                                {% endif %}
-                                <!-- Setting Area End Here -->
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Header Top Right Area End Here -->
                 </div>
+                <!-- Header Top Left Area End Here -->
+                <!-- Begin Header Top Right Area -->
+                <div class="">
+                    <div class="header-top-right">
+                        <ul class="ht-menu">
+                            <!-- Begin Setting Area -->
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'accounts:logout' %}" class="text-black">Logout</a>
+                            {% else %}
+                            <li>
+                                <div><a href="{% url 'accounts:accounts' %}">Login/Register</a></div>
+                            </li>
+                            {% endif %}
+                            <!-- Setting Area End Here -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Header Top Right Area End Here -->
+            </div>
         </div>
     </div>
     <!-- Header Top Area End Here -->
@@ -134,26 +134,26 @@
                     <div class="hb-menu hb-menu-2 d-xl-block">
                         <nav>
                             <ul>
-                                <li class="dropdown-holder"><a href="{% url 'Home:home' %}">Home</a>
-                                </li>
+                                <li><a href="{% url 'Home:home' %}">Home</a></li>
                                 {% for i in main_category %}
-                                <li class="megamenu-holder"><a
-                                        href="/shop-page/?main-category={{i.slug}}">{{i.main_category_name}}</a>
-                                    <ul class="megamenu hb-megamenu">
-                                        {% for i in i.main_cat.all %}
-                                        <li><a href="/shop-page/?category={{i.slug}}">{{i.category_name}}</a>
-                                            <ul>
-                                                {% for i in i.cat.all %}
-                                                <li><a
-                                                        href="/shop-page/?sub-category={{i.slug}}">{{i.sub_category_name}}</a>
-                                                </li>
-                                                {% endfor %}
 
-                                            </ul>
-                                        </li>
-                                        {% endfor %}
-                                    </ul>
+
+                                <li class="megamenu-holder" style="margin-right: 2px;"><a
+                                        href="/shop-page/?main-category={{i.slug}}">{{i.main_category_name}}</a>
+                                        <ul class="megamenu hb-megamenu row" style="overflow: auto;">
+                                            {% for i in i.main_cat.all %}
+                                            <li class="col-lg-4 col-md-4 col-sm-6">
+                                                <a href="/shop-page/?category={{i.slug}}">{{i.category_name}}</a>
+                                                <!-- <ul class="list-unstyled">
+                                                    {% for i in i.cat.all %}
+                                                    <li><a href="/shop-page/?sub-category={{i.slug}}">{{i.sub_category_name}}</a></li>
+                                                    {% endfor %}
+                                                </ul> -->
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
                                 </li>
+                                
                                 {% endfor %}
                                 <li><a href="contact.html">Contact</a></li>
                                 <!-- Begin Header Bottom Menu Information Area -->
