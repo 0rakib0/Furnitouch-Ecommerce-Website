@@ -1,0 +1,93 @@
+{% extends "admin_app/base.html" %}
+{% block title %}
+  Pending Order List
+{% endblock%}
+
+{% block body_block %}
+
+<div class="page-body">
+  <!-- Table Start -->
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="title-header option-title">
+                          <h5>Deliverd Order List</h5>
+                          <a href="#" class="btn btn-solid">Download all orders</a>
+                      </div>
+                      <div>
+                          <div class="table-responsive">
+                              <table class="table all-package order-table theme-table" id="table_id">
+                                  <thead>
+                                      <tr>
+                                          <th>#</th>
+                                          <th>Cus Name</th>
+                                          <th>Cus Email</th>
+                                          <th>Date</th>
+                                          <th>Order Number</th>
+                                          <th>Delivery Status</th>
+                                          <th>Amount</th>
+                                          <th>Option</th>
+                                      </tr>
+                                  </thead>
+
+                                  <tbody>
+                                    {% for i in delivered_order_list %}
+                                    
+                                      <tr data-bs-toggle="offcanvas" href="#order-details">
+                                          <td>{{forloop.counter}}</td>
+                                          <td>{{i.user.profile.full_name}}</td>
+                                          <td>{{i.user.email}}</td>
+
+                                          <td>{{i.create_at|date:"M d, Y"}}</td>
+
+                                          <td>{{i.order_num}}</td>
+
+                                          <td class="order-success">
+                                              <span>Delivered</span>
+                                          </td>
+
+                                          <td>{{i.get_totals}}&#2547</td>
+
+                                          <td>
+                                              <ul>
+                                                  <li>
+                                                      <a href="order-detail.html">
+                                                          <i class="ri-eye-line"></i>
+                                                      </a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                          data-bs-target="#exampleModalToggle">
+                                                          <i class="ri-delete-bin-line"></i>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                          </td>
+                                      </tr>
+                                      {% endfor %}
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Table End -->
+
+  <!-- footer start-->
+  <div class="container-fluid">
+      <footer class="footer">
+          <div class="row">
+              <div class="col-md-12 footer-copyright text-center">
+                  <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+              </div>
+          </div>
+      </footer>
+  </div>
+</div>
+
+{% endblock %}

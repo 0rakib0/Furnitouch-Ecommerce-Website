@@ -44,7 +44,13 @@ def User_login(request):
         user = authenticate(username=email, password=password)
         if user is not None:
             login(request, user)
-            return redirect('Home:home')
+            if user.user_type == 'Admin':
+                return redirect('Admin_app:dashbord')
+            if user.user_type == 'Staff':
+                return redirect('Admin_app:dashbord')
+            if user.user_type == 'Customer':
+                messages.success(request, 'Loged In Success!')
+                return redirect('Home:home')
         else:
             messages.error(request, 'Email or password not valid!')
             return redirect('accounts:register')
@@ -62,25 +68,41 @@ def User_Profile(request):
         username = request.POST.get('username')
         fullname = request.POST.get('fullname')
         addresd1 = request.POST.get('addresd1')
+        profile_pic = request.FILES.get('profile_pic')
         city = request.POST.get('city')
         zip_code = request.POST.get('zip_code')
         country = request.POST.get('country')
         phone = request.POST.get('phone')
-        
+        passsword1 = request.POST.get('password1')
+        passsword2 = request.POST.get('password2')
         profile = Profile.objects.get(user=user)
       
+        if passsword1 != passsword2:
+            messages.success(request, 'Password Not Match!')
+            return redirect('accounts:profile')
         profile.username = username
         profile.full_name = fullname
         profile.address_1 = addresd1
+        if profile_pic is not None:
+            profile.profile_pic = profile_pic
         profile.city = city
         profile.zipcode = zip_code
         profile.country = country
         profile.phone = phone
+        
+        
         profile.save()
+        if passsword1:
+            user.set_password(passsword1)
+            user.save()
+            return redirect('accounts:logout')
         messages.success(request, 'Profile successfully updated!')
         return redirect('accounts:profile')    
         
     context = {
         'profile':profile,
     }
-    return render(request, 'accounts/profile.html', context)
+    if request.user.user_type == 'Admin' or  request.user.user_type == 'Staff':
+        return render(request, 'accounts/admin_staff_profile.html', context)
+    else:
+        return render(request, 'accounts/profile.html', context)

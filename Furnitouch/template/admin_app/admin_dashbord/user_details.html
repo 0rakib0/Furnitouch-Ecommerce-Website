@@ -1,0 +1,73 @@
+{% extends "admin_app/base.html" %}
+{% load static %}
+{% block title %}
+  Staff-List
+{% endblock%}
+
+{% block body_block %}
+
+
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="title-header option-title">
+                                    <h5>User Profile Details</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 overflow-hidden">
+                                        <div>
+                                            <div class="tracking-product-image">
+                                                {% if profile.profile_pic %}
+                                                <img src="/media/{{profile.profile_pic}}" style="width: 200px;" alt="">
+                                                {% else %}
+                                                <img src="{% static 'images/demo.png' %}" style="width: 200px;" alt="">
+                                                {% endif %}
+                                            </div> <br>
+
+                                            <div class="order-image-contain">
+                                                <h4>{{profile.user.user_type}}'s Profile</h4>
+                                                <hr>
+                                                <div class="tracker-number text-black">
+                                                    <h3 style="margin-bottom: 10px;">Name : <span>{{profile.full_name}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">Username : <span>{{profile.username}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">Email : <span>{{profile.user.email}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">Phone Number : <span>{{profile.phone}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">Country : <span>{{profile.country}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">Address : <span>{{profile.address_1}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">City : <span>{{profile.city}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">Zip Code : <span>{{profile.zipcode}}</span></h3>
+                                                    <h3 style="margin-bottom: 10px;">Join Date : <span>{{profile.create_at}}</span></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+
+    <!-- footer start-->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer end-->
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends "admin_app/base.html" %}
+{% block title %}
+  Order Details
+{% endblock%}
+
+{% block body_block %}
+
+
+<div class="page-body">
+    <!-- tracking table start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="title-header title-header-block package-card">
+                            <div>
+                                <h5>Order Number: {{order_ditails.order_num}}</h5>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="bg-inner cart-section order-details-table">
+                            <div class="row g-4">
+                                <div class="col-xl-8">
+                                    <div class="table-responsive table-details">
+                                        <table class="table cart-table table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Items</th>
+                                                    <th class="text-end" colspan="2">
+                                                        <a href="javascript:void(0)"
+                                                            class="theme-color">Edit
+                                                            Items</a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                {% for i in order_ditails.order_item.all %}
+                                                <tr class="table-order">
+                                                    <td>
+                                                        <a href="javascript:void(0)">
+                                                            <img src="/media/{{i.product.image}}"
+                                                                class="img-fluid blur-up lazyload" alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <p>Product Name</p>
+                                                        <h5>{{i}}</h5>
+                                                    </td>
+                                                    <td>
+                                                        <p>Quantity</p>
+                                                        <h5>{{i.quantity}}</h5>
+                                                    </td>
+                                                    <td>
+                                                        <p>Price</p>
+                                                        <h5>{{i.get_total}}&#2547</h5>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}                                              
+                                            </tbody>
+
+                                            <tfoot>
+                                                
+                                                <tr class="table-order">
+                                                    <td colspan="3">
+                                                        <h5>Shipping :</h5>
+                                                    </td>
+                                                    <td>
+                                                        <h4>0</h4>
+                                                    </td>
+                                                </tr>
+                                                <tr class="table-order">
+                                                    <td colspan="3">
+                                                        <h4 class="theme-color fw-bold">Total Price :</h4>
+                                                    </td>
+                                                    <td>
+                                                        <h4 class="theme-color fw-bold">{{order_ditails.get_totals}}&#2547</h4>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4">
+                                    <div class="order-success">
+                                        <div class="row g-4">
+                                            <h4>summery</h4>
+                                            <ul class="order-details">
+                                                <li>Order Number: {{order_ditails.order_num}}</li>
+                                                <li>Order Date: {{order_ditails.create_at}}</li>
+                                                <li>Payment ID: {{order_ditails.pymentID}}</li>
+                                                
+                                                <li>Order Total: {{order_ditails.get_totals}}&#2547</li>
+                                            </ul>
+
+                                            <h4>shipping address</h4>
+                                            <ul class="order-details">
+                                                <li>Gerg Harvell</li>
+                                                <li>568, Suite Ave.</li>
+                                                <li>Austrlia, 235153 Contact No. 48465465465</li>
+                                            </ul>
+                                            {% if order_ditails.cancel == True %}
+                                            <div class="delivery-sec">
+                                                <button href="" disabled class="btn btn-danger">Canceled</button>
+                                            </div>
+                                            {% else %}
+                                            <div class="delivery-sec">
+                                                <a href="{% url 'Admin_app:order_delivery' id=order_ditails.id %}" class="btn btn-primary">Delivery</a>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- section end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tracking table end -->
+
+    <div class="container-fluid">
+        <!-- footer start-->
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+{% endblock %}

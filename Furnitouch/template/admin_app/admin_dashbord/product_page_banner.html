@@ -1,0 +1,57 @@
+{% extends "admin_app/base.html" %}
+{% block title %}
+  add-product-page-banner
+{% endblock%}
+
+{% block body_block %}
+
+<div class="page-body">
+
+    <!-- New Product Add Start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12 m-auto">
+                        {% include 'include/message.html' %}
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-header-2">
+                                    <h5>Product Page Banner</h5>
+                                </div>
+
+                                <form class="theme-form theme-form-2 mega-form" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="form-label-title col-sm-3 mb-0">Picture(1164x285)px</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" required type="file" name="banner_pic"
+                                                placeholder="Main Category Name">
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="col-sm-9 btn btn-primary ms-auto mt-4">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New Product Add End -->
+
+    <!-- footer Start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer En -->
+</div>
+
+{% endblock%}

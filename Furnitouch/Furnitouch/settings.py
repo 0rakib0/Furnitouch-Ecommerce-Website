@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Home',
     'Accounts',
-    'Shop_app'
+    'Shop_app',
+    'Order_App',
+    'Payment_app',
+    'Admin_app',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +127,7 @@ USE_TZ = True
 STATICFILES_DIRS = [SATATIC_DIR,]
 STATIC_URL = 'static/'
 
+LOGIN_URL = '/login/'
 
 MEDIA_ROOT  = MEDIA_DIR
 MEDIA_URL = 'media/'

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Checkout
+{% endblock%}
+
+{% block body%}
+
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Checkout</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Li's Breadcrumb Area End Here -->
+<!--Checkout Area Strat-->
+<div class="checkout-area pt-60 pb-30">
+    <div class="container">
+        {% include "include/message.html" %}
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="checkbox-form">
+                        <h3>Billing Details</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="country-select clearfix">
+                                    <label>Country <span class="required">*</span></label>
+                                    <select class="nice-select wide" name="country">
+                                      <option value="{{profile.id}}">{{profile.country}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Full Name <span class="required">*</span></label>
+                                    <input value="{{profile.full_name}}" type="text" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Username Name <span class="required">*</span></label>
+                                    <input required value="{{profile.username}}" type="text">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Address <span class="required">*</span></label>
+                                    <input value="{{profile.address_1}}" required name="address_1" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <input name="address_2" value="{{save_billing_address.address_2}}" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Town / City <span class="required">*</span></label>
+                                    <input name="city" value="{{save_billing_address.city}}" type="text" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Postcode / Zip <span class="required">*</span></label>
+                                    <input name="zipcode" value="{{save_billing_address.zipcode}}" type="text" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Email Address <span class="required">*</span></label>
+                                    <input value="{{user.email}}" type="email" readonly required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Phone  <span class="required">*</span></label>
+                                    <input value="{{profile.phone}}" type="text" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                        
+                                            <input value="Save Info" class="btn btn-dark" type="submit">
+                                        
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="your-order">
+                    <h3>Your order</h3>
+                    <div class="your-order-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="cart-product-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in order_items %}
+                                <tr class="cart_item">
+                                    <td class="cart-product-name">{{i.product.product_name}}<strong class="product-quantity"> × {{i.quantity}}</strong></td>
+                                    <td class="cart-product-total"><span class="amount">{{i.get_total}} &#2547</span></td>  
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr class="order-total">
+                                    <th>Order Total</th>
+                                    <td><strong><span class="amount">{{order_total}} &#2547</span></strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="payment-method">
+                        <div class="payment-accordion">
+                            <div class="order-button-payment">
+                                <a href="{% url 'payment_app:payment' %}" class="btn btn-dark px-5">PLACE ORDER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Checkout Area End-->
+
+{% endblock%}

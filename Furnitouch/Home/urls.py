@@ -7,6 +7,7 @@ app_name = 'Home'
 
 urlpatterns = [
     path('', views.Home, name='home'),
+    path('new-arrival-product/', views.New_Product, name='new_product'),
     # path('category/', views.Category, name='category')
     
 ]

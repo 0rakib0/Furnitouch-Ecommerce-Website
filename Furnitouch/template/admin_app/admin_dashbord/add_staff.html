@@ -1,0 +1,109 @@
+{% extends "admin_app/base.html" %}
+{% block title %}
+  add-new-staff
+{% endblock%}
+
+{% block body_block %}
+
+
+<div class="page-body">
+    <!-- New User start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12 m-auto">
+                        {% include 'include/message.html' %}
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="title-header option-title">
+                                    <h5>Add New User</h5>
+                                </div>
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-home-tab"
+                                            data-bs-toggle="pill" data-bs-target="#pills-home"
+                                            type="button">Account</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+                                        <form class="theme-form theme-form-2 mega-form" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="card-header-1">
+                                                <h5>Product Information</h5>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label
+                                                        class="form-label-title col-lg-2 col-md-3 mb-0">Full
+                                                        Name</label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input class="form-control" name="full_name" required type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label
+                                                        class="form-label-title col-lg-2 col-md-3 mb-0">Profile Picture</label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input class="form-control" required name="profile_pic" type="file">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label
+                                                        class="col-lg-2 col-md-3 col-form-label form-label-title">Email
+                                                        Address</label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input class="form-control" required name="email" type="email">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label
+                                                        class="col-lg-2 col-md-3 col-form-label form-label-title">Password</label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input class="form-control" required name="password1" type="password">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                                    <label
+                                                        class="col-lg-2 col-md-3 col-form-label form-label-title">Confirm
+                                                        Password</label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input class="form-control" required name="password2" type="password">
+                                                    </div>
+                                                </div>
+                                                <button class="col-sm-12 btn btn-primary ms-auto mt-4">ADD STAFF</button>
+                                            </div>
+                                        </form>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New User End -->
+
+    <!-- footer start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer end -->
+</div>
+
+
+{% endblock %}
