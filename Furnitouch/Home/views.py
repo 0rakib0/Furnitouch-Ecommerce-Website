@@ -14,10 +14,8 @@ from Shop_app.models import Category, SubCategory, Main_Category, WishList
 def Home(request):
     profile = None
     main_category = Main_Category.objects.all()
-    category = Category.objects.all()
+    category = Category.objects.all()[:12]
     cub_category = SubCategory.objects.all()
-    print('----------------')
-    print(category)
     if request.user.is_authenticated:
             profile = Profile.objects.get(user=request.user)
     new_product = Product.objects.filter(is_newarival=True).order_by('-id')[:5]
