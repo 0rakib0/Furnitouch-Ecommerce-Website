@@ -5,7 +5,7 @@ from Accounts.models import Profile
 from Shop_app.models import Product
 from .models import Home_banner
 from Shop_app.models import Category, SubCategory, Main_Category, WishList
-
+from django.db.models import Q
 
 # Create your views here.
 
@@ -20,13 +20,17 @@ def Home(request):
             profile = Profile.objects.get(user=request.user)
     new_product = Product.objects.filter(is_newarival=True).order_by('-id')[:5]
     banner_info = Home_banner.objects.all().order_by('-id')
+    bedCatId = Category.objects.get(category_name="Bed")
+    featursBed = Product.objects.filter(Q(product_category=bedCatId) & Q(is_featured=True))
+    
     context = {
         'category':category,
         'cub_category':cub_category,
         'main_category':main_category,
         'profile':profile,
         'new_product':new_product,
-        'banner_info':banner_info
+        'banner_info':banner_info,
+        'featursBed':featursBed
     }
     return render(request, 'Home/home.html', context)
 

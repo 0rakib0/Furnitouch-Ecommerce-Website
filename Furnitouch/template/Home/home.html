@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-  Home
+Home
 {% endblock%}
 
 {% block body%}
@@ -42,7 +42,7 @@
             <!-- Begin Li Banner Area -->
             <div class="col-lg-4 text-center pt-xs-30 align-self-center">
                 <div class="mt-5">
-                    <h3 >Offer Ending At:</h3>
+                    <h3>Offer Ending At:</h3>
                     <div class="mt-5">
                         <div class="li-countdown"></div>
                     </div>
@@ -58,7 +58,8 @@
 
 <section class="product-area li-laptop-product Special-product pt-60 pb-45">
     <div class="container">
-        <div class="d-flex px-6 justify-content-between align-items-center" style="background-color: #3e3c3c;padding:0 20px;">
+        <div class="d-flex px-6 justify-content-between align-items-center"
+            style="background-color: #3e3c3c;padding:0 20px;">
             <p class="text-center py-2 h4 mt-2" style="color: #ffc107;">OUR TOP COLLECTION</p>
             <a href="#">SHOP MORE</a>
         </div>
@@ -69,19 +70,19 @@
                 <div class="row">
 
                     {% for i in category %}
-                        <div class="col-4 col-lg-2 text-center border p-2">
-                            <img src="{{i.category_image.url}}" width="100px" alt="">
-                            <p class="font-weight-bold" style="color: #3e3c3c;">{{i.category_name}}</p>
-                        </div>
+                    <div class="col-4 col-lg-2 text-center border p-2">
+                        <img src="{{i.category_image.url}}" width="100px" alt="">
+                        <p class="font-weight-bold" style="color: #3e3c3c;">{{i.category_name}}</p>
+                    </div>
                     {% endfor %}
-                    
+
                 </div>
             </div>
             <!-- Li's Section Area End Here -->
         </div>
 
     </div>
-    
+
 </section>
 <!-- end top category section -->
 
@@ -89,9 +90,10 @@
 <!-- New Arrival section start -->
 
 <section class="product-area li-laptop-product Special-product pt-60 pb-45">
-    <div >
+    <div>
         <div class="container">
-            <div class="d-flex px-6 justify-content-between align-items-center" style="background-color: #3e3c3c;padding:0 20px;">
+            <div class="d-flex px-6 justify-content-between align-items-center"
+                style="background-color: #3e3c3c;padding:0 20px;">
                 <p class="text-center py-2 h4 mt-2" style="color: #ffc107;">NEW ARRIEVAL</p>
                 <a href="#">SHOP MORE</a>
             </div>
@@ -102,19 +104,26 @@
             <div class="col-lg-12">
                 <div class="row d-flex justify-content-center">
                     {% for i in new_product %}
-                        <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded ">
-                            <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg mb-2" width="100%" alt="">
-                            <a href="{% url 'Shop_app:single_product' slug=i.slug %}" class="font-weight-bold mt-2" style="color: #3e3c3c;" onmouseover="this.style.color = 'red'">{{i.roduct_title}}</a>
-                            <p class="-mt-2 text-dark">{{i.main_price}}&#2547;</p>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded overflow-hidden overlyZoom">
+                        <div class="imgScal">
+                            <img src="{{i.image.url}}" class="rounded-lg mb-2 zoominn" width="100%"
+                                style="transition: transform 0.5s ease-in-out;" alt="Image not found">
                         </div>
+                        <a href="{% url 'Shop_app:single_product' slug=i.slug %}" class="font-weight-bold mt-2"
+                            style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
+                            onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title}}</a>
+                        <p class="text-dark">{{i.main_price}}&#2547;</p>
+                        <p class="newlogo">New</p>
+                    </div>
                     {% endfor %}
                 </div>
+
             </div>
             <!-- Li's Section Area End Here -->
         </div>
 
     </div>
-    
+
 </section>
 
 <!-- New Arriaval section end -->
@@ -122,9 +131,10 @@
 
 <!-- Top Design Bed Collection -->
 <section class="product-area li-laptop-product Special-product pt-60 pb-45">
-    <div >
+    <div>
         <div class="container">
-            <div class="d-flex px-6 justify-content-between align-items-center" style="background-color: #3e3c3c;padding:0 20px;">
+            <div class="d-flex px-6 justify-content-between align-items-center"
+                style="background-color: #3e3c3c;padding:0 20px;">
                 <p class="text-center py-2 h4 mt-2" style="color: #ffc107;">BESTSELLERS : BED</p>
                 <a href="#">SHOP MORE</a>
             </div>
@@ -134,63 +144,36 @@
             <!-- Begin Li's Section Area -->
             <div class="col-lg-12">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded ">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <h4 class="-mt-2">$400.00</h4>
+                    {% for i in featursBed %}
+
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded overlyZoom">
+                        <div class="imgScal">
+                            <img src="{{i.image.url}}" class="rounded-lg mb-2 zoominn" width="100%"
+                                style="transition: transform 0.5s ease-in-out;" alt="Image not found">
+                        </div>
+                        <a href="{% url 'Shop_app:single_product' slug=i.slug %}" class="font-weight-bold mt-2"
+                            style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
+                            onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title}}</a>
+                        <p class="text-dark">{{i.main_price}}&#2547;</p>
                     </div>
-                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
-                        <p>$400.00</p>
-                    </div>
+
+                    {% endfor %}
                 </div>
             </div>
             <!-- Li's Section Area End Here -->
         </div>
 
     </div>
-    
+
 </section>
 <!-- Bed Collection end -->
 
 <!-- best sofa collection -->
 <section class="product-area li-laptop-product Special-product pt-60 pb-45">
-    <div >
+    <div>
         <div class="container">
-            <div class="d-flex px-6 justify-content-between align-items-center" style="background-color: #3e3c3c;padding:0 20px;">
+            <div class="d-flex px-6 justify-content-between align-items-center"
+                style="background-color: #3e3c3c;padding:0 20px;">
                 <p class="text-center py-2 h4 mt-2" style="color: #ffc107;">BESTSELLERS : SOFA SET</p>
                 <a href="#">SHOP MORE</a>
             </div>
@@ -201,44 +184,62 @@
             <div class="col-lg-12">
                 <div class="row d-flex justify-content-center">
                     <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded ">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg" width="100%" alt="">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg"
+                            width="100%" alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <h4 class="-mt-2">$400.00</h4>
                     </div>
                     <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
                     </div>
@@ -248,7 +249,7 @@
         </div>
 
     </div>
-    
+
 </section>
 
 <!-- Sofa Collection End -->
@@ -256,9 +257,10 @@
 <!-- Best Sell Bedroom Set -->
 
 <section class="product-area li-laptop-product Special-product pt-60 pb-45">
-    <div >
+    <div>
         <div class="container">
-            <div class="d-flex px-6 justify-content-between align-items-center" style="background-color: #3e3c3c;padding:0 20px;">
+            <div class="d-flex px-6 justify-content-between align-items-center"
+                style="background-color: #3e3c3c;padding:0 20px;">
                 <p class="text-center py-2 h4 mt-2" style="color: #ffc107;">BESTSELLERS : BED ROOM SET</p>
                 <a href="#">SHOP MORE</a>
             </div>
@@ -269,54 +271,72 @@
             <div class="col-lg-12">
                 <div class="row d-flex justify-content-center">
                     <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded ">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg" width="100%" alt="">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg"
+                            width="100%" alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <h4 class="-mt-2">$400.00</h4>
                     </div>
                     <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div><div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
+                    </div>
+                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
                         <p class="font-weight-bold mt-2" style="color: #3e3c3c;">Sofa Set</p>
                         <p>$400.00</p>
-                    </div>                    
+                    </div>
                 </div>
             </div>
             <!-- Li's Section Area End Here -->
         </div>
 
     </div>
-    
+
 </section>
 
 <!-- Best Sell Bedroom set end -->
@@ -326,7 +346,8 @@
 <section class="product-area li-laptop-product Special-product pt-60 pb-45">
     <div>
         <div class="container">
-            <div class="d-flex px-6 justify-content-between align-items-center" style="background-color: #3e3c3c;padding:0 20px;">
+            <div class="d-flex px-6 justify-content-between align-items-center"
+                style="background-color: #3e3c3c;padding:0 20px;">
                 <p class="text-center py-2 h4 mt-2" style="color: #ffc107;">BLOG POSTS</p>
                 <a href="#">READ MORE</a>
             </div>
@@ -337,29 +358,42 @@
             <div class="col-lg-12">
                 <div class="row d-flex justify-content-center">
                     <div class="col-3 p-2 rounded ">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg" width="100%" alt="">
-                        <p class="font-weight-bold mt-2 h6" style="color: #3e3c3c;">DIY furniture projects to make your home elegant</p>
-                        <p>Making your own furniture can be a great way to add a touch of elegance to your home. DIY furniture projects can be both fun and challenging, and t...</p>
-                        <a href="#" class="border p-2" style="background-color: #ffc107;color:white;border-radius:5px">READ MORE</a>
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" class="rounded-lg"
+                            width="100%" alt="">
+                        <p class="font-weight-bold mt-2 h6" style="color: #3e3c3c;">DIY furniture projects to make your
+                            home elegant</p>
+                        <p>Making your own furniture can be a great way to add a touch of elegance to your home. DIY
+                            furniture projects can be both fun and challenging, and t...</p>
+                        <a href="#" class="border p-2"
+                            style="background-color: #ffc107;color:white;border-radius:5px">READ MORE</a>
                     </div>
                     <div class="col-3 p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2 h6" style="color: #3e3c3c;">DIY furniture projects to make your home elegant</p>
-                        <p>Making your own furniture can be a great way to add a touch of elegance to your home. DIY furniture projects can be both fun and challenging, and t...</p>
-                        <a href="#" class="border p-2" style="background-color: #ffc107;color:white;border-radius:5px">READ MORE</a>
-                    </div><div class="col-3 p-2 rounded">
-                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%" alt="">
-                        <p class="font-weight-bold mt-2 h6" style="color: #3e3c3c;">DIY furniture projects to make your home elegant</p>
-                        <p>Making your own furniture can be a great way to add a touch of elegance to your home. DIY furniture projects can be both fun and challenging, and t...</p>
-                        <a href="#" class="border p-2" style="background-color: #ffc107;color:white;border-radius:5px">READ MORE</a>
-                    </div>                    
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
+                        <p class="font-weight-bold mt-2 h6" style="color: #3e3c3c;">DIY furniture projects to make your
+                            home elegant</p>
+                        <p>Making your own furniture can be a great way to add a touch of elegance to your home. DIY
+                            furniture projects can be both fun and challenging, and t...</p>
+                        <a href="#" class="border p-2"
+                            style="background-color: #ffc107;color:white;border-radius:5px">READ MORE</a>
+                    </div>
+                    <div class="col-3 p-2 rounded">
+                        <img src="https://woodbuzz.in/cdn/shop/products/FWOG01_360x.jpg?v=1638929655" width="100%"
+                            alt="">
+                        <p class="font-weight-bold mt-2 h6" style="color: #3e3c3c;">DIY furniture projects to make your
+                            home elegant</p>
+                        <p>Making your own furniture can be a great way to add a touch of elegance to your home. DIY
+                            furniture projects can be both fun and challenging, and t...</p>
+                        <a href="#" class="border p-2"
+                            style="background-color: #ffc107;color:white;border-radius:5px">READ MORE</a>
+                    </div>
                 </div>
             </div>
             <!-- Li's Section Area End Here -->
         </div>
 
     </div>
-    
+
 </section>
 
 <!-- END BLOG POST -->

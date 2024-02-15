@@ -5373,6 +5373,39 @@ span.required {
 .small-version {
   display: none;
 }
+
+
+/* -----------------------------------------My Styles------------------------------------------------------- */
+
+.overlyZoom .zoominn {
+    transition-duration: 3s; /* Setting the duration of the transition */
+
+}
+
+.imgScal{
+	overflow: hidden;
+	margin-bottom: .5rem;
+}
+
+.overlyZoom:hover .zoominn{
+	transition-duration: 3s;
+	transform: scale(1.2);
+	margin-bottom: 10px;
+}
+
+.overlyZoom{
+	position: relative;
+}
+
+.newlogo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ffc107;
+	padding: 1px 10px;
+	color: #000;
+}
+
 /*----------------------------------------------------------------------------------------------------*/
 /*------------------------------------------> The End <-----------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------*/
