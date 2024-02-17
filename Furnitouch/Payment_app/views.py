@@ -21,7 +21,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 @login_required
 def Checkout(request):
-    print('Hello Bangladesh----------------------')
     if not request.user.profile.is_fully_filed():
         messages.warning(request, 'Please complate profile details!')
         return redirect('accounts:profile')

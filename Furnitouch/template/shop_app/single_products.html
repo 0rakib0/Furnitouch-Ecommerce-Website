@@ -53,12 +53,17 @@
                 </div>
                 <!--// Product Details Left -->
             </div>
-
             <div class="col-lg-7 col-md-6">
                 <div class="product-details-view-content">
                     <div class="product-info">
                         <p class="" style="font-size: 30px;color:rgb(34, 34, 34);">{{product.roduct_title}}</p>
                         <div class="pt-20">
+                                    {% if product.product_quintity <= 5 %}
+                                      <p class="mb-2 text-danger">{{product.product_quintity}} Item in stock</p>
+                                    {% else %}
+                                      <span class="mb-2">{{product.product_quintity}} Item in stock</span>
+                                    {% endif %}
+                            
                             {% if product.dic_price == 0 %}
                             <span class="new-price text-3">{{product.main_price}} &#2547</span>
                             {% else %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-  shop-page
+shop-page
 {% endblock%}
 
 {% block body%}
@@ -53,29 +53,38 @@
                 <!-- shop-products-wrapper start -->
                 <div class="shop-products-wrapper mt-3">
                     <div class="tab-content">
-                        
+
                         <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
                             <div class="product-area shop-product-area">
                                 <div class="row">
                                     {% for i in product %}
-                                    <div class="col-3 col-lg-2 m-2  text-center border p-2 rounded overflow-hidden overlyZoom">
+                                    <div
+                                        class="col-3 col-lg-2 m-2  text-center border p-2 rounded overflow-hidden overlyZoom">
                                         <div class="imgScal">
                                             <img src="{{i.image.url}}" class="rounded-lg mb-2 zoominn" width="100%"
                                                 style="transition: transform 0.5s ease-in-out;" alt="Image not found">
                                         </div>
-                                        <a href="{% url 'Shop_app:single_product' slug=i.slug %}" class="font-weight-bold mt-2"
-                                            style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
+                                        <a href="{% url 'Shop_app:single_product' slug=i.slug %}"
+                                            class="font-weight-bold mt-2" style="color: #3e3c3c;"
+                                            onmouseover="this.style.color = '#ffc107'"
                                             onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title}}</a>
+                                        {% if i.dic_price == 0 %}
                                         <p class="text-dark">{{i.main_price}}&#2547;</p>
-                                        {% if i.is_newarival %}
-                                            <p class="newlogo">New</p>
+                                        {% else %}
+                                        <div class="d-flex justify-content-center mt-2">
+                                            <p class="text-dark">{{i.dic_price}}&#2547;</p>
+                                            <p class="text-dark" style="margin-left: .5rem;"><del>{{i.main_price}}</del>&#2547;</p>
+                                        </div>
                                         {% endif %}
-                                    </div>       
-                                     {% endfor %}
+                                        {% if i.is_newarival %}
+                                        <p class="newlogo">New</p>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
-                        </div>   
-                          
+                        </div>
+
 
                         <!-- <div class="paginatoin-area">
                             <div class="row">
