@@ -60,7 +60,7 @@ def User_logout(request):
     logout(request)
     return redirect('Home:home')
 
-
+@login_required
 def User_Profile(request):
     user = request.user
     profile = Profile.objects.get(user=user)

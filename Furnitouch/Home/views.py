@@ -21,7 +21,11 @@ def Home(request):
     new_product = Product.objects.filter(is_newarival=True).order_by('-id')[:5]
     banner_info = Home_banner.objects.all().order_by('-id')
     bedCatId = Category.objects.get(category_name="Bed")
+    sofaCatId = Category.objects.get(category_name="Sofa")
+    bedRoomatId = Category.objects.get(category_name='Bedroom Set')
     featursBed = Product.objects.filter(Q(product_category=bedCatId) & Q(is_featured=True))
+    featursSofa = Product.objects.filter(Q(product_category=sofaCatId) & Q(is_featured=True))
+    featursBerroom = Product.objects.filter(Q(product_category=bedRoomatId) & Q(is_featured=True))
     
     context = {
         'category':category,
@@ -30,7 +34,9 @@ def Home(request):
         'profile':profile,
         'new_product':new_product,
         'banner_info':banner_info,
-        'featursBed':featursBed
+        'featursBed':featursBed,
+        'featursSofa':featursSofa,
+        'featursBerroom':featursBerroom
     }
     return render(request, 'Home/home.html', context)
 
