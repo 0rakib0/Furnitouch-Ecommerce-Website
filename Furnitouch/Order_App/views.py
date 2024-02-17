@@ -6,7 +6,7 @@ from Shop_app.models import Product
 from django.contrib import messages
 # Create your views here.
 
-
+@login_required
 def Add_to_Card(request, slug):
     item = get_object_or_404(Product, slug=slug)
     order_items = Shoping_Card.objects.get_or_create(product=item, user=request.user, purchased=False)

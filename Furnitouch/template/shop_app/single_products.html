@@ -192,8 +192,7 @@
                             <table class="table table-bordered">
                                 <thead class="text-center">
                                     <tr>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col" colspan="2">Product Spacification</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -263,7 +262,7 @@
             <div class="col-lg-12">
                 <div class="li-section-title">
                     <h2>
-                        <span>{{releted_product_count}} PRODUCT IN SAME CATEGORY:</span>
+                        <span>{{releted_product_count}} &nbsp;Releted Product Found</span>
                     </h2>
                 </div>
                 <div class="row">
@@ -271,35 +270,19 @@
                         {% for i in releted_product %}
                         <div class="col-lg-12">
                             <!-- single-product-wrap start -->
-                            <div class="single-product-wrap">
-                                <div class="product-image">
-                                    <a href="{% url 'Shop_app:single_product' slug=i.slug %}">
-                                        <img src="/media/{{i.image}}" alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">New</span>
+                            <div class="single-product-wrap overflow-hidden overlyZoom">
+                                <div class="imgScal">
+                                    <img src="{{i.image.url}}" class="rounded-lg mb-2 zoominn" width="100%"
+                                        style="transition: transform 0.5s ease-in-out;" alt="Image not found">
                                 </div>
                                 <div class="product_desc">
                                     <div class="product_desc_info">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="product-details.html">{{i.product_name}}</a>
-                                            </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <h4><a class="product_name"
-                                                href="{% url 'Shop_app:single_product' slug=i.slug %}">{{i.roduct_title}}</a>
-                                        </h4>
+                                        <a href="{% url 'Shop_app:single_product' slug=i.slug %}" class="font-weight-bold mt-2"
+                                            style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
+                                            onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title}}</a>
                                         <div class="price-box">
                                             {% if i.dic_price == 0 %}
-                                            <span class="new-price new-price-2">{{i.main_price}} &#2547</span>
+                                            <p class="text-dark">{{i.main_price}}&#2547;</p>
                                             {% else %}
                                             <span class="new-price new-price-2">{{i.dic_price}} &#2547</span>
                                             <span class="old-price">{{i.main_price}} &#2547</span>
@@ -309,12 +292,7 @@
                                     </div>
                                     <div class="add-actions">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                            <li><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
-                                            <li><a class="links-details" href="wishlist.html"><i
-                                                        class="fa fa-heart-o"></i></a></li>
+                                            <li class="add-cart active"><a href="{% url 'order_app:add_product_card' slug=i.slug %}">Add to cart</a></li>
                                         </ul>
                                     </div>
                                 </div>
