@@ -58,10 +58,11 @@
                     <div class="product-info">
                         <p class="" style="font-size: 30px;color:rgb(34, 34, 34);">{{product.roduct_title}}</p>
                         <div class="pt-20">
+                                    <span>PRODUCT CODE: {{product.product_code}}</span> <br>
                                     {% if product.product_quintity <= 5 %}
-                                      <p class="mb-2 text-danger">{{product.product_quintity}} Item in stock</p>
+                                      <p class="mb-2 text-danger">{{product.product_quintity}} Item in stock</p> <br>
                                     {% else %}
-                                      <span class="mb-2">{{product.product_quintity}} Item in stock</span>
+                                      <span class="mb-2">{{product.product_quintity}} Item in stock</span><br>
                                     {% endif %}
                             
                             {% if product.dic_price == 0 %}

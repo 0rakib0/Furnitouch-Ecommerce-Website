@@ -12,6 +12,14 @@ from django.db.models import Q
 
 # @login_required
 def Home(request):
+    searchProduct = None
+    if request.method == 'GET':
+        fined_product = request.GET.get('fined_product')
+    if fined_product:
+        searchProduct = Product.objects.filter(Q(product_name__contains=fined_product) | Q(product_code=fined_product) | Q(product_code=fined_product) | Q(product_keyword=fined_product))
+    
+    
+    
     profile = None
     main_category = Main_Category.objects.all()
     category = Category.objects.all()[:12]
@@ -36,7 +44,8 @@ def Home(request):
         'banner_info':banner_info,
         'featursBed':featursBed,
         'featursSofa':featursSofa,
-        'featursBerroom':featursBerroom
+        'featursBerroom':featursBerroom,
+        "searchProduct":searchProduct
     }
     return render(request, 'Home/home.html', context)
 

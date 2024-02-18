@@ -58,8 +58,7 @@ shop-page
                             <div class="product-area shop-product-area">
                                 <div class="row">
                                     {% for i in product %}
-                                    <div
-                                        class="col-3 col-lg-2 m-2  text-center border p-2 rounded overflow-hidden overlyZoom">
+                                    <div class="col-lg-3 col-6 my-2 shadow overflow-hidden overlyZoom" style="box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.459); ">
                                         <div class="imgScal">
                                             <img src="{{i.image.url}}" class="rounded-lg mb-2 zoominn" width="100%"
                                                 style="transition: transform 0.5s ease-in-out;" alt="Image not found">
@@ -68,17 +67,20 @@ shop-page
                                             class="font-weight-bold mt-2" style="color: #3e3c3c;"
                                             onmouseover="this.style.color = '#ffc107'"
                                             onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title}}</a>
-                                        {% if i.dic_price == 0 %}
-                                        <p class="text-dark">{{i.main_price}}&#2547;</p>
-                                        {% else %}
-                                        <div class="d-flex justify-content-center mt-2">
-                                            <p class="text-dark">{{i.dic_price}}&#2547;</p>
-                                            <p class="text-dark" style="margin-left: .5rem;"><del>{{i.main_price}}</del>&#2547;</p>
-                                        </div>
-                                        {% endif %}
-                                        {% if i.is_newarival %}
-                                        <p class="newlogo">New</p>
-                                        {% endif %}
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <a href="#" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
+                                            {% if i.dic_price == 0 %}
+                                                <p class="text-dark mt-2">{{i.main_price}}&#2547;</p>
+                                            {% else %}
+                                                <div class="d-flex justify-content-center mt-2">
+                                                    <p class="text-dark">{{i.dic_price}}&#2547;</p>
+                                                    <p class="text-dark" style="margin-left: .5rem;"><del>{{i.main_price}}</del>&#2547;</p>
+                                                </div>
+                                            {% endif %}
+                                            {% if i.is_newarival %}
+                                            <p class="newlogo">New</p>
+                                            {% endif %}
+                                            </div>
                                     </div>
                                     {% endfor %}
                                 </div>
