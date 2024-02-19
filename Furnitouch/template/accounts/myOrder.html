@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+User | Profile
+{% endblock%}
+
+{% block body %}
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            {% include "include/message.html" %}
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active">My Orders</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Li's Breadcrumb Area End Here -->
+<!-- Begin Login Content Area -->
+
+<div class="container">
+    <h1>This is My Order page</h1>
+</div>
+
+
+{% endblock%}

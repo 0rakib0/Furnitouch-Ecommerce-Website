@@ -106,3 +106,11 @@ def User_Profile(request):
         return render(request, 'accounts/admin_staff_profile.html', context)
     else:
         return render(request, 'accounts/profile.html', context)
+    
+    
+@login_required
+def myOrder(request):
+    context = {
+        
+    }
+    return render(request, 'accounts/myOrder.html', context)
