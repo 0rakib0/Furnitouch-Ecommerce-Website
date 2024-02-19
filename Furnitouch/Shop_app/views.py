@@ -11,6 +11,8 @@ from .models import ProductMoreImage
 
 def Shop_page(request):
     product = None
+    if request.method == "GET":
+        sort_value = request.GET.get('sort-value')
     main_category = request.GET.get('main-category')
     category_id = request.GET.get('category')
     sub_category_id = request.GET.get('sub-category')
@@ -31,6 +33,10 @@ def Shop_page(request):
         product = Product.objects.filter(product_category=category_id)
     elif sub_category_id !=None:
         product = Product.objects.filter(product_sub_category=subcategory_id)
+    elif sort_value == 'a-z':
+        product = Product.objects.all().order_by('roduct_title')
+    elif sort_value == 'z-a':
+        product = Product.objects.all().order_by('-roduct_title')
     else:
         product = Product.objects.all().order_by('-id')
     

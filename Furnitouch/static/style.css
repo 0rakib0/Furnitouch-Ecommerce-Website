@@ -5406,6 +5406,21 @@ span.required {
 	color: #000;
 }
 
+.Product-Sort-btn{
+	background-color: transparent;
+	border: none;
+	border: 1px solid #F39C11;
+	color: black;
+	transition-duration: .5s;
+}
+
+.Product-Sort-btn:hover{
+	background-color: #F39C11;
+	/* border: none; */
+	color: white;
+
+}
+
 /*----------------------------------------------------------------------------------------------------*/
 /*------------------------------------------> The End <-----------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------*/
