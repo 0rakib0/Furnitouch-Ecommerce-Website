@@ -56,7 +56,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="product-details-view-content">
                     <div class="product-info">
-                        <p class="" style="font-size: 30px;color:rgb(34, 34, 34);">{{product.roduct_title}}</p>
+                        <p class="" style="font-size: 30px;color:rgb(34, 34, 34);line-height: 1.2;">{{product.roduct_title}}</p>
                         <div class="pt-20">
                                     <span>PRODUCT CODE: {{product.product_code}}</span> <br>
                                     {% if product.product_quintity <= 5 %}
@@ -285,7 +285,7 @@
                                     <div class="product_desc_info">
                                         <a href="{% url 'Shop_app:single_product' slug=i.slug %}" class="font-weight-bold mt-2"
                                             style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
-                                            onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title}}</a>
+                                            onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title | slice:':30'}}...</a>
                                         <div class="price-box">
                                             {% if i.dic_price == 0 %}
                                             <p class="text-dark">{{i.main_price}}&#2547;</p>

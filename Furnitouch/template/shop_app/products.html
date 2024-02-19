@@ -66,7 +66,7 @@ shop-page
                                         <a href="{% url 'Shop_app:single_product' slug=i.slug %}"
                                             class="font-weight-bold mt-2" style="color: #3e3c3c;"
                                             onmouseover="this.style.color = '#ffc107'"
-                                            onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title}}</a>
+                                            onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title | slice:':30'}}...</a>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <a href="#" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
                                             {% if i.dic_price == 0 %}
