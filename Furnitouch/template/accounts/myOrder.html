@@ -101,6 +101,44 @@ User | Profile
                 <p class="h6" style="margin-top: 10px;color:black">My Delivered Order Status</p>
                 
                 <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Order Items</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     {% for i in confirmedOrder %}
+                        <tr>
+                          <th scope="row">{{i.order_num}}</th>
+                          <td>Not Set</td>
+                          <td>
+                            {% for items in i.order_item.all %}
+                              <div class="d-flex">
+                                <span>{{items.product.roduct_title}} X {{items.quantity}}</span>
+                              </div>   
+                            {% endfor %}
+                          </td>
+                          <td>{{i.create_at| date:"d M Y"}}</td>
+                          {% if i.delivered %}
+                            <td><span class="badge badge-success">Delivered</span></td>
+                          {% else %}
+                          <td><span class="badge badge-primary">Pending Delivery</span></td>
+                          {% endif %}
+                        </tr>
+                     {% endfor %}
+                    </tbody>
+                  </table>
+
+            </div>
+
+            <div id="PendingOrderHiden" class="pt-2 d-none">
+                <p class="h6" style="margin-top: 10px;color:black">My Pending Order Status</p>
+                
+                <table class="table table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Order Number</th>
@@ -111,7 +149,7 @@ User | Profile
                     </tr>
                   </thead>
                   <tbody>
-                   {% for i in deliveredOrder %}
+                   {% for i in pendingOrder %}
                       <tr>
                         <th scope="row">{{i.order_num}}</th>
                         <td>Not Set</td>
@@ -123,46 +161,15 @@ User | Profile
                           {% endfor %}
                         </td>
                         <td>{{i.create_at| date:"d M Y"}}</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
+                        {% if i.delivered %}
+                          <td><span class="badge badge-success">Delivered</span></td>
+                        {% else %}
+                        <td><span class="badge badge-danger">Pending</span></td>
+                        {% endif %}
                       </tr>
                    {% endfor %}
                   </tbody>
                 </table>
-
-            </div>
-
-            <div id="PendingOrderHiden" class="pt-2 d-none">
-                <p class="h6" style="margin-top: 10px;color:black">My Pending Order Status</p>
-                
-                <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
 
             </div>
         </div>

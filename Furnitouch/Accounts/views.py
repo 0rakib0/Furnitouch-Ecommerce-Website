@@ -115,10 +115,12 @@ def myOrder(request):
     profile = Profile.objects.get(user = request.user)
     confirmedOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=True))
     deliveredOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=True) & Q(delivered=True))
+    pendingOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=False) & Q(delivered=False))
     
     context = {
         "profile":profile,
         'confirmedOrder':confirmedOrder,
-        'deliveredOrder':deliveredOrder
+        'deliveredOrder':deliveredOrder,
+        'pendingOrder':pendingOrder
     }
     return render(request, 'accounts/myOrder.html', context)
