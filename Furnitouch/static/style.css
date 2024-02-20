@@ -5432,10 +5432,43 @@ span.required {
 	overflow: hidden;
 	/* padding: .5rem; */
 	margin: .5rem;
+	margin-left: 2rem;
+	margin-top: 2rem;
 }
 
 .profile-pic{
 	border-radius: 10px;
+	border: 1px solid #F39C11;
+}
+
+.userProfile{
+	background-color:#e7e7e7;
+	color: black;
+	
+}
+
+.profile-head{
+	margin-left: 2rem;
+	color: black;
+}
+
+.profile-head h6 {
+	margin-bottom: 12px;
+}
+
+.profile-body{
+	background-color: #F2F2F2;
+	margin-top:5rem;
+	margin-bottom: 1rem;
+	margin-right:1rem;
+}
+
+.update-profile-button{
+	
+	border: 1px solid #F39C11;
+	padding: 5px;
+	border-radius: 4px;
+
 }
 
 /*----------------------------------------------------------------------------------------------------*/

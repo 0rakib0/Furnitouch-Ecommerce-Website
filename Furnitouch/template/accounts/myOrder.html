@@ -20,13 +20,70 @@ User | Profile
 <!-- Begin Login Content Area -->
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 bg-primary">
+    <div class="row userProfile">
+        <div class="col-md-3">
             <div class="bg-info profile-pic">
-                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" width="100%" alt="profile pic not found">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                    width="100%" alt="profile pic not found">
+            </div>
+            <div class="profile-head">
+                <h6 id="userProfileHide">Profile</h6>
+                <h6 id="myOrderHidden">My Orders</h6>
+                <h6>My Delivered Orders</h6>
+                <h6>Pending Orders</p>
             </div>
         </div>
-        <div class="col bg-danger"><h1>Hello Bangladesh</h1></div>
+        <div class="col profile-body">
+            <div id="profileHidden" class="pt-2">
+                <p class="h6" style="margin-top: 10px;color:black">Profile Information</p>
+                <a href="#" class="update-profile-button">Update Profile</a>
+                
+                <div class="d-flex flex-column mt-4">
+                    <span class="mb-1">Full Name: Rakibul Hasan</span>
+                    <span class="mb-1">User Name: rakib00</span>
+                    <span class="mb-1">Email: rakib@gmail.com</span>
+                    <span class="mb-1">Mobile Number: 01571140796</span>
+                    <span class="mb-1">Full Address: Gulshan, Dhaka-1212</span>
+
+                </div>
+
+            </div>
+
+            <div id="OrderHidden" class="pt-2 d-none">
+                <p class="h6" style="margin-top: 10px;color:black">My Orders Status</p>
+                
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+        </div>
     </div>
 </div>
 
