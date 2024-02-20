@@ -30,7 +30,7 @@ User | Profile
                 <h6 id="userProfileHide" style="color: #F39C11;">Profile</h6>
                 <h6 id="myOrderHidden">My Orders</h6>
                 <h6 id="myDeliveredOrderHidden">My Delivered Orders</h6>
-                <h6>Pending Orders</p>
+                <h6 id="pendingOrderHidden">Pending Orders</p>
                 <a href="#">Logout</a>
             </div>
         </div>
@@ -87,6 +87,41 @@ User | Profile
 
             <div id="DeliveredOrderHidden" class="pt-2 d-none">
                 <p class="h6" style="margin-top: 10px;color:black">My Delivered Order Status</p>
+                
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+
+            <div id="PendingOrderHiden" class="pt-2 d-none">
+                <p class="h6" style="margin-top: 10px;color:black">My Pending Order Status</p>
                 
                 <table class="table table-bordered">
                     <thead>
