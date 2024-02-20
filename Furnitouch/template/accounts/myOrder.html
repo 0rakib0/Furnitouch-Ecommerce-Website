@@ -19,13 +19,21 @@ User | Profile
 <!-- Li's Breadcrumb Area End Here -->
 <!-- Begin Login Content Area -->
 
-<div class="container">
+<div class="container" style="margin-bottom: 4rem;">
     <div class="row userProfile">
         <div class="col-md-3">
+            {% if profile.profile_pic %}
             <div class="bg-info profile-pic">
-                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                    width="100%" alt="profile pic not found">
+              <img src="{{profile.profile_pic.url}}"
+                  width="100%" alt="profile pic not found">
+            </div>            
+            {% else %}
+            <h1>Test2</h1>
+            <div class="bg-info profile-pic">
+              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                  width="100%" alt="profile pic not found">
             </div>
+            {% endif %}
             <div class="profile-head">
                 <h6 id="userProfileHide" style="color: #F39C11;">Profile</h6>
                 <h6 id="myOrderHidden">My Orders</h6>
@@ -40,12 +48,13 @@ User | Profile
                 <a href="#" class="update-profile-button">Update Profile</a>
                 
                 <div class="d-flex flex-column mt-4">
-                    <span class="mb-1">Full Name: Rakibul Hasan</span>
-                    <span class="mb-1">User Name: rakib00</span>
-                    <span class="mb-1">Email: rakib@gmail.com</span>
-                    <span class="mb-1">Mobile Number: 01571140796</span>
-                    <span class="mb-1">Full Address: Gulshan, Dhaka-1212</span>
-
+                    <span class="mb-1">Full Name : {{profile.full_name}}</span>
+                    <span class="mb-1">User Name : {{profile.username}}</span>
+                    <span class="mb-1">Email : {{user.email}}</span>
+                    <span class="mb-1">Mobile Number : {{profile.phone}}</span>
+                    <span class="mb-1">Full Address : {{profile.address_1}}, {{profile.city}}, {{profile.zipcode}}</span>
+                    <span class="mb-1">Country : {{profile.country}}</span>
+                    <span class="mb-1">Stay With Us From: {{profile.create_at |date:"d M Y"}}</span>
                 </div>
 
             </div>
@@ -56,30 +65,33 @@ User | Profile
                 <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Order Items</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Status</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                     {% for i in confirmedOrder %}
+                        <tr>
+                          <th scope="row">{{i.order_num}}</th>
+                          <td>Not Set</td>
+                          <td>
+                            {% for items in i.order_item.all %}
+                              <div class="d-flex">
+                                <span>{{items.product.roduct_title}} X {{items.quantity}}</span>
+                              </div>   
+                            {% endfor %}
+                          </td>
+                          <td>{{i.create_at| date:"d M Y"}}</td>
+                          {% if i.delivered %}
+                            <td><span class="badge badge-success">Delivered</span></td>
+                          {% else %}
+                          <td><span class="badge badge-primary">Pending Delivery</span></td>
+                          {% endif %}
+                        </tr>
+                     {% endfor %}
                     </tbody>
                   </table>
 
@@ -89,34 +101,33 @@ User | Profile
                 <p class="h6" style="margin-top: 10px;color:black">My Delivered Order Status</p>
                 
                 <table class="table table-bordered">
-                    <thead>
+                  <thead>
+                    <tr>
+                      <th scope="col">Order Number</th>
+                      <th scope="col">Order ID</th>
+                      <th scope="col">Order Items</th>
+                      <th scope="col">Order Date</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {% for i in deliveredOrder %}
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="row">{{i.order_num}}</th>
+                        <td>Not Set</td>
+                        <td>
+                          {% for items in i.order_item.all %}
+                            <div class="d-flex">
+                              <span>{{items.product.roduct_title}} X {{items.quantity}}</span>
+                            </div>   
+                          {% endfor %}
+                        </td>
+                        <td>{{i.create_at| date:"d M Y"}}</td>
+                        <td><span class="badge badge-success">Delivered</span></td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                   {% endfor %}
+                  </tbody>
+                </table>
 
             </div>
 

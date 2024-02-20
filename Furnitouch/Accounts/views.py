@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
+from Order_App.models import Order
+from django.db.models import Q
 # Create your views here.
 
 
@@ -110,7 +112,13 @@ def User_Profile(request):
     
 @login_required
 def myOrder(request):
+    profile = Profile.objects.get(user = request.user)
+    confirmedOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=True))
+    deliveredOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=True) & Q(delivered=True))
+    
     context = {
-        
+        "profile":profile,
+        'confirmedOrder':confirmedOrder,
+        'deliveredOrder':deliveredOrder
     }
     return render(request, 'accounts/myOrder.html', context)
