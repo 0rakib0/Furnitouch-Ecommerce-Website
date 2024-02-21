@@ -16,7 +16,7 @@ def Home(request):
     if request.method == 'GET':
         fined_product = request.GET.get('fined_product')
     if fined_product:
-        searchProduct = Product.objects.filter(Q(product_name__contains=fined_product) | Q(product_code=fined_product) | Q(product_code=fined_product) | Q(product_keyword=fined_product))
+        searchProduct = Product.objects.filter(Q(roduct_title__contains=fined_product) | Q(product_code=fined_product) | Q(product_keyword=fined_product))
     
     
     
