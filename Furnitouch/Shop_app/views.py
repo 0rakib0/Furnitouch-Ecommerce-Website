@@ -62,6 +62,13 @@ def Single_Product(request, slug):
     cub_category = SubCategory.objects.all()
     releted_product = Product.objects.filter()
     product = Product.objects.get(slug=slug)
+
+    product_main_price = product.main_price
+    product_discount_price = product.dic_price
+    if product_discount_price !=0:
+        diffrent_price = product_main_price-product_discount_price
+        save_money = round((diffrent_price / product_main_price) * 100)
+    
     productImages = ProductMoreImage.objects.filter(product=product.id)
     category_id = product.product_category.id
     releted_product = Product.objects.filter(product_category=category_id).order_by('-id')
@@ -76,6 +83,7 @@ def Single_Product(request, slug):
         'productImages':productImages,
         'releted_product':releted_product,
         'releted_product_count':releted_product_count,
+        'save_money':save_money
     }
     return render(request, 'shop_app/single_products.html', context)
 

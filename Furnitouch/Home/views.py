@@ -18,8 +18,6 @@ def Home(request):
     if fined_product:
         searchProduct = Product.objects.filter(Q(roduct_title__contains=fined_product) | Q(product_code=fined_product) | Q(product_keyword=fined_product))
     
-    
-    
     profile = None
     main_category = Main_Category.objects.all()
     category = Category.objects.all()[:12]
