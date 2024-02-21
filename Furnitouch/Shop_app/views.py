@@ -57,6 +57,7 @@ def Shop_page(request):
     return render(request, 'shop_app/products.html', context)
 
 def Single_Product(request, slug):
+    save_money = None
     main_category = Main_Category.objects.all()
     category = Category.objects.all()
     cub_category = SubCategory.objects.all()

@@ -26,7 +26,7 @@ Home
                             onmouseover="this.style.color = '#ffc107'"
                             onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title | slice:':30'}}...</a>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a href="#" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
+                            <a href="{% url 'order_app:add_product_card' slug=i.slug %}" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
                         {% if i.dic_price == 0 %}
                             <p class="text-dark mt-2">{{i.main_price}}&#2547;</p>
                         {% else %}
@@ -152,7 +152,7 @@ Home
                             style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
                             onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title | slice:':30'}}...</a>
                             <div class="d-flex justify-content-between align-items-center">
-                                <a href="#" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
+                                <a href="{% url 'order_app:add_product_card' slug=i.slug %}" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
                             {% if i.dic_price == 0 %}
                                 <p class="text-dark mt-2">{{i.main_price}}&#2547;</p>
                             {% else %}
@@ -206,7 +206,7 @@ Home
                                 style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
                                 onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title | slice:':30'}}...</a>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="#" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
+                                    <a href="{% url 'order_app:add_product_card' slug=i.slug %}" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
                                 {% if i.dic_price == 0 %}
                                     <p class="text-dark mt-2">{{i.main_price}}&#2547;</p>
                                 {% else %}
@@ -258,7 +258,7 @@ Home
                                 style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
                                 onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title | slice:':30'}}...</a>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="#" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
+                                    <a href="{% url 'order_app:add_product_card' slug=i.slug %}" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
                                 {% if i.dic_price == 0 %}
                                     <p class="text-dark mt-2">{{i.main_price}}&#2547;</p>
                                 {% else %}
@@ -313,7 +313,7 @@ Home
                                     style="color: #3e3c3c;" onmouseover="this.style.color = '#ffc107'"
                                     onmouseout="this.style.color = '#3e3c3c'">{{i.roduct_title | slice:':30'}}...</a>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
+                                        <a href="{% url 'order_app:add_product_card' slug=i.slug %}" class='text-dark border px-1' style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor ='#ffce3b'" onmouseout="this.style.backgroundColor ='white';">Add To Card</a>
                                     {% if i.dic_price == 0 %}
                                         <p class="text-dark mt-2">{{i.main_price}}&#2547;</p>
                                     {% else %}
