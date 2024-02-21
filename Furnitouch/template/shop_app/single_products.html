@@ -214,13 +214,15 @@
                                         <td class="text-center">Color</td>
                                         <td>{{product.product_Colors}}</td>
                                     </tr>
+                                    {% if product.fabrics_details %}
+                                        <tr>
+                                            <td class="text-center">Fabrics</td>
+                                            <td>{{product.fabrics_details}}</td>
+                                        </tr>
+                                    {% endif %}
                                     <tr>
-                                        <td class="text-center">Fabrics</td>
-                                        <td>{{product.fabrics_details}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">Wood</td>
-                                        <td>{{product.wood_details}}</td>
+                                        <td class="text-center">Meterials Details</td>
+                                        <td>{{product.Meterials_details}}</td>
                                     </tr>
                                 </tbody>
                             </table>
