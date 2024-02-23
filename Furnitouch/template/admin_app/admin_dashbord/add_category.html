@@ -11,27 +11,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="row">
-                    <div class="col-sm-8 m-auto">
+                <div class="">
+                    <div class="">
                         {% include 'include/message.html' %}
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-header-2">
                                     <h5>Category Information</h5>
                                 </div>
-
                                 <form class="theme-form theme-form-2 mega-form" method="POST">
                                     {% csrf_token %}
-                                    <div class="mb-4 row align-items-center">
-                                        <label class="form-label-title col-sm-3 mb-0">Category Name</label>
-                                        <div class="col-sm-9">
+                                    <div class="mb-4">
+                                        <label class="form-label-title col-12 mb-0">Category Name</label>
+                                        <div class="col-12">
                                             <input class="form-control" required type="text" name="name"
                                                 placeholder="Main Category Name">
                                         </div>
                                     </div>
-                                    <div class="mb-4 row align-items-center">
-                                        <label class="col-sm-3 col-form-label form-label-title">Main Category</label>
-                                        <div class="col-sm-9">
+                                    <div class="mb-4 align-items-center">
+                                        <label class="col-12 col-form-label form-label-title">Main Category</label>
+                                        <div class="col-12">
                                             <select class="js-example-basic-single w-100" name="main_cat_id">
                                                 <option selected>--SELECT--</option>
                                                 {% for i in Main_cat %}
@@ -40,7 +39,18 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button class="col-sm-9 btn btn-primary ms-auto mt-4">Save</button>
+
+                                    <div class="mb-4 align-items-center">
+                                        <div class="mb-4">
+                                            <label
+                                                class="col-12 col-form-label form-label-title">Images</label>
+                                            <div class="col-12">
+                                                <input class="form-control form-choose" name="category_pic" type="file"
+                                                    id="formFile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="col-12 btn btn-primary ms-auto mt-4">Add Category</button>
                                 </form>
                             </div>
                         </div>
@@ -49,19 +59,6 @@
             </div>
         </div>
     </div>
-    <!-- New Product Add End -->
-
-    <!-- footer Start -->
-    <div class="container-fluid">
-        <footer class="footer">
-            <div class="row">
-                <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <!-- footer En -->
 </div>
 
 {% endblock%}

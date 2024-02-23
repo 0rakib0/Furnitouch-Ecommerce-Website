@@ -143,6 +143,7 @@ def Del_main_cat(request, slug):
 def Add_category(request):
     if request.method == 'POST':
         cat_name = request.POST.get('name')
+        category_pic = request.POST.get('category_pic')
         main_cat_id = request.POST.get('main_cat_id')
         if main_cat_id == '--SELECT--':
             messages.success(request, 'Main Category Must Be Select!')
@@ -151,7 +152,9 @@ def Add_category(request):
 
         category = Category(
             category_name = cat_name,
-            main_category = main_cat
+            main_category = main_cat,
+            category_image = category_pic
+            
         )
         category.save()
         messages.success(request, 'Category Successfully Added')
