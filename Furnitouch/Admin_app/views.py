@@ -77,77 +77,77 @@ def Admin_dashbord(request):
 def Add_New_Product(request):
     main_category = Main_Category.objects.all().order_by('-id')
     category = Category.objects.all().order_by('-id')
-    # try:
-    if request.method == 'POST':
-        productName = request.POST.get('product_name')
-        productTitle = request.POST.get('product_title')
-        productImage = request.FILES.get('product_image')
-        productCode = request.POST.get('product_code')
-        productQuentity = request.POST.get('product_quentity')
-        productColors = request.POST.get('product_colors')
-        productKeywords = request.POST.get('product_keyword')
-        productFabrics = request.POST.get('product_fabrics')
-        productMeterials = request.POST.get('product_meterial')
-        productLenght = request.POST.get('product_lenght')
-        productDepth = request.POST.get('product_deepth')
-        productHeight = request.POST.get('product_height')
-        regularPrice = request.POST.get('regular_price')
-        discountPrice = request.POST.get('discount_price')
-        mainCategory = request.POST.get('main_cat')
-        productCategory = request.POST.get('category')
-        productDetails = request.POST.get('product_details')
-        isNew = request.POST.get('is_new')
-        isFeatured = request.POST.get('is_featured')
-        isDiscount = request.POST.get('is_discount')
-        isReady = request.POST.get('is_ready')
-        
-        productMainCatID = Main_Category.objects.get(id=mainCategory)
-        productCatID = Category.objects.get(id=productCategory)
+    try:
+        if request.method == 'POST':
+            productName = request.POST.get('product_name')
+            productTitle = request.POST.get('product_title')
+            productImage = request.FILES.get('product_image')
+            productCode = request.POST.get('product_code')
+            productQuentity = request.POST.get('product_quentity')
+            productColors = request.POST.get('product_colors')
+            productKeywords = request.POST.get('product_keyword')
+            productFabrics = request.POST.get('product_fabrics')
+            productMeterials = request.POST.get('product_meterial')
+            productLenght = request.POST.get('product_lenght')
+            productDepth = request.POST.get('product_deepth')
+            productHeight = request.POST.get('product_height')
+            regularPrice = request.POST.get('regular_price')
+            discountPrice = request.POST.get('discount_price')
+            mainCategory = request.POST.get('main_cat')
+            productCategory = request.POST.get('category')
+            productDetails = request.POST.get('product_details')
+            isNew = request.POST.get('is_new')
+            isFeatured = request.POST.get('is_featured')
+            isDiscount = request.POST.get('is_discount')
+            isReady = request.POST.get('is_ready')
             
-        print(isDiscount)
-        print(isNew)
-        print(isFeatured)
-        print(isReady)
-        
-        if (main_category == '--SELECT--' or productCategory == '--SELECT--'):
-            messages.success(request, 'Category Relect is required')
+            productMainCatID = Main_Category.objects.get(id=mainCategory)
+            productCatID = Category.objects.get(id=productCategory)
+                
+            print(isDiscount)
+            print(isNew)
+            print(isFeatured)
+            print(isReady)
+            
+            if (main_category == '--SELECT--' or productCategory == '--SELECT--'):
+                messages.success(request, 'Category Relect is required')
+                return redirect('Admin_app:add_product')
+            
+            newProduct = Product(
+                product_name = productName,
+                product_code = productCode,
+                product_quintity = productQuentity,
+                product_main_category = productMainCatID,
+                product_category = productCatID,
+                roduct_title = productTitle,
+                product_keyword = productKeywords,
+                image = productImage,
+                product_Colors = productColors,
+                details = productDetails,
+                fabrics_details = productFabrics,
+                Meterials_details = productMeterials,
+                lenth = productLenght,
+                deepth = productDepth,
+                height = productHeight,
+                main_price = regularPrice,
+                dic_price = discountPrice
+            )
+            
+            if isNew:
+                newProduct.is_newarival = True
+            if isFeatured:
+                newProduct.is_featured = True
+            if isDiscount:
+                newProduct.is_discount = True
+            if isReady:
+                newProduct.is_ready_Stock = True
+            
+            newProduct.save()
+            messages.success(request, 'Product Successfully Added')
             return redirect('Admin_app:add_product')
-        
-        newProduct = Product(
-            product_name = productName,
-            product_code = productCode,
-            product_quintity = productQuentity,
-            product_main_category = productMainCatID,
-            product_category = productCatID,
-            roduct_title = productTitle,
-            product_keyword = productKeywords,
-            image = productImage,
-            product_Colors = productColors,
-            details = productDetails,
-            fabrics_details = productFabrics,
-            Meterials_details = productMeterials,
-            lenth = productLenght,
-            deepth = productDepth,
-            height = productHeight,
-            main_price = regularPrice,
-            dic_price = discountPrice
-        )
-        
-        if isNew:
-            newProduct.is_newarival = True
-        if isFeatured:
-            newProduct.is_featured = True
-        if isDiscount:
-            newProduct.is_discount = True
-        if isReady:
-            newProduct.is_ready_Stock = True
-        
-        newProduct.save()
-        messages.success(request, 'Product Successfully Added')
+    except:
+        messages.success(request, 'Product info not save! something wrong!')
         return redirect('Admin_app:add_product')
-    # except:
-    #     messages.warning(request, 'Product info not save! something wrong!')
-    #     return redirect('Admin_app:add_product')
     
         
     context = {
@@ -157,8 +157,17 @@ def Add_New_Product(request):
     return render(request,'admin_app/admin_dashbord/add_product.html' , context)
 
 
+def UpdateProduct(request, slug):
+    product_object = Product.objects.get(slug=slug)
+    
+    context = {
+        'product_object':product_object
+    }
+    return render(request, 'admin_app/admin_dashbord/updateProduct.html', context)
+
+
 def ProductList(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('-id')
     
     context = {
         'products':products
@@ -184,7 +193,7 @@ def Add_main_category(request):
             return redirect('Admin_app:add_main_category')
         
     except:
-        messages.warning(request, 'Category not save! something wrong!')
+        messages.success(request, 'Category not save! something wrong!')
         return redirect('Admin_app:add_main_category')
         
     return render(request, 'admin_app/admin_dashbord/add_main_category.html', context={})

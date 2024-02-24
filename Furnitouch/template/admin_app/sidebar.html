@@ -2,10 +2,7 @@
 <div class="sidebar-wrapper">
     <div>
         <div class="logo-wrapper logo-wrapper-center">
-            <a href="index.html" data-bs-original-title="" title="">
-                <img class="img-fluid for-white" src="{% static 'admin_filse/assets/images/logo/full-white.png' %}"
-                    alt="logo">
-            </a>
+            <h4 class="text-white h3">Furni<span style="color: #ffa53b;">touch</span></h4>
             {% if user.user_type == 'Admin' %}
             <p class="text-white my-2">Admin Dashbord</p>
             {% elif user.user_type == 'Staff'%}

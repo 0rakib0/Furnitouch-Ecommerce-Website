@@ -1,0 +1,209 @@
+{% extends "admin_app/base.html" %}
+{% block title %}
+  add-new-product
+{% endblock%}
+
+{% block body_block %}
+  
+
+<div class="page-body" style="background-color: rgb(255, 255, 255);">
+
+                <!-- New Product Add Start -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 m-auto">
+                                    {% include 'include/message.html' %}
+                                    <div class="card">
+                                        <div class="card-body" style="background-color: rgb(238, 238, 238);padding:2rem">
+                                            <div class="card-header-2">
+                                                <h5>Product Information</h5>
+                                            </div>
+
+                                            <form class="theme-form theme-form-2 mega-form" method="POST" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                <div class="mb-4 align-items-center">
+                                                    <label class="form-label-title mb-0">Product Name<span style="color: red;">*</span></label>
+                                                    <div class="col-12">
+                                                        <input class="form-control" name="product_name" type="text"
+                                                            value="{{product_object.product_name}}" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 align-items-center">
+                                                    <label class="form-label-title mb-0">Product Title<span style="color: red;">*</span></label>
+                                                    <div class="col-12">
+                                                        <input class="form-control" name="product_title" type="text"
+                                                            value="{{product_object.roduct_title}}" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <img src="{{product_object.image.url}}" width="50px" alt="">
+                                                    <label
+                                                        class="col-12 col-form-label form-label-title">Images<span style="color: red;">*</span></label>
+                                                    <div class="col-12">
+                                                        <input name="product_image" class="form-control form-choose" type="file" id="formFile" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex row">
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title mb-0">Product Code<span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_code" type="text"
+                                                                placeholder="Product Code" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title col-12 mb-0">Product Quientity <span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_quentity" type="number"
+                                                                placeholder="Product Quantity" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex row">
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title mb-0">Product Color<span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_colors" type="text"
+                                                                placeholder="Product Colors" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title col-12 mb-0">Product KeyWord</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_keyword" type="text"
+                                                                placeholder="Product Keywords">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex row">
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title mb-0">Product Febrics</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_fabrics" type="text"
+                                                                placeholder="Product Fabrics">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title col-12 mb-0">Product Meterials<span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_meterial" type="text"
+                                                                placeholder="Product Meterials" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex row">
+                                                    <div class="mb-4 col-lg-4 col-12">
+                                                        <label class="form-label-title mb-0">Product Length<span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_lenght" type="text"
+                                                                placeholder="Product Length" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 col-lg-4 col-12">
+                                                        <label class="form-label-title col-12 mb-0">Product Deepth<span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_deepth" type="text"
+                                                                placeholder="Product Deepth" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 col-lg-4 col-12">
+                                                        <label class="form-label-title col-12 mb-0">Product Height<span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="product_height" type="text"
+                                                                placeholder="Product Height" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex row">
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title mb-0">Product Regular Price<span style="color: red;">*</span></label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="regular_price" type="number"
+                                                                placeholder="Regular Price" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="form-label-title col-12 mb-0">Product Discount</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" name="discount_price" type="number"
+                                                                placeholder="Discount Price">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex row">
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label class="col-form-label form-label-title">Main Category<span style="color: red;">*</span></label>
+                                                        <div class="">
+                                                            <select class="js-example-basic-single w-100" name="main_cat">
+                                                                <option selected>--SELECT--</option>
+                                                                {% for i in main_category %}
+                                                                <option value="{{i.id}}">{{i.main_category_name}}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-4 col-lg-6 col-12">
+                                                        <label
+                                                            class="col-form-label form-label-title">Category<span style="color: red;">*</span></label>
+                                                        <div class="">
+                                                            <select class="js-example-basic-single w-100" name="category">
+                                                                <option selected>--SELECT--</option>
+                                                                {% for i in category %}
+                                                                <option value="{{i.id}}">{{i.category_name}}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="mb-4 align-items-center">
+                                                    <label class="form-label-title mb-0">Product Details<span style="color: red;">*</span></label>
+                                                    <div class="col-12">
+                                                        <textarea name="product_details" class="form-control" id="" cols="30" rows="10" required></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex row">
+                                                    <div class="col-lg-3 col-12">
+                                                        <div class="mb-2">
+                                                            <label for="offer_product" class="col-form-label form-label-title">Offer Available</label>
+                                                            <input name="is_new" id="offer_product" type="checkbox" value="True">
+                                                        </div>
+                                                    </div>
+                                                    <div class=" col-lg-3 col-12">
+                                                        <div class="mb-2">
+                                                            <label for="featured" class="col-form-label form-label-title">Featured Product</label>
+                                                            <input name="is_featured" id="featured" type="checkbox" value="True">
+                                                        </div>
+                                                    </div>
+                                                    <div class=" col-lg-3 col-12">
+                                                        <div class="mb-2">
+                                                            <label for="discount" class="col-form-label form-label-title">Discount Available</label>
+                                                            <input name="is_discount" id="discount" type="checkbox" value="True">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-12">
+                                                        <div class="mb-2">
+                                                            <label for="ready_stock" class="col-form-label form-label-title">Ready Stock Product</label>
+                                                            <input name="is_ready" id="ready_stock" type="checkbox" value="True">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button class="w-100 p-2 btn btn-primary">Add Product</button>
+                                            </form>
+                                        </div>
+                                    </div>   
+            </div>
+{% endblock%}

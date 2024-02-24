@@ -53,10 +53,16 @@ Product-List
                                             </td>
                             
                                             <td class="">
-                                                <span>{{i.product_code}}</span>
+                                                <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
+                                                    <span>{{i.product_code}}</span>
+                                                </a>
                                             </td>
                             
-                                            <td>{{i.roduct_title | slice:":10"}}...</td>
+                                            <td>
+                                                <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
+                                                    {{i.roduct_title | slice:":10"}}...
+                                                </a>
+                                            </td>
                             
                                             <td>{{i.product_category.category_name}}</td>
                             
@@ -67,7 +73,7 @@ Product-List
                             
                                             <td class="d-flex justify-content-center" style="gap:1rem;">
                                                 <div>
-                                                    <a href="#">
+                                                    <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
                                                         <i class="ri-pencil-line"></i>
                                                     </a>
                                                 </div>
