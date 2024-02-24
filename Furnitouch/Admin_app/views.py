@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Shop_app.models import Main_Category, Category, SubCategory
+from Shop_app.models import Main_Category, Category, SubCategory, Product
 from Order_App.models import Order
 from Accounts.models import User, Profile
 from Home.models import Home_banner, ProductPageBanner
@@ -77,6 +77,7 @@ def Admin_dashbord(request):
 def Add_New_Product(request):
     main_category = Main_Category.objects.all().order_by('-id')
     category = Category.objects.all().order_by('-id')
+    # try:
     if request.method == 'POST':
         productName = request.POST.get('product_name')
         productTitle = request.POST.get('product_title')
@@ -100,18 +101,55 @@ def Add_New_Product(request):
         isDiscount = request.POST.get('is_discount')
         isReady = request.POST.get('is_ready')
         
+        productMainCatID = Main_Category.objects.get(id=mainCategory)
+        productCatID = Category.objects.get(id=productCategory)
+            
+        print(isDiscount)
+        print(isNew)
+        print(isFeatured)
+        print(isReady)
         
         if (main_category == '--SELECT--' or productCategory == '--SELECT--'):
             messages.success(request, 'Category Relect is required')
             return redirect('Admin_app:add_product')
         
-        print('-----------------------------------------')
-        print(productName)
-        print(productImage)
-        print(regularPrice)
-        print(discountPrice)
-        print(mainCategory)
-        print(productCategory)
+        newProduct = Product(
+            product_name = productName,
+            product_code = productCode,
+            product_quintity = productQuentity,
+            product_main_category = productMainCatID,
+            product_category = productCatID,
+            roduct_title = productTitle,
+            product_keyword = productKeywords,
+            image = productImage,
+            product_Colors = productColors,
+            details = productDetails,
+            fabrics_details = productFabrics,
+            Meterials_details = productMeterials,
+            lenth = productLenght,
+            deepth = productDepth,
+            height = productHeight,
+            main_price = regularPrice,
+            dic_price = discountPrice
+        )
+        
+        if isNew:
+            newProduct.is_newarival = True
+        if isFeatured:
+            newProduct.is_featured = True
+        if isDiscount:
+            newProduct.is_discount = True
+        if isReady:
+            newProduct.is_ready_Stock = True
+        
+        newProduct.save()
+        messages.success(request, 'Product Successfully Added')
+        return redirect('Admin_app:add_product')
+    # except:
+    #     messages.warning(request, 'Product info not save! something wrong!')
+    #     return redirect('Admin_app:add_product')
+    
+        
     context = {
         'main_category':main_category,
         'category':category,
