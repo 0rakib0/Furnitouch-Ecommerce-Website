@@ -77,11 +77,44 @@ def Admin_dashbord(request):
 def Add_New_Product(request):
     main_category = Main_Category.objects.all().order_by('-id')
     category = Category.objects.all().order_by('-id')
-    sub_category = SubCategory.objects.all().order_by('-id')
+    if request.method == 'POST':
+        productName = request.POST.get('product_name')
+        productTitle = request.POST.get('product_title')
+        productImage = request.FILES.get('product_image')
+        productCode = request.POST.get('product_code')
+        productQuentity = request.POST.get('product_quentity')
+        productColors = request.POST.get('product_colors')
+        productKeywords = request.POST.get('product_keyword')
+        productFabrics = request.POST.get('product_fabrics')
+        productMeterials = request.POST.get('product_meterial')
+        productLenght = request.POST.get('product_lenght')
+        productDepth = request.POST.get('product_deepth')
+        productHeight = request.POST.get('product_height')
+        regularPrice = request.POST.get('regular_price')
+        discountPrice = request.POST.get('discount_price')
+        mainCategory = request.POST.get('main_cat')
+        productCategory = request.POST.get('category')
+        productDetails = request.POST.get('product_details')
+        isNew = request.POST.get('is_new')
+        isFeatured = request.POST.get('is_featured')
+        isDiscount = request.POST.get('is_discount')
+        isReady = request.POST.get('is_ready')
+        
+        
+        if (main_category == '--SELECT--' or productCategory == '--SELECT--'):
+            messages.success(request, 'Category Relect is required')
+            return redirect('Admin_app:add_product')
+        
+        print('-----------------------------------------')
+        print(productName)
+        print(productImage)
+        print(regularPrice)
+        print(discountPrice)
+        print(mainCategory)
+        print(productCategory)
     context = {
         'main_category':main_category,
         'category':category,
-        'sub_category':sub_category
     }
     return render(request,'admin_app/admin_dashbord/add_product.html' , context)
 
