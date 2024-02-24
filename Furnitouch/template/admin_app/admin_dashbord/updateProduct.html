@@ -1,6 +1,6 @@
 {% extends "admin_app/base.html" %}
 {% block title %}
-  add-new-product
+  update-product
 {% endblock%}
 
 {% block body_block %}
@@ -53,14 +53,14 @@
                                                         <label class="form-label-title mb-0">Product Code<span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_code" type="text"
-                                                                placeholder="Product Code" required>
+                                                                value="{{product_object.product_code}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="mb-4 col-lg-6 col-12">
                                                         <label class="form-label-title col-12 mb-0">Product Quientity <span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_quentity" type="number"
-                                                                placeholder="Product Quantity" required>
+                                                                value="{{product_object.product_quintity}}" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -70,14 +70,14 @@
                                                         <label class="form-label-title mb-0">Product Color<span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_colors" type="text"
-                                                                placeholder="Product Colors" required>
+                                                                value="{{product_object.product_Colors}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="mb-4 col-lg-6 col-12">
                                                         <label class="form-label-title col-12 mb-0">Product KeyWord</label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_keyword" type="text"
-                                                                placeholder="Product Keywords">
+                                                                value="{{product_object.product_keyword}}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -87,14 +87,14 @@
                                                         <label class="form-label-title mb-0">Product Febrics</label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_fabrics" type="text"
-                                                                placeholder="Product Fabrics">
+                                                                value="{{product_object.fabrics_details}}">
                                                         </div>
                                                     </div>
                                                     <div class="mb-4 col-lg-6 col-12">
                                                         <label class="form-label-title col-12 mb-0">Product Meterials<span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_meterial" type="text"
-                                                                placeholder="Product Meterials" required>
+                                                                value="{{product_object.Meterials_details}}" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -104,21 +104,21 @@
                                                         <label class="form-label-title mb-0">Product Length<span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_lenght" type="text"
-                                                                placeholder="Product Length" required>
+                                                                value="{{product_object.lenth}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="mb-4 col-lg-4 col-12">
                                                         <label class="form-label-title col-12 mb-0">Product Deepth<span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_deepth" type="text"
-                                                                placeholder="Product Deepth" required>
+                                                                value="{{product_object.deepth}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="mb-4 col-lg-4 col-12">
                                                         <label class="form-label-title col-12 mb-0">Product Height<span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="product_height" type="text"
-                                                                placeholder="Product Height" required>
+                                                                value="{{product_object.height}}" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -128,14 +128,14 @@
                                                         <label class="form-label-title mb-0">Product Regular Price<span style="color: red;">*</span></label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="regular_price" type="number"
-                                                                placeholder="Regular Price" required>
+                                                                value="{{product_object.main_price}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="mb-4 col-lg-6 col-12">
                                                         <label class="form-label-title col-12 mb-0">Product Discount</label>
                                                         <div class="col-12">
                                                             <input class="form-control" name="discount_price" type="number"
-                                                                placeholder="Discount Price">
+                                                                value="{{product_object.dic_price}}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,8 +145,8 @@
                                                         <label class="col-form-label form-label-title">Main Category<span style="color: red;">*</span></label>
                                                         <div class="">
                                                             <select class="js-example-basic-single w-100" name="main_cat">
-                                                                <option selected>--SELECT--</option>
-                                                                {% for i in main_category %}
+                                                                <option selected value="{{product_object.product_main_category.id}}">{{product_object.product_main_category.main_category_name}}</option>
+                                                                {% for i in mainCate %}
                                                                 <option value="{{i.id}}">{{i.main_category_name}}</option>
                                                                 {% endfor %}
                                                             </select>
@@ -158,8 +158,8 @@
                                                             class="col-form-label form-label-title">Category<span style="color: red;">*</span></label>
                                                         <div class="">
                                                             <select class="js-example-basic-single w-100" name="category">
-                                                                <option selected>--SELECT--</option>
-                                                                {% for i in category %}
+                                                                <option selected value="{{product_object.product_category.id}}">{{product_object.product_category.category_name}}</option>
+                                                                {% for i in Categoryy %}
                                                                 <option value="{{i.id}}">{{i.category_name}}</option>
                                                                 {% endfor %}
                                                             </select>
@@ -170,7 +170,7 @@
                                                 <div class="mb-4 align-items-center">
                                                     <label class="form-label-title mb-0">Product Details<span style="color: red;">*</span></label>
                                                     <div class="col-12">
-                                                        <textarea name="product_details" class="form-control" id="" cols="30" rows="10" required></textarea>
+                                                        <textarea name="product_details" class="form-control" id="" cols="30" rows="10" required>{{product_object.details}}</textarea>
                                                     </div>
                                                 </div>
 
@@ -184,7 +184,7 @@
                                                     <div class=" col-lg-3 col-12">
                                                         <div class="mb-2">
                                                             <label for="featured" class="col-form-label form-label-title">Featured Product</label>
-                                                            <input name="is_featured" id="featured" type="checkbox" value="True">
+                                                            <input name="is_featured" checked="False" id="featured" type="checkbox" value="True">
                                                         </div>
                                                     </div>
                                                     <div class=" col-lg-3 col-12">
@@ -201,7 +201,7 @@
                                                     </div>
                                                 </div>
 
-                                                <button class="w-100 p-2 btn btn-primary">Add Product</button>
+                                                <button class="w-100 p-2 btn btn-primary">Update Product</button>
                                             </form>
                                         </div>
                                     </div>   

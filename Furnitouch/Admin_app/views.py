@@ -159,9 +159,12 @@ def Add_New_Product(request):
 
 def UpdateProduct(request, slug):
     product_object = Product.objects.get(slug=slug)
-    
+    mainCate = Main_Category.objects.all()
+    Categoryy = Category.objects.all()
     context = {
-        'product_object':product_object
+        'product_object':product_object,
+        'mainCate':mainCate,
+        'Categoryy':Categoryy
     }
     return render(request, 'admin_app/admin_dashbord/updateProduct.html', context)
 
