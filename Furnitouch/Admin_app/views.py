@@ -157,6 +157,16 @@ def Add_New_Product(request):
     return render(request,'admin_app/admin_dashbord/add_product.html' , context)
 
 
+def ProductList(request):
+    products = Product.objects.all()
+    
+    context = {
+        'products':products
+    }
+    
+    return render(request, 'admin_app/admin_dashbord/productList.html', context)
+
+
 
 # =====================> Category Section <============================
 

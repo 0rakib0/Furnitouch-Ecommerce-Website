@@ -7,6 +7,7 @@ app_name='Admin_app'
 urlpatterns = [
     path('Dashbord/', views.Admin_dashbord, name='dashbord'),
     path('add-product/', views.Add_New_Product, name='add_product'),
+    path('product-list/', views.ProductList, name='product_list'),
     path('add-main-category/', views.Add_main_category, name='add_main_category'),
     path('view-main-category/', views.View_main_cat, name='view_main_cat'),
     path('update-main-category/<slug:slug>/', views.Update_main_cat, name='update_main_cat'),

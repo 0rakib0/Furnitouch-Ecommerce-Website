@@ -1,0 +1,98 @@
+{% extends "admin_app/base.html" %}
+{% block title %}
+Product-List
+{% endblock%}
+
+{% block body_block %}
+
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="title-header option-title">
+                            <h5>Products List</h5>
+                            <div class="right-options">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)">import</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Export</a>
+                                    </li>
+                                    <li>
+                                        <a class="btn btn-solid" href="add-new-product.html">Add Product</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="table-responsive" style="overflow-x: scroll;">
+                                <table class="table all-package theme-table table-product" id="table_id">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Image</th>
+                                            <th>Product Code</th>
+                                            <th>Product Name</th>
+                                            <th>Category</th>
+                                            <th>Current Qty</th>
+                                            <th>Regular Price</th>
+                                            <th>Discount Price</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                        {% for i in products %}
+                                        <tr>
+                                            <td>
+                                                <div class="table-image">
+                                                    <img src="{{i.image.url}}" class="img-fluid" alt="">
+                                                </div>
+                                            </td>
+
+                                            <td class="">
+                                                <span>{{i.product_code}}</span>
+                                            </td>
+
+                                            <td>{{i.roduct_title | slice:":10"}}...</td>
+
+                                            <td>{{i.product_category.category_name}}</td>
+
+                                            <td>{{i.product_quintity}}</td>
+
+                                            <td class="td-price">{{i.main_price}}&#2547;</td>
+                                            <td class="td-price">{{i.dic_price}}&#2547;</td>
+
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0)">
+                                                            <i class="ri-pencil-line"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#exampleModalToggle">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}
