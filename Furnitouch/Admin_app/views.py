@@ -312,7 +312,7 @@ def Del_main_cat(request, slug):
 def Add_category(request):
     if request.method == 'POST':
         cat_name = request.POST.get('name')
-        category_pic = request.POST.get('category_pic')
+        category_pic = request.FILES.get('category_pic')
         main_cat_id = request.POST.get('main_cat_id')
         if main_cat_id == '--SELECT--':
             messages.success(request, 'Main Category Must Be Select!')
@@ -344,12 +344,19 @@ def View_Category(request):
     }
     return render(request, 'admin_app/admin_dashbord/view_category.html', context)
 
+
+
+
+
 @login_required
 def Update_cat(request, slug):
     instant_cat = Category.objects.get(slug=slug)
     if request.method == 'POST':
         cat_name = request.POST.get('name')
+        cat_pic = request.FILES.get('image')
         instant_cat.category_name = cat_name
+        if cat_pic != None:
+            instant_cat.category_image = cat_pic
         instant_cat.save()
         messages.success(request, 'Successfully Updated!')
         return redirect('Admin_app:view_category')
@@ -357,6 +364,10 @@ def Update_cat(request, slug):
         'instant_cat':instant_cat
     }
     return render(request, 'admin_app/admin_dashbord/update_cat.html', context)
+
+
+
+
 
 @login_required
 def Del_cat(request, slug):

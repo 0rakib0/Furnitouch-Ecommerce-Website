@@ -22,45 +22,55 @@
                             </form>
                         </div>
 
-                        <div class="table-responsive category-table">
-                            <table class="table all-package theme-table" id="table_id">
+                        <div style="overflow-x: auto;">
+                            
+                            <table class="table table-bordered" id="table_id">
                                 <thead>
                                     <tr>
+                                        <th>Image</th>
                                         <th>Category Name</th>
-                                        <th>Main Category Name</th>
-                                        <th>Date</th>
+                                        <th>Main Category</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
-
+                        
                                 <tbody>
                                     {% for i in cat_list %}
                                     <tr>
-                                        <td>{{i.category_name}}</td>
-                                        <td>{{i.main_category.main_category_name}}</td>
-
-                                        <td>{{i.created_at}}</td>
-
                                         <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="{% url 'Admin_app:update_cat' slug=i.slug %}">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="{% url 'Admin_app:del_cat' slug=i.slug %}">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            <div class="table-image">
+                                                <img src="{{i.category_image.url}}" width="50px" class="img-fluid" alt="">
+                                            </div>
+                                        </td>
+                        
+                                        <td class="">
+                                            
+                                            <span>{{i.category_name}}</span>
+                                            
+                                        </td>
+                        
+                                        <td>
+                                            
+                                            {{i.main_category.main_category_name}}
+                                            
+                                        </td>                        
+                                        <td class="d-flex justify-content-center" style="gap:1rem;">
+                                            <div>
+                                                <a href="{% url 'Admin_app:update_cat' slug=i.slug %}">
+                                                    <i class="ri-pencil-line"></i>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="{% url 'Admin_app:del_cat' slug=i.slug %}">
+                                                    <i class="ri-delete-bin-line"></i>
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
-                        </div>
+                         </div>
                     </div>
                 </div>
             </div>

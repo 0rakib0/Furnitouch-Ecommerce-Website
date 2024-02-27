@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-sm-8 m-auto">
+                    <div class="col-12 m-auto">
                         {% include 'include/message.html' %}
                         <div class="card">
                             <div class="card-body">
@@ -20,24 +20,33 @@
                                     <h5>Category Information</h5>
                                 </div>
 
-                                <form class="theme-form theme-form-2 mega-form" method="POST">
+                                <form class="theme-form theme-form-2 mega-form" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <div class="mb-4 row align-items-center">
-                                        <label class="form-label-title col-sm-3 mb-0">Category Name</label>
-                                        <div class="col-sm-9">
+                                        <label class="form-label-title col-12 mb-0">Category Name</label>
+                                        <div class="col-12">
                                             <input class="form-control" value="{{instant_cat.category_name}}" required type="text" name="name"
                                                 placeholder="Main Category Name">
                                         </div>
                                     </div>
                                     <div class="mb-4 row align-items-center">
-                                        <label class="col-sm-3 col-form-label form-label-title">Main Category</label>
-                                        <div class="col-sm-9">
+                                        <label class="form-label-title col-12 mb-0">Category Image</label>
+                                        <div style="width: 100px">
+                                            <img src="{{instant_cat.category_image.url}}" width="100%" alt="">
+                                        </div>
+                                        <div class="col-12">
+                                            <input class="form-control" type="file" name="image">
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="col-12 col-form-label form-label-title">Main Category</label>
+                                        <div class="col-12">
                                             <select class="js-example-basic-single w-100" name="main_cat_id">
                                                 <option selected>{{instant_cat.main_category.main_category_name}}</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <button class="col-sm-9 btn btn-primary ms-auto mt-4">Save</button>
+                                    <button class="col-12 btn btn-primary ms-auto mt-4">Save</button>
                                 </form>
                             </div>
                         </div>

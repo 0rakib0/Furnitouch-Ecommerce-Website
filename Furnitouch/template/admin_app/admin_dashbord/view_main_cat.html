@@ -22,8 +22,8 @@
                             </form>
                         </div>
 
-                        <div class="table-responsive category-table">
-                            <table class="table all-package theme-table" id="table_id">
+                        <div style="overflow-x: auto;">
+                            <table class="table table-bordered" id="table_id">
                                 <thead>
                                     <tr>
                                         <th>Category Name</th>
@@ -39,20 +39,15 @@
 
                                         <td>{{i.created_at}}</td>
 
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="{% url 'Admin_app:update_main_cat' slug=i.slug %}">
+                                        <td class="d-flex justify-content-center" style="gap:1rem;">
+                                            <a href="{% url 'Admin_app:update_main_cat' slug=i.slug %}">
                                                         <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="{% url 'Admin_app:delete_main_cat' slug=i.slug %}">
+                                            </a>
+                                                
+                                            <a href="{% url 'Admin_app:delete_main_cat' slug=i.slug %}">
                                                         <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            </a>                                             
+                                            
                                         </td>
                                     </tr>
                                     {% endfor %}
