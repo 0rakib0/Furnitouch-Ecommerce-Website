@@ -3,11 +3,11 @@
     <div>
         <div class="logo-wrapper logo-wrapper-center">
             <h4 class="text-white h3">Furni<span style="color: #ffa53b;">touch</span></h4>
-            {% if user.user_type == 'Admin' %}
+            <!-- {% if user.user_type == 'Admin' %}
             <p class="text-white my-2">Admin Dashbord</p>
             {% elif user.user_type == 'Staff'%}
             <p>Staff Dashbord</p>
-            {%endif%}
+            {%endif%} -->
             <div class="back-btn">
                 <i class="fa fa-angle-left"></i>
             </div>
@@ -192,14 +192,7 @@
                                 <a href="create-coupon.html">Create Coupon</a>
                             </li>
                         </ul>
-                    </li> -->
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="taxes.html">
-                            <i class="ri-price-tag-3-line"></i>
-                            <span>Tax</span>
-                        </a>
-                    </li>
+                    </li> -->                    
 
                     <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title link-nav" href="product-review.html">
@@ -207,14 +200,6 @@
                             <span>Product Review</span>
                         </a>
                     </li>
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
-                            <i class="ri-phone-line"></i>
-                            <span>Support Ticket</span>
-                        </a>
-                    </li>
-
                     <li class="sidebar-list">
                         <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                             <i class="ri-settings-line"></i>
@@ -225,20 +210,6 @@
                                 <a href="{% url 'accounts:profile' %}">Profile Setting</a>
                             </li>
                         </ul>
-                    </li>
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="reports.html">
-                            <i class="ri-file-chart-line"></i>
-                            <span>Reports</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-list">
-                        <a class="sidebar-link sidebar-title link-nav" href="list-page.html">
-                            <i class="ri-list-check"></i>
-                            <span>List Page</span>
-                        </a>
                     </li>
                 </ul>
             </div>
