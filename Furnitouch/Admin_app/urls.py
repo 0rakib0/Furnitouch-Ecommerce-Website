@@ -11,6 +11,7 @@ urlpatterns = [
     path('add-product/', views.Add_New_Product, name='add_product'),
     path('product-list/', views.ProductList, name='product_list'),
     path("update-product/<slug:slug>/", views.UpdateProduct, name="update_product"),
+    path("delete-product/<slug:slug>/", views.DeleteProduct, name="product_delete"),
     
     # ============================> Main Category <======================================
     path('add-main-category/', views.Add_main_category, name='add_main_category'),

@@ -233,6 +233,18 @@ def UpdateProduct(request, slug):
     return render(request, 'admin_app/admin_dashbord/updateProduct.html', context)
 
 
+def DeleteProduct(request, slug):
+    print('------------------Delete Request Send-------------------')
+    product = Product.objects.get(slug=slug)
+    if product:
+        product.delete()
+        messages.success(request, 'Product Successfully deleted!')
+        return redirect('Admin_app:product_list')
+    else:
+        messages.success(request, 'Product Not Delete, Something wrong!')
+        return redirect('Admin_app:product_list')
+
+
 def ProductList(request):
     products = Product.objects.all().order_by('-id')
     
