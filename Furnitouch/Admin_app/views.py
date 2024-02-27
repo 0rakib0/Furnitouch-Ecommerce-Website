@@ -184,14 +184,47 @@ def UpdateProduct(request, slug):
         isFeatured = request.POST.get('is_featured')
         isDiscount = request.POST.get('is_discount')
         isReady = request.POST.get('is_ready')
+        print('-----------------Hello--------------')
         
-        print('--------------------Update method Work---------------')
-        print(productImage)
-        print(isDiscount)
-        print(isNew)
-        print(isFeatured)
-        print(isReady)
-    
+        productMainCatID = Main_Category.objects.get(id=mainCategory)
+        productCatID = Category.objects.get(id=productCategory)
+        print(mainCategory)
+        print(productCategory)
+        print(productMainCatID)
+        print(productCatID)
+        
+        product_object.product_name = productName
+        product_object.product_code = productCode
+        product_object.product_quintity = productQuentity
+        product_object.product_main_category = productMainCatID
+        product_object.product_category = productCatID
+        product_object.roduct_title = productTitle
+        product_object.product_keyword = productKeywords
+        product_object.product_Colors = productColors
+        product_object.details = productDetails
+        product_object.fabrics_details = productFabrics
+        product_object.Meterials_details = productMeterials
+        product_object.lenth = productLenght
+        product_object.deepth = productDepth
+        product_object.height = productHeight
+        product_object.main_price = regularPrice
+        product_object.dic_price = discountPrice
+        
+        if productImage != None:
+            product_object.image = productImage
+        
+        if isNew:
+            product_object.is_newarival = True
+        if isFeatured:
+            product_object.is_featured = True
+        if isDiscount:
+            product_object.is_discount = True
+        if isReady:
+            product_object.is_ready_Stock = True
+            
+        product_object.save()
+        messages.success(request, 'Product Successfully Update')
+        return redirect('Admin_app:product_list')
     context = {
         'product_object':product_object,
         'mainCate':mainCate,
