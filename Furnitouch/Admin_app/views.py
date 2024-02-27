@@ -161,6 +161,37 @@ def UpdateProduct(request, slug):
     product_object = Product.objects.get(slug=slug)
     mainCate = Main_Category.objects.all()
     Categoryy = Category.objects.all()
+    
+    if request.method == 'POST':
+        productName = request.POST.get('product_name')
+        productTitle = request.POST.get('product_title')
+        productImage = request.FILES.get('product_image')
+        productCode = request.POST.get('product_code')
+        productQuentity = request.POST.get('product_quentity')
+        productColors = request.POST.get('product_colors')
+        productKeywords = request.POST.get('product_keyword')
+        productFabrics = request.POST.get('product_fabrics')
+        productMeterials = request.POST.get('product_meterial')
+        productLenght = request.POST.get('product_lenght')
+        productDepth = request.POST.get('product_deepth')
+        productHeight = request.POST.get('product_height')
+        regularPrice = request.POST.get('regular_price')
+        discountPrice = request.POST.get('discount_price')
+        mainCategory = request.POST.get('main_cat')
+        productCategory = request.POST.get('category')
+        productDetails = request.POST.get('product_details')
+        isNew = request.POST.get('is_new')
+        isFeatured = request.POST.get('is_featured')
+        isDiscount = request.POST.get('is_discount')
+        isReady = request.POST.get('is_ready')
+        
+        print('--------------------Update method Work---------------')
+        print(productImage)
+        print(isDiscount)
+        print(isNew)
+        print(isFeatured)
+        print(isReady)
+    
     context = {
         'product_object':product_object,
         'mainCate':mainCate,
