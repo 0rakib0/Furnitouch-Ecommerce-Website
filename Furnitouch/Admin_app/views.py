@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Shop_app.models import Main_Category, Category, SubCategory, Product
+from Shop_app.models import Main_Category, Category, SubCategory, Product, ProductMoreImage
 from Order_App.models import Order
 from Accounts.models import User, Profile
 from Home.models import Home_banner, ProductPageBanner
@@ -82,7 +82,7 @@ def Add_New_Product(request):
             productName = request.POST.get('product_name')
             productTitle = request.POST.get('product_title')
             productImage = request.FILES.get('product_image')
-            productMoreImage = request.FILES.getlist('product_more_image')
+            productMoreImages = request.FILES.getlist('product_more_image')
             productCode = request.POST.get('product_code')
             productQuentity = request.POST.get('product_quentity')
             productColors = request.POST.get('product_colors')
@@ -105,9 +105,7 @@ def Add_New_Product(request):
             productMainCatID = Main_Category.objects.get(id=mainCategory)
             productCatID = Category.objects.get(id=productCategory)
                 
-            print('----------------Product More Image Loading------------')
-            for i in productMoreImage:
-               print(i)
+            
             
             
             if (main_category == '--SELECT--' or productCategory == '--SELECT--'):
@@ -143,7 +141,15 @@ def Add_New_Product(request):
             if isReady:
                 newProduct.is_ready_Stock = True
             
-            # newProduct.save()
+            newProduct.save()
+            
+            if productMoreImages != None:
+                for image in productMoreImages:
+                    moreImage = ProductMoreImage(
+                        product = newProduct,
+                        images = image
+                    )
+                    moreImage.save()
             messages.success(request, 'Product Successfully Added')
             return redirect('Admin_app:add_product')
     except:
