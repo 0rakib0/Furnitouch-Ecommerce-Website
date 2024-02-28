@@ -82,6 +82,7 @@ def Add_New_Product(request):
             productName = request.POST.get('product_name')
             productTitle = request.POST.get('product_title')
             productImage = request.FILES.get('product_image')
+            productMoreImage = request.FILES.getlist('product_more_image')
             productCode = request.POST.get('product_code')
             productQuentity = request.POST.get('product_quentity')
             productColors = request.POST.get('product_colors')
@@ -104,10 +105,10 @@ def Add_New_Product(request):
             productMainCatID = Main_Category.objects.get(id=mainCategory)
             productCatID = Category.objects.get(id=productCategory)
                 
-            print(isDiscount)
-            print(isNew)
-            print(isFeatured)
-            print(isReady)
+            print('----------------Product More Image Loading------------')
+            for i in productMoreImage:
+               print(i)
+            
             
             if (main_category == '--SELECT--' or productCategory == '--SELECT--'):
                 messages.success(request, 'Category Relect is required')
@@ -142,7 +143,7 @@ def Add_New_Product(request):
             if isReady:
                 newProduct.is_ready_Stock = True
             
-            newProduct.save()
+            # newProduct.save()
             messages.success(request, 'Product Successfully Added')
             return redirect('Admin_app:add_product')
     except:
