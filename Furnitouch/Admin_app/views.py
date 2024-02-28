@@ -550,8 +550,10 @@ def Order_delivery(request, id):
 # -----------------------------> Customar Report <-------------------------------
 
 def CustomarList(request):
+    Customar = User.objects.filter(user_type='Customer')
+    print(Customar)
     context = {
-        
+        'Customar':Customar
     }
     return render(request, 'admin_app/admin_dashbord/Customars.html', context)
     
