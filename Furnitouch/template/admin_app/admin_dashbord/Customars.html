@@ -55,7 +55,7 @@ Product-List
                             
                                             <td>{{i.profile.phone}}</td>
                             
-                                            <td>{{i.profile.create_at | date:'d M y'}}</td>
+                                            <td>{{i.profile.create_at | date:'d M Y'}}</td>
                                             <td class="d-flex justify-content-center">
                                                 <a href="{% url 'Admin_app:user_details' id=i.id %}">
                                                     <i class="ri-eye-line"></i>
