@@ -49,5 +49,8 @@ urlpatterns = [
     path('add-product-page-banner/', views.ProductPageBannerr, name='product_page_banner'),
     path('add-home-page-banner/', views.HomePageBenner, name='home_page_banner'),
     path('offer-banner-list/', views.Banner_List, name='banner_list'),
-    path('delete-banner/<int:id>/', views.Delete_banner, name='delete_banner')
+    path('delete-banner/<int:id>/', views.Delete_banner, name='delete_banner'),
+    
+    # ============================> Customar <===================================
+    path('customars/', views.CustomarList, name='customar_list'),
 ]

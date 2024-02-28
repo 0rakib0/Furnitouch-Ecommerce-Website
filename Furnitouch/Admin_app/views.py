@@ -546,3 +546,12 @@ def Order_delivery(request, id):
         return redirect('Admin_app:pending_order_list')
     
     
+    
+# -----------------------------> Customar Report <-------------------------------
+
+def CustomarList(request):
+    context = {
+        
+    }
+    return render(request, 'admin_app/admin_dashbord/Customars.html', context)
+    
