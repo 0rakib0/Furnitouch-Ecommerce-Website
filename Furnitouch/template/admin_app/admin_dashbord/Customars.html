@@ -1,4 +1,5 @@
 {% extends "admin_app/base.html" %}
+{% load static %}
 {% block title %}
 Product-List
 {% endblock%}
@@ -20,79 +21,47 @@ Product-List
                                 <table class="table table-bordered" id="table_id">
                                     <thead>
                                         <tr>
-                                            <th>Image</th>
-                                            <th>Code</th>
+                                            <th>Profile Pic</th>
                                             <th>Name</th>
-                                            <th>Category</th>
-                                            <th>Qty</th>
-                                            <th>Price</th>
-                                            <th>offer P</th>
-                                            <th>Option</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Join Date</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                             
                                     <tbody>
-                                        {% for i in products %}
+                                        {% for i in Customar %}
                                         <tr>
                                             <td>
                                                 <div class="table-image">
-                                                    <img src="{{i.image.url}}" width="50px" class="img-fluid" alt="">
+                                                    {% if i.profile.profile_pic.url != '' %}
+                                                    <img src="{{i.profile.profile_pic.url}}" width="50px" class="img-fluid" alt="pic not found">
+                                                    {% else %}
+                                                    <img src="{% static 'images/demo.png' %}" width="50px" class="img-fluid" alt="pic not found">
+                                                    {% endif %}
                                                 </div>
                                             </td>
                             
                                             <td class="">
-                                                <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
-                                                    <span>{{i.product_code}}</span>
+                                                <a href="{% url 'Admin_app:user_details' id=i.id %}">
+                                                    <span>{{i.profile.full_name}}</span>
                                                 </a>
                                             </td>
                             
                                             <td>
-                                                <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
-                                                    {{i.roduct_title | slice:":10"}}...
+                                                {{i.email}}
+                                            </td>
+                            
+                                            <td>{{i.profile.phone}}</td>
+                            
+                                            <td>{{i.profile.create_at | date:'d M y'}}</td>
+                                            <td class="d-flex justify-content-center">
+                                                <a href="{% url 'Admin_app:user_details' id=i.id %}">
+                                                    <i class="ri-eye-line"></i>
                                                 </a>
                                             </td>
-                            
-                                            <td>{{i.product_category.category_name}}</td>
-                            
-                                            <td>{{i.product_quintity}}</td>
-                            
-                                            <td class="td-price">{{i.main_price}}&#2547;</td>
-                                            <td class="td-price">{{i.dic_price}}&#2547;</td>
-                            
-                                            <td class="d-flex justify-content-center" style="gap:1rem;">
-                                                <div>
-                                                    <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="{% url 'Admin_app:product_delete' slug=i.slug %}">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
                                         </tr>
-
-                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                  </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                  ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                  <button type="button" class="btn btn-primary">Save changes</button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-
                                         {% endfor %}
                                     </tbody>
                                 </table>
