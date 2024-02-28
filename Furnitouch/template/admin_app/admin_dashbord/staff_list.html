@@ -1,4 +1,5 @@
 {% extends "admin_app/base.html" %}
+{% load static %}
 {% block title %}
   Staff-List
 {% endblock%}
@@ -22,59 +23,57 @@
                             </form>
                         </div>
 
-                        <div class="table-responsive table-product">
-                            <table class="table all-package theme-table" id="table_id">
+                        <div style="overflow-x: auto;">
+                            
+                            <table class="table table-bordered" id="table_id">
                                 <thead>
                                     <tr>
-                                        <th>Profile Picture</th>
+                                        <th>Profile Pic</th>
                                         <th>Name</th>
-                                        <th>Phone</th>
                                         <th>Email</th>
-                                        <th>Option</th>
+                                        <th>Phone</th>
+                                        <th>Join Date</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-
+                        
                                 <tbody>
                                     {% for i in user_staff %}
                                     <tr>
                                         <td>
                                             <div class="table-image">
-                                                <img src="/media/{{i.profile.profile_pic}}" class="img-fluid"
-                                                    alt="">
+                                                {% if i.profile.profile_pic.url != '' %}
+                                                <img src="{{i.profile.profile_pic.url}}" width="50px" class="img-fluid" alt="pic not found">
+                                                {% else %}
+                                                <img src="{% static 'images/demo.png' %}" width="50px" class="img-fluid" alt="pic not found">
+                                                {% endif %}
                                             </div>
                                         </td>
-
-                                        <td>
-                                            <div class="user-name">
+                        
+                                        <td class="">
+                                            <a href="{% url 'Admin_app:user_details' id=i.id %}">
                                                 <span>{{i.profile.full_name}}</span>
-                                            </div>
+                                            </a>
                                         </td>
-                                        {% if i.profile.phone %}
-                                        <td>{{i.profile.phone}}</td>
-                                        {% else %}
-                                        <td>Not Set</td>
-                                        {% endif %}
-                                        <td>{{i.email}}</td>
-
+                        
                                         <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="{% url 'Admin_app:user_details' id=i.id %}">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{% url 'Admin_app:delete_user' id=i.id %}">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            {{i.email}}
+                                        </td>
+                        
+                                        <td>{{i.profile.phone}}</td>
+                        
+                                        <td>{{i.profile.create_at | date:'d M Y'}}</td>
+                                        <td class="d-flex justify-content-center">
+                                            <a href="{% url 'Admin_app:user_details' id=i.id %}">
+                                                <i class="ri-eye-line"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
-                        </div>
+                        
+                    </div>
                     </div>
                 </div>
             </div>
