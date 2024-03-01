@@ -13,20 +13,20 @@
                 <div class="card">
                     <div class="card-body">
                         {% include 'include/message.html' %}
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div class="title-header option-title">
                                 <h5>Sales Report</h5>
                             </div>
                             <form action="" method="GET">
                                 <div class="product-select-box">
                                     <div class="product-short">
-                                        <p>Sort By:</p>
-                                        <select class="nice-select" name="sort-value">
+                                        <span>Sort By:</span>
+                                        <select class="nice-select p-1" name="sort-value">
                                             <option hidden selected value="all">Sort Items</option>
                                             <option value="a-z">Name (A - Z)</option>
                                             <option value="z-a">Name (Z - A)</option>
                                         </select>
-                                        <button class="Product-Sort-btn">Sort Item</button>
+                                        <button class="Product-Sort-btn" style="background-color: transparent;Border: 1px solid #0da487;padding:2.6px">Sort Item</button>
                                     </div>
                                 </div>
                             </form>
