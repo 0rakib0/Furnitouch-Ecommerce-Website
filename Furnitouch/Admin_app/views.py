@@ -6,6 +6,7 @@ from Home.models import Home_banner, ProductPageBanner
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
+from datetime import datetime, timedelta
 # Create your views here.
 
 @login_required
@@ -562,6 +563,12 @@ def CustomarList(request):
 # -------------------------------> Sales Report <----------------------------------
 
 def SalesReport(request):
+    currentTime = datetime.now()
+    saven_days_ago = currentTime - timedelta(days=7)
+    one_month_ago = currentTime - timedelta(days=30)
+    six_month_ago = currentTime - timedelta(days=6*30)
+    one_year_ago = currentTime - timedelta(days=365)
+    
     if request.method == 'POST':
         sortValue = request.POST.get('sort-value')
         print(sortValue)

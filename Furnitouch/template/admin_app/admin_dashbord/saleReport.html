@@ -43,6 +43,7 @@
                                             <th>Client Email</th>
                                             <th>Delivery Status</th>
                                             <th>Order Date</th>
+                                            <th>Totall Amount</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -70,6 +71,7 @@
                                             
                             
                                             <td>{{i.create_at | date:'d M Y'}}</td>                            
+                                            <td>{{i.get_totals}}</td>                            
                                             <td class="d-flex justify-content-center">
                                                 <a href="{% url 'Admin_app:user_details' id=i.id %}">
                                                     <i class="ri-eye-line"></i>
