@@ -571,8 +571,6 @@ def SalesReport(request):
     
     
     sortValue = request.GET.get('sort-value')
-    print('----------------------')
-    print(sortValue)
     if sortValue == 'last-week-report':
         orderObj = Order.objects.filter(create_at__gte=saven_days_ago)
     elif sortValue == 'last-mont-report':

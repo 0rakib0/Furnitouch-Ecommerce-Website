@@ -59,3 +59,13 @@ class Order(models.Model):
         for order_Item in self.order_item.all():
             total += float(order_Item.get_total())
         return total
+    
+    
+class OrderTraking(models.Model):
+    orderId = models.ForeignKey(Order, on_delete=models.CASCADE)
+    OrderTrack = models.CharField(max_length=156)
+    
+    def __str__(self) -> str:
+        return str(self.orderId.order_num)
+    
+    
