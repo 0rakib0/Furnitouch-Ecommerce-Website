@@ -118,4 +118,17 @@ class WishList(models.Model):
     def __str__(self) -> str:
         return str(self.user.email) +'==>'+str(self.product.product_name)
     
+    
+    
+class ProductReview(models.Model):
+    productId = models.ForeignKey(Product, on_delete=models.CASCADE)
+    userId = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    reviewMsg = models.TextField()
+    rating = models.IntegerField(default=4)
+    reviewStatus = models.BooleanField(default=False)
+    
+    def __str__(self) -> str:
+        return str(self.productId.product_name)  +"'s Review"
+    
+    
 

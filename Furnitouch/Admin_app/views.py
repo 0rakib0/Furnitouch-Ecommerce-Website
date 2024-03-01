@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from Shop_app.models import Main_Category, Category, SubCategory, Product, ProductMoreImage
-from Order_App.models import Order
+from Order_App.models import Order, OrderTraking
 from Accounts.models import User, Profile
 from Home.models import Home_banner, ProductPageBanner
 from django.contrib.auth.decorators import login_required
@@ -585,4 +585,12 @@ def SalesReport(request):
         "orderObj":orderObj
     }
     return render(request, 'admin_app/admin_dashbord/saleReport.html', context)
+
+
+# ------------------------------> Order Tracking <----------------------------
+def TrackOrder(request):
+    return render(request, 'admin_app/admin_dashbord/orderTrack.html')
+
+def TrackingUpdate(request, id):
+    return None
     

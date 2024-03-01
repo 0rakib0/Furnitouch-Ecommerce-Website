@@ -55,5 +55,8 @@ urlpatterns = [
     path('customars/', views.CustomarList, name='customar_list'),
     
     # ============================> Sales Report <===============================
-    path('sales-report/', views.SalesReport, name='sale_report')
+    path('sales-report/', views.SalesReport, name='sale_report'),
+    
+    # ============================> Order Traking <==============================
+    path('order-traking/', views.TrackOrder, name='track_order'),
 ]
