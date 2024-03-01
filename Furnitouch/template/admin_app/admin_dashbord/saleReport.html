@@ -17,16 +17,19 @@
                             <div class="title-header option-title">
                                 <h5>Sales Report</h5>
                             </div>
-                            <form action="" method="GET">
+                            <form action="" method="POST">
+                                {% csrf_token %}
                                 <div class="product-select-box">
                                     <div class="product-short">
                                         <span>Sort By:</span>
                                         <select class="nice-select p-1" name="sort-value">
-                                            <option hidden selected value="all">Sort Items</option>
-                                            <option value="a-z">Name (A - Z)</option>
-                                            <option value="z-a">Name (Z - A)</option>
+                                            <option hidden selected value="all">All</option>
+                                            <option value="last-week-report">Last Week</option>
+                                            <option value="last-mont-report">Last Month</option>
+                                            <option value="last-6mont-report">Last 6 Month</option>
+                                            <option value="last-year-report">Last year</option>
                                         </select>
-                                        <button class="Product-Sort-btn" style="background-color: transparent;Border: 1px solid #0da487;padding:2.6px">Sort Item</button>
+                                        <button class="Product-Sort-btn" style="background-color: transparent;Border: 1px solid #0da487;padding:2.6px">Sort data</button>
                                     </div>
                                 </div>
                             </form>

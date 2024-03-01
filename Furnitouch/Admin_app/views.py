@@ -562,6 +562,9 @@ def CustomarList(request):
 # -------------------------------> Sales Report <----------------------------------
 
 def SalesReport(request):
+    if request.method == 'POST':
+        sortValue = request.POST.get('sort-value')
+        print(sortValue)
     orderObj = Order.objects.filter(ordered=True)
     context = {
         "orderObj":orderObj
