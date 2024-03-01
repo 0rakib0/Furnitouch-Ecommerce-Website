@@ -17,7 +17,7 @@
                             <div class="title-header option-title">
                                 <h5>Sales Report</h5>
                             </div>
-                            <form action="" method="POST">
+                            <form action="" method="GET">
                                 {% csrf_token %}
                                 <div class="product-select-box">
                                     <div class="product-short">
@@ -73,7 +73,7 @@
                                             <td>{{i.create_at | date:'d M Y'}}</td>                            
                                             <td>{{i.get_totals}}</td>                            
                                             <td class="d-flex justify-content-center">
-                                                <a href="{% url 'Admin_app:user_details' id=i.id %}">
+                                                <a href="{% url 'Admin_app:order_details' id=i.id%}">
                                                     <i class="ri-eye-line"></i>
                                                 </a>
                                             </td>

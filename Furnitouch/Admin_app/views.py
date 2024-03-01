@@ -569,10 +569,20 @@ def SalesReport(request):
     six_month_ago = currentTime - timedelta(days=6*30)
     one_year_ago = currentTime - timedelta(days=365)
     
-    if request.method == 'POST':
-        sortValue = request.POST.get('sort-value')
-        print(sortValue)
-    orderObj = Order.objects.filter(ordered=True)
+    
+    sortValue = request.GET.get('sort-value')
+    print('----------------------')
+    print(sortValue)
+    if sortValue == 'last-week-report':
+        orderObj = Order.objects.filter(create_at__gte=saven_days_ago)
+    elif sortValue == 'last-mont-report':
+        orderObj = Order.objects.filter(create_at__gte=one_month_ago)
+    elif sortValue == 'last-6mont-report':
+        orderObj = Order.objects.filter(create_at__gte=six_month_ago)  
+    elif sortValue == 'last-year-report':
+        orderObj = Order.objects.filter(create_at__gte=one_year_ago)
+    else:
+        orderObj = Order.objects.filter(ordered=True)
     context = {
         "orderObj":orderObj
     }
