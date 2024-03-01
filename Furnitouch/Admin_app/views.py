@@ -5,6 +5,7 @@ from Accounts.models import User, Profile
 from Home.models import Home_banner, ProductPageBanner
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 # Create your views here.
 
 @login_required
@@ -556,4 +557,14 @@ def CustomarList(request):
         'Customar':Customar
     }
     return render(request, 'admin_app/admin_dashbord/Customars.html', context)
+
+
+# -------------------------------> Sales Report <----------------------------------
+
+def SalesReport(request):
+    orderObj = Order.objects.filter(ordered=True)
+    context = {
+        "orderObj":orderObj
+    }
+    return render(request, 'admin_app/admin_dashbord/saleReport.html', context)
     

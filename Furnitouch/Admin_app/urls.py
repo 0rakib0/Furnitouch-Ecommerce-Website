@@ -53,4 +53,7 @@ urlpatterns = [
     
     # ============================> Customar <===================================
     path('customars/', views.CustomarList, name='customar_list'),
+    
+    # ============================> Sales Report <===============================
+    path('sales-report/', views.SalesReport, name='sale_report')
 ]
