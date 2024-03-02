@@ -57,10 +57,7 @@ def Shop_page(request):
     return render(request, 'shop_app/products.html', context)
 
 def Single_Product(request, slug):
-    user = request.user
-    # if not user:
-    #     messages.error(request, 'Befor Submit Review Please Login!')
-    #     return redirect('Shop_app:single_product')    
+    user = request.user   
     save_money = None
     main_category = Main_Category.objects.all()
     category = Category.objects.all()
@@ -106,6 +103,8 @@ def Single_Product(request, slug):
     releted_product = Product.objects.filter(product_category=category_id).order_by('-id')
     releted_product_count = Product.objects.filter(product_category=category_id).count()
     
+    reviews = ProductReview.objects.filter(productId=product)
+    print(reviews)
 
     context = {
         'category':category,
