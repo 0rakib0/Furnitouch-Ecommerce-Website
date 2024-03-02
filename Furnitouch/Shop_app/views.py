@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product, Category, SubCategory, Main_Category, WishList
+from .models import Product, Category, SubCategory, Main_Category, WishList, ProductReview
 from django.contrib.auth.decorators import login_required
 from Home.models import ProductPageBanner
 from Order_App.models import Shoping_Card, Order
@@ -57,12 +57,43 @@ def Shop_page(request):
     return render(request, 'shop_app/products.html', context)
 
 def Single_Product(request, slug):
+    user = request.user
+    # if not user:
+    #     messages.error(request, 'Befor Submit Review Please Login!')
+    #     return redirect('Shop_app:single_product')    
     save_money = None
     main_category = Main_Category.objects.all()
     category = Category.objects.all()
     cub_category = SubCategory.objects.all()
     releted_product = Product.objects.filter()
     product = Product.objects.get(slug=slug)
+    
+    
+    if request.method == 'POST':
+        if user.is_authenticated:
+            name = request.POST.get('name')
+            review = request.POST.get('review')
+            rating = request.POST.get('rating')
+            if rating == None or rating == '':
+                messages.warning(request, 'Rating value is requerd!')
+                return redirect('Shop_app:single_product', slug=slug)
+            
+            review = ProductReview(
+                productId = product,
+                userId = user,
+                ClientName = name,
+                reviewMsg = review,
+                rating = rating
+            )
+            
+            review.save()
+            messages.success(request, 'Review Successfully submit!')
+            return redirect('Shop_app:single_product', slug=slug)
+        else:
+            messages.success(request, 'Befor Submit Review Please Login!')
+            return redirect('Shop_app:single_product', slug=slug)
+        
+    
 
     product_main_price = product.main_price
     product_discount_price = product.dic_price

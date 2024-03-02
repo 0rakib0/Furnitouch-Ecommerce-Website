@@ -9,6 +9,7 @@
 
 <div class="breadcrumb-area">
     <div class="container">
+        {% include "include/message.html" %}
         <div class="breadcrumb-content">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -252,7 +253,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form method="POST">
+            <form action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                   <label for="exampleInputEmail1">Your Name</label>
@@ -264,13 +265,13 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Product Rating</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" name="rating" id="exampleFormControlSelect1">
                         <option value="" hidden selected>OUT OF Five</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                       </select>
                 </div>
                 <button type="submit" class="btn btn-warning text-white">Submit Review</button>

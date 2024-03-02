@@ -123,6 +123,7 @@ class WishList(models.Model):
 class ProductReview(models.Model):
     productId = models.ForeignKey(Product, on_delete=models.CASCADE)
     userId = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    ClientName = models.CharField(max_length=156)
     reviewMsg = models.TextField()
     rating = models.IntegerField(default=4)
     reviewStatus = models.BooleanField(default=False)
