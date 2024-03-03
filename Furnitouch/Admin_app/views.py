@@ -604,6 +604,20 @@ def Reviews(request):
     }
     return render(request, 'admin_app/admin_dashbord/ProductReviewList.html', context)
 
+def ReviewApprove(request, id):
+    review = ProductReview.objects.get(id=id)
+    if review:
+        review.reviewStatus = True
+        review.save()
+        messages.success(request, 'Review Succeefully Approved!')
+        return redirect('Admin_app:product_review')
+    else:
+        messages.success(request, 'Review Not Approved, Something Wrong!')
+        return redirect('Admin_app:product_review')
+
+def DeleteReview(request):
+    pass
+
 
 
     

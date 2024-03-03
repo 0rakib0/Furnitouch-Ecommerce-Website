@@ -47,13 +47,13 @@ product-review-List
                                         {% for i in product_review %}
                                         <tr>                            
                                             <td class="">
-                                                <a target="_blank" href="#">
-                                                    <span>{{i.productId.product_code}}</span>
+                                                <a target="_blank" href="{% url 'Shop_app:single_product' slug=i.productId.slug %}">
+                                                    {{i.productId.product_code}}
                                                 </a>
                                             </td>
                             
                                             <td>
-                                                <a href="">
+                                                <a target="_blank" href="{% url 'Admin_app:user_details' id=i.id %}">
                                                     {{i.userId.email}}
                                                 </a>
                                             </td>
@@ -63,7 +63,11 @@ product-review-List
                                             <td>{{i.reviewMsg}}</td>
                             
                                             <td class="td-price">{{i.rating}}</td>
-                                            <td class="td-price">Pending</td>
+                                            {% if i.reviewStatus %}
+                                                <td class="td-price"><span class="bg-primary p-1" style="border-radius: 6px;">Success</span></td>
+                                            {% else %}
+                                                <td class="td-price"><a href="{% url 'Admin_app:review_approve' id=i.id %}" class="bg-warning p-1" style="border-radius: 6px;">Pending</a></td>
+                                            {% endif %}
                             
                                             <td class="d-flex justify-content-center" style="gap:1rem;">
                                                 <div>
