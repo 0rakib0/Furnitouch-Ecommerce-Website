@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Shop_app.models import Main_Category, Category, SubCategory, Product, ProductMoreImage
+from Shop_app.models import Main_Category, Category, SubCategory, Product, ProductMoreImage, ProductReview
 from Order_App.models import Order, OrderTraking
 from Accounts.models import User, Profile
 from Home.models import Home_banner, ProductPageBanner
@@ -593,6 +593,16 @@ def TrackOrder(request):
 
 def TrackingUpdate(request, id):
     return None
+
+
+# ------------------------------> Product Review <-------------------------------
+def Reviews(request):
+    product_review = ProductReview.objects.all().order_by('-id')
+    print(product_review)
+    context = {
+        "product_review":product_review
+    }
+    return render(request, 'admin_app/admin_dashbord/ProductReviewList.html', context)
 
 
 

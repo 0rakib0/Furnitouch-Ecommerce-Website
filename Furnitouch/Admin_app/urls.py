@@ -59,4 +59,7 @@ urlpatterns = [
     
     # ============================> Order Traking <==============================
     path('order-traking/', views.TrackOrder, name='track_order'),
+    
+    # ============================> Product View <===============================
+    path('product-review-list/', views.Reviews, name='product_review')
 ]
