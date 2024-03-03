@@ -241,6 +241,64 @@
     </button>
 </div>
 
+<div class="container mt-4">
+    <h5 class="">Product Review</h5>
+    {% for i in reviews %}
+        <div class="pt-4">
+            <div class="d-flex align-items-center" style="gap: 2rem;">
+                <span class="h6" style="color: black;">{{i.ClientName}}</span>
+                <div class="rating-box mt-5">
+                    {% if i.rating == 1 %}
+                        <ul class="rating rating-with-review-item">
+                            <li><i class="fa fa-star-o"></i></li>
+                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                        </ul>
+                    {% elif i.rating == 2 %}
+                    <ul class="rating rating-with-review-item">
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                    {% elif i.rating == 3 %}
+                    <ul class="rating rating-with-review-item">
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                    {% elif i.rating == 4 %}
+                    <ul class="rating rating-with-review-item">
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                    {% else %}
+                    <ul class="rating rating-with-review-item">
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                    </ul>
+                    {% endif %}
+                    
+                </div>
+            </div>
+            <div class="mt-1 col-lg-4 col-10">
+                <span class="d-block">{{i.reviewMsg}}</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
 <!-- Button trigger modal -->  
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

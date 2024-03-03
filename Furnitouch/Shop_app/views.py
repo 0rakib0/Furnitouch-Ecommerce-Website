@@ -6,6 +6,7 @@ from Order_App.models import Shoping_Card, Order
 from django.template import TemplateDoesNotExist
 from django.contrib import messages
 from .models import ProductMoreImage
+from django.db.models import Q
 # Create your views here.
 
 
@@ -103,8 +104,8 @@ def Single_Product(request, slug):
     releted_product = Product.objects.filter(product_category=category_id).order_by('-id')
     releted_product_count = Product.objects.filter(product_category=category_id).count()
     
-    reviews = ProductReview.objects.filter(productId=product)
-    print(reviews)
+    reviews = ProductReview.objects.filter(Q(productId=product) & Q(reviewStatus=True))
+    
 
     context = {
         'category':category,
@@ -114,7 +115,8 @@ def Single_Product(request, slug):
         'productImages':productImages,
         'releted_product':releted_product,
         'releted_product_count':releted_product_count,
-        'save_money':save_money
+        'save_money':save_money,
+        'reviews':reviews
     }
     return render(request, 'shop_app/single_products.html', context)
 
