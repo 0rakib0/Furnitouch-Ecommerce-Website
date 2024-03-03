@@ -44,67 +44,35 @@ product-review-List
                                     </thead>
                             
                                     <tbody>
-                                        {% for i in products %}
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="{{i.image.url}}" width="50px" class="img-fluid" alt="">
-                                                </div>
-                                            </td>
-                            
+                                        {% for i in product_review %}
+                                        <tr>                            
                                             <td class="">
-                                                <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
-                                                    <span>{{i.product_code}}</span>
+                                                <a target="_blank" href="#">
+                                                    <span>{{i.productId.product_code}}</span>
                                                 </a>
                                             </td>
                             
                                             <td>
-                                                <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
-                                                    {{i.roduct_title | slice:":10"}}...
+                                                <a href="">
+                                                    {{i.userId.email}}
                                                 </a>
                                             </td>
                             
-                                            <td>{{i.product_category.category_name}}</td>
+                                            <td>{{i.ClientName}}</td>
                             
-                                            <td>{{i.product_quintity}}</td>
+                                            <td>{{i.reviewMsg}}</td>
                             
-                                            <td class="td-price">{{i.main_price}}&#2547;</td>
-                                            <td class="td-price">{{i.dic_price}}&#2547;</td>
+                                            <td class="td-price">{{i.rating}}</td>
+                                            <td class="td-price">Pending</td>
                             
                                             <td class="d-flex justify-content-center" style="gap:1rem;">
                                                 <div>
-                                                    <a href="{% url 'Admin_app:update_product' slug=i.slug %}">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="{% url 'Admin_app:product_delete' slug=i.slug %}">
+                                                    <a href="#">
                                                         <i class="ri-delete-bin-line"></i>
                                                     </a>
                                                 </div>
                                             </td>
                                         </tr>
-
-                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                  </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                  ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                  <button type="button" class="btn btn-primary">Save changes</button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-
                                         {% endfor %}
                                     </tbody>
                                 </table>
