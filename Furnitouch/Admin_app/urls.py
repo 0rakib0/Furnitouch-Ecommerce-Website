@@ -62,5 +62,6 @@ urlpatterns = [
     
     # ============================> Product View <===============================
     path('product-review-list/', views.Reviews, name='product_review'),
-    path('approve-review/<int:id>/', views.ReviewApprove, name='review_approve')
+    path('approve-review/<int:id>/', views.ReviewApprove, name='review_approve'),
+    path('review-delete/<int:id>/', views.DeleteReview, name='delete_review')
 ]

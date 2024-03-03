@@ -615,8 +615,15 @@ def ReviewApprove(request, id):
         messages.success(request, 'Review Not Approved, Something Wrong!')
         return redirect('Admin_app:product_review')
 
-def DeleteReview(request):
-    pass
+def DeleteReview(request, id):
+    review = ProductReview.objects.get(id=id)
+    if review:
+        review.delete()
+        messages.success(request, 'Review Succeefully Deleted!')
+        return redirect('Admin_app:product_review')
+    else:
+        messages.success(request, 'Review Not Delete, Something Wrong!')
+        return redirect('Admin_app:product_review')
 
 
 
