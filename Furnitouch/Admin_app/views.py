@@ -12,14 +12,13 @@ from Payment_app.models import Billing_address
 
 @login_required
 def Admin_dashbord(request):
-    total_order = Order.objects.all()
+    total_order = Order.objects.filter(ordered=True)
     order_total_revinue = round(sum(order.get_totals() for order in total_order))
     order_count = total_order.count()
     total_product = Product.objects.all().count()
     total_customar = User.objects.filter(user_type='Customer').count()
     currentTime = datetime.now()
     today_date = date.today()
-    print(currentTime)
     Todays = Order.objects.filter(create_at__date=today_date , ordered=True)
     saven_days_ago = currentTime - timedelta(days=7)
     Last_seven_days = Order.objects.filter(Q(create_at__gte=saven_days_ago) & Q(ordered=True))
