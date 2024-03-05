@@ -10,6 +10,22 @@ from datetime import datetime, timedelta
 # Create your views here.
 
 @login_required
+def Admin_dashbord(request):
+    total_order = Order.objects.all()
+    order_total_revinue = round(sum(order.get_totals() for order in total_order))
+    order_count = total_order.count()
+    total_product = Product.objects.all().count()
+    total_customar = User.objects.filter(user_type='Customer').count()
+    print(total_customar)
+    context = {
+        'order_count':order_count,
+        'order_total_revinue':order_total_revinue,
+        'total_product':total_product,
+        'total_customar':total_customar
+    }
+    return render(request, 'admin_app/admin_dashbord/dashbord.html', context)
+
+@login_required
 def Add_Staff(request):
     if request.method == 'POST':
         full_name = request.POST.get('full_name')
@@ -63,15 +79,6 @@ def Delete_user(request, id):
     return redirect('Admin_app:staff_list')
     
 
-
-
-
-@login_required
-def Admin_dashbord(request):
-    context = {
-        
-    }
-    return render(request, 'admin_app/admin_dashbord/dashbord.html', context)
 
 # =====================> Product Section <============================
 
