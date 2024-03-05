@@ -105,6 +105,143 @@
     </div>
     <!-- Container-fluid Ends-->
 
+    <!-- Todays Order List -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="title-header option-title">
+                          {% include 'include/message.html'%}
+                            <h5>Todays Order</h5>
+                        </div>
+                        <div style="overflow-x: auto;">
+                                <table class="table table-bordered" id="table_id">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Cus Name</th>
+                                            <th>Cus Email</th>
+                                            <th>Date</th>
+                                            <th>Order Number</th>
+                                            <th>Delivery Status</th>
+                                            <th>Amount</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+  
+                                    <tbody>
+                                      {% for i in Todays %}
+                                      
+                                        <tr data-bs-toggle="offcanvas" href="#order-details">
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{i.user.profile.full_name}}</td>
+                                            <td>{{i.user.email}}</td>
+  
+                                            <td>{{i.create_at|date:"M d, Y"}}</td>
+  
+                                            <td>{{i.order_num}}</td>
+                                          
+                                            <td class="order-success">
+                                              {% if i.cancel == True %}
+                                                  <span class="badge badge-danger text-danger">Canceled</span>
+                                              {% else %}
+                                                  <span class="badge badge-success">Prossesing</span>
+                                              {% endif %}
+                                            </td>
+  
+                                            <td>{{i.get_totals}}&#2547</td>
+  
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{% url 'Admin_app:order_details' id=i.id%}">
+                                                            <i class="ri-eye-line"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#exampleModalToggle">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Last seven Days Order List -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="title-header option-title">
+                          {% include 'include/message.html'%}
+                            <h5>Last Seven Days Order</h5>
+                        </div>
+                        <div style="overflow-x: auto;">
+                                <table class="table table-bordered" id="table_id">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Cus Name</th>
+                                            <th>Cus Email</th>
+                                            <th>Date</th>
+                                            <th>Order Number</th>
+                                            <th>Delivery Status</th>
+                                            <th>Amount</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+  
+                                    <tbody>
+                                      {% for i in Last_seven_days %}
+                                      
+                                        <tr data-bs-toggle="offcanvas" href="#order-details">
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{i.user.profile.full_name}}</td>
+                                            <td>{{i.user.email}}</td>
+  
+                                            <td>{{i.create_at|date:"M d, Y"}}</td>
+  
+                                            <td>{{i.order_num}}</td>
+                                          
+                                            <td class="order-success">
+                                              {% if i.cancel == True %}
+                                                  <span class="badge badge-danger text-danger">Canceled</span>
+                                              {% else %}
+                                                  <span class="badge badge-success">Prossesing</span>
+                                              {% endif %}
+                                            </td>
+  
+                                            <td>{{i.get_totals}}&#2547</td>
+  
+                                            <td class="d-flex justify-content-center" style="gap:1rem;">
+                                                    <div>
+                                                        <a href="{% url 'Admin_app:order_details' id=i.id%}">
+                                                            <i class="ri-eye-line"></i>
+                                                        </a>
+                                                    </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- footer start-->
     <div class="container-fluid">
         <footer class="footer">

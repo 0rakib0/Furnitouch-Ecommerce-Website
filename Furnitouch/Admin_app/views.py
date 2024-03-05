@@ -16,12 +16,17 @@ def Admin_dashbord(request):
     order_count = total_order.count()
     total_product = Product.objects.all().count()
     total_customar = User.objects.filter(user_type='Customer').count()
-    print(total_customar)
+    currentTime = datetime.now()
+    saven_days_ago = currentTime - timedelta(days=7)
+    Last_seven_days = Order.objects.filter(Q(create_at__gte=saven_days_ago) & Q(ordered=True))
+    Todays = Order.objects.filter(Q(create_at=currentTime) & Q(ordered=True))
     context = {
         'order_count':order_count,
         'order_total_revinue':order_total_revinue,
         'total_product':total_product,
-        'total_customar':total_customar
+        'total_customar':total_customar,
+        'Last_seven_days':Last_seven_days,
+        'Todays':Todays
     }
     return render(request, 'admin_app/admin_dashbord/dashbord.html', context)
 
@@ -579,13 +584,13 @@ def SalesReport(request):
     
     sortValue = request.GET.get('sort-value')
     if sortValue == 'last-week-report':
-        orderObj = Order.objects.filter(create_at__gte=saven_days_ago)
+        orderObj = Order.objects.filter(Q(create_at__gte=saven_days_ago) & Q(ordered=True))
     elif sortValue == 'last-mont-report':
-        orderObj = Order.objects.filter(create_at__gte=one_month_ago)
+        orderObj = Order.objects.filter(Q(create_at__gte=one_month_ago) & Q(ordered=True))
     elif sortValue == 'last-6mont-report':
-        orderObj = Order.objects.filter(create_at__gte=six_month_ago)  
+        orderObj = Order.objects.filter(Q(create_at__gte=six_month_ago) & Q(ordered=True))  
     elif sortValue == 'last-year-report':
-        orderObj = Order.objects.filter(create_at__gte=one_year_ago)
+        orderObj = Order.objects.filter(Q(create_at__gte=one_year_ago) & Q(ordered=True))
     else:
         orderObj = Order.objects.filter(ordered=True)
     context = {
