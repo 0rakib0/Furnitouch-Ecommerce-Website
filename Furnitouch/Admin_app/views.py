@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from datetime import datetime, timedelta
+from Payment_app.models import Billing_address
 # Create your views here.
 
 @login_required
@@ -537,10 +538,13 @@ def Delivered_order_list(request):
 
 def Order_details(request, id):
     order_ditails = Order.objects.get(id=id, ordered=True)
-    
+    user = order_ditails.user
+    order_shiping_address = Billing_address.objects.get(user=user)
+    print(order_shiping_address)    
     if order_ditails:
         context = {
-            'order_ditails':order_ditails
+            'order_ditails':order_ditails,
+            'order_shiping_address':order_shiping_address
         }
         return render(request, 'admin_app/admin_dashbord/order_details.html', context)
     else:

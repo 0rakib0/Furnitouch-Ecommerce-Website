@@ -80,6 +80,31 @@
                                                 </tr>
                                             </tfoot>
                                         </table>
+                                        <div class="container mt-5">
+                                            <h5>User Information</h5>
+                                            <table class="table table-bordered mt-2">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Full Name</th>
+                                                    <th scope="col">{{order_ditails.user.profile.full_name}}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">username</th>
+                                                    <th scope="col">{{order_ditails.user.profile.username}}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">{{order_ditails.user.email}}</th>
+                                                </tr>
+                                                    <th scope="col">Phone</th>
+                                                    <th scope="col">{{order_ditails.user.profile.phone}}</th>
+                                                <tr>
+                                                    <th scope="col">Address</th>
+                                                    <th scope="col">{{order_ditails.user.profile.address_1}}, {{order_ditails.user.profile.city}}, {{order_ditails.user.profile.zipcode}}, {{order_ditails.user.profile.country}},</th>
+                                                  </tr>
+                                                </thead>
+                                              </table>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -97,9 +122,11 @@
 
                                             <h4>shipping address</h4>
                                             <ul class="order-details">
-                                                <li>Gerg Harvell</li>
-                                                <li>568, Suite Ave.</li>
-                                                <li>Austrlia, 235153 Contact No. 48465465465</li>
+                                                <li>{{order_shiping_address.city}}</li>
+                                                <li>{{order_shiping_address.zipcode}}</li>
+                                                <li>{{order_shiping_address.address_1}}</li>
+                                                <li>{{order_shiping_address.address_2}}</li>
+                                                <li>Bangladesh</li>
                                             </ul>
                                             {% if order_ditails.cancel == True %}
                                             <div class="delivery-sec">
