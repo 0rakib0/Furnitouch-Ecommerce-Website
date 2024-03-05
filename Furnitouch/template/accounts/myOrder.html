@@ -76,7 +76,7 @@ User | Profile
                      {% for i in confirmedOrder %}
                         <tr>
                           <th scope="row">{{i.order_num}}</th>
-                          <td>Not Set</td>
+                          <td>{{i.order_num}}</td>
                           <td>
                             {% for items in i.order_item.all %}
                               <div class="d-flex">

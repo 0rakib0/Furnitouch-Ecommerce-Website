@@ -152,20 +152,12 @@
   
                                             <td>{{i.get_totals}}&#2547</td>
   
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="{% url 'Admin_app:order_details' id=i.id%}">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                            <td class="d-flex justify-content-center" style="gap:1rem;">
+                                                <div>
+                                                    <a href="{% url 'Admin_app:order_details' id=i.id%}">
+                                                        <i class="ri-eye-line"></i>
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                         {% endfor %}

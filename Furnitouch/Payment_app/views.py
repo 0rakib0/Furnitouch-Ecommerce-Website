@@ -52,6 +52,7 @@ def Checkout(request):
     order_items = order_qs[0].order_item.all()
     order_total = order_qs[0].get_totals()
     save_billing_address = Billing_address.objects.get_or_create(user=request.user)
+    save_billing_address = save_billing_address[0]
     
     context = {
         'category':category,

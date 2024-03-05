@@ -6,7 +6,7 @@ from Home.models import Home_banner, ProductPageBanner
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from Payment_app.models import Billing_address
 # Create your views here.
 
@@ -18,9 +18,12 @@ def Admin_dashbord(request):
     total_product = Product.objects.all().count()
     total_customar = User.objects.filter(user_type='Customer').count()
     currentTime = datetime.now()
+    today_date = date.today()
+    print(currentTime)
+    Todays = Order.objects.filter(create_at__date=today_date , ordered=True)
     saven_days_ago = currentTime - timedelta(days=7)
     Last_seven_days = Order.objects.filter(Q(create_at__gte=saven_days_ago) & Q(ordered=True))
-    Todays = Order.objects.filter(Q(create_at=currentTime) & Q(ordered=True))
+    
     context = {
         'order_count':order_count,
         'order_total_revinue':order_total_revinue,
