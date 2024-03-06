@@ -45,7 +45,7 @@ User | Profile
         <div class="col profile-body">
             <div id="profileHidden" class="pt-2">
                 <p class="h6" style="margin-top: 10px;color:black">Profile Information</p>
-                <a href="#" class="update-profile-button">Update Profile</a>
+                <a href="{% url 'accounts:profile' %}" class="update-profile-button">Update Profile</a>
                 
                 <div class="d-flex flex-column mt-4">
                     <span class="mb-1">Full Name : {{profile.full_name}}</span>

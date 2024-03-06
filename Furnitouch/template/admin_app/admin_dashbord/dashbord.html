@@ -140,7 +140,7 @@
   
                                             <td>{{i.create_at|date:"M d, Y"}}</td>
   
-                                            <td>{{i.order_num}}</td>
+                                            <td>{{i.order_num}} <a href="{% url 'Admin_app:add_traking_order' Orderid=i.id %}">Track Order</a></td>
                                           
                                             <td class="order-success">
                                               {% if i.cancel == True %}
@@ -205,7 +205,7 @@
   
                                             <td>{{i.create_at|date:"M d, Y"}}</td>
   
-                                            <td>{{i.order_num}}</td>
+                                            <td>{{i.order_num}} <a href="{% url 'Admin_app:add_traking_order' Orderid=i.id %}">Track Order</a></td>
                                           
                                             <td class="order-success">
                                               {% if i.cancel == True %}

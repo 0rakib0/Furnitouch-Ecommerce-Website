@@ -24,7 +24,6 @@
                             <!-- Begin Setting Area -->
                             {% if user.is_authenticated %}
                             <a href="{% url 'accounts:logout' %}" class="text-black">Logout</a>
-                            <a href="{% url 'accounts:my_order' %}" class="text-black ml-3">My Orders</a>
                             {% else %}
                             <li>
                                 <div><a href="{% url 'accounts:accounts' %}">Login/Register</a></div>
@@ -66,7 +65,7 @@
                             <!-- Begin Header Middle Wishlist Area -->
 
                             <li class="hm-wishlist">
-                                <a href="{% url 'accounts:profile' %}">
+                                <a href="{% url 'accounts:my_order' %}">
                                     <i class="fa fa-user"></i>
                                 </a>
                             </li>
