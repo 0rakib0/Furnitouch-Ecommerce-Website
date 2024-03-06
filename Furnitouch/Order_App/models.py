@@ -63,7 +63,7 @@ class Order(models.Model):
     
 class OrderTraking(models.Model):
     orderId = models.ForeignKey(Order, on_delete=models.CASCADE)
-    OrderTrack = models.CharField(max_length=156)
+    OrderTrack = models.CharField(max_length=156, default='Proccesing')
     
     def __str__(self) -> str:
         return str(self.orderId.order_num)

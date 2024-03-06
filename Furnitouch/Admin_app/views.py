@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.db.models import Q
 from datetime import datetime, timedelta, date
 from Payment_app.models import Billing_address
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 @login_required
@@ -606,11 +607,33 @@ def SalesReport(request):
 
 
 # ------------------------------> Order Tracking <----------------------------
-def TrackOrder(request):
-    return render(request, 'admin_app/admin_dashbord/orderTrack.html')
+def TrackOrder(request, Orderid=None):
+    orderTrakingList = OrderTraking.objects.all()
+    context = {
+        'orderTrakingList':orderTrakingList
+    }
+    return render(request, 'admin_app/admin_dashbord/orderTrack.html', context)
+    
+def AddTrackingOrder(request, Orderid):
+    order = Order.objects.get(id=Orderid)
+    try:
+        in_track = OrderTraking.objects.get(orderId=order)
+        print('Order Already in track list')
+    except ObjectDoesNotExist:
+        track = OrderTraking (
+            orderId = order
+        )
+        track.save()
+        messages.success(request, f'{order.order_num} No Order Start Tracking')
+        return redirect('Admin_app:track_order')
+
+
 
 def TrackingUpdate(request, id):
-    return None
+    trakingId = OrderTraking.objects.get(id=id)
+    print('--------------------')
+    print(trakingId)
+    pass
 
 
 # ------------------------------> Product Review <-------------------------------

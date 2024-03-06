@@ -1,1 +1,74 @@
-<h1>This is Order Traking Page</h1>
+{% extends "admin_app/base.html" %}
+{% block title %}
+  Orders Tracking
+{% endblock%}
+
+{% block body_block %}
+
+<div class="page-body">
+  <!-- Table Start -->
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+            {% include "include/message.html" %}
+              <div class="card">
+                  <div class="card-body">
+                      <div class="title-header option-title">
+                          <h5>Deliverd Order List</h5>
+                          <a href="#" class="btn btn-solid">Download all orders</a>
+                      </div>
+                      <div style="overflow-x: auto;">
+                              <table class="table table-bordered" id="table_id">
+                                  <thead>
+                                      <tr>
+                                          <th>#</th>
+                                          <th>Order Id</th>
+                                          <th>Tracking Status</th>
+                                          <th>Option</th>
+                                      </tr>
+                                  </thead>
+
+                                  <tbody>
+                                    {% for i in orderTrakingList %}
+                                    
+                                      <tr data-bs-toggle="offcanvas" href="#order-details">
+                                          <td>{{forloop.counter}}</td>
+                                          <td>{{i.orderId.order_num}}</td>
+                                          <td>{{i.OrderTrack}}</td>
+                                          <td class="d-flex justify-content-center" style="gap:1rem;">
+                                                <div>
+                                                    <a href="{% url 'Admin_app:traking_update' id=i.id%}">
+                                                        <i class="ri-pencil-line"></i>
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href="{% url 'Admin_app:order_details' id=i.id%}">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                      </tr>
+                                      {% endfor %}
+                                  </tbody>
+                              </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Table End -->
+
+  <!-- footer start-->
+  <div class="container-fluid">
+      <footer class="footer">
+          <div class="row">
+              <div class="col-md-12 footer-copyright text-center">
+                  <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+              </div>
+          </div>
+      </footer>
+  </div>
+</div>
+
+{% endblock %}
