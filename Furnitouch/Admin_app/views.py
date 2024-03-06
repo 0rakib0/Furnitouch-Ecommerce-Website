@@ -633,7 +633,7 @@ def TrackingUpdate(request, id):
     trakingId = OrderTraking.objects.get(id=id)
     print('--------------------')
     print(trakingId)
-    pass
+    return render(request, 'admin_app/admin_dashbord/OrderTrackUpdate.html')
 
 
 # ------------------------------> Product Review <-------------------------------
