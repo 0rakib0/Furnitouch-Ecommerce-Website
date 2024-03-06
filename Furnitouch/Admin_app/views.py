@@ -627,6 +627,11 @@ def AddTrackingOrder(request, Orderid):
         track.save()
         messages.success(request, f'{order.order_num} No Order Start Tracking')
         return redirect('Admin_app:track_order')
+def trakingDelete(request, id):
+    orderTrack = OrderTraking.objects.get(id=id)
+    orderTrack.delete()    
+    messages.success(request, 'Successfully Deleted')
+    return redirect('Admin_app:track_order')
 
 
 
