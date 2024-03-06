@@ -618,7 +618,8 @@ def AddTrackingOrder(request, Orderid):
     order = Order.objects.get(id=Orderid)
     try:
         in_track = OrderTraking.objects.get(orderId=order)
-        print('Order Already in track list')
+        if in_track:
+            return redirect('Admin_app:track_order')
     except ObjectDoesNotExist:
         track = OrderTraking (
             orderId = order
@@ -630,10 +631,20 @@ def AddTrackingOrder(request, Orderid):
 
 
 def TrackingUpdate(request, id):
+    traking_status = None
     trakingId = OrderTraking.objects.get(id=id)
-    print('--------------------')
-    print(trakingId)
-    return render(request, 'admin_app/admin_dashbord/OrderTrackUpdate.html')
+    
+    if request.method == 'POST':
+        traking_status = request.POST.get('traking')
+        if traking_status != None or traking_status != '':
+            trakingId.OrderTrack=traking_status
+            trakingId.save()
+            messages.success(request, f"{trakingId.orderId.order_num} No Order Traking Update")
+            return redirect('Admin_app:track_order')
+    context = {
+        'trakingId':trakingId
+    }
+    return render(request, 'admin_app/admin_dashbord/OrderTrackUpdate.html', context)
 
 
 # ------------------------------> Product Review <-------------------------------
