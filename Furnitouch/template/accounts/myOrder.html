@@ -93,7 +93,25 @@ User | Profile
                         </tr>
                      {% endfor %}
                     </tbody>
-                  </table>
+                </table>
+
+                <table class="table table-bordered">
+                  <h6>Traking Orders</h6>
+                  <thead>
+                    <tr>
+                      <th scope="col">Order Number</th>
+                      <th scope="col">Traking Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {% for i in traking_order %}
+                      <tr>
+                        <th scope="row">{{i.orderId.order_num}}</th>
+                        <td>{{i.OrderTrack}}</td>
+                      </tr>
+                   {% endfor %}
+                  </tbody>
+              </table>
 
             </div>
 
@@ -172,8 +190,8 @@ User | Profile
                 </table>
 
             </div>
+          </div>
         </div>
-    </div>
 </div>
 
 

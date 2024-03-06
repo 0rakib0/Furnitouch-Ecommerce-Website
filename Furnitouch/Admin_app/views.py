@@ -616,13 +616,15 @@ def TrackOrder(request, Orderid=None):
     
 def AddTrackingOrder(request, Orderid):
     order = Order.objects.get(id=Orderid)
+    user = order.user
     try:
         in_track = OrderTraking.objects.get(orderId=order)
         if in_track:
             return redirect('Admin_app:track_order')
     except ObjectDoesNotExist:
         track = OrderTraking (
-            orderId = order
+            orderId = order,
+            user = user
         )
         track.save()
         messages.success(request, f'{order.order_num} No Order Start Tracking')

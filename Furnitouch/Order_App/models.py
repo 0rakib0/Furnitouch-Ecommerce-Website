@@ -62,6 +62,7 @@ class Order(models.Model):
     
     
 class OrderTraking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     orderId = models.ForeignKey(Order, on_delete=models.CASCADE)
     OrderTrack = models.CharField(max_length=156, default='In Prossess')
     

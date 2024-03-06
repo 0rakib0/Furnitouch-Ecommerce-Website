@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
-from Order_App.models import Order
+from Order_App.models import Order, OrderTraking
 from django.db.models import Q
 # Create your views here.
 
@@ -116,11 +116,12 @@ def myOrder(request):
     confirmedOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=True))
     deliveredOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=True) & Q(delivered=True))
     pendingOrder = Order.objects.filter(Q(user = request.user) & Q(ordered=False) & Q(delivered=False))
-    
+    traking_order = OrderTraking.objects.filter(user=request.user)
     context = {
         "profile":profile,
         'confirmedOrder':confirmedOrder,
         'deliveredOrder':deliveredOrder,
-        'pendingOrder':pendingOrder
+        'pendingOrder':pendingOrder,
+        'traking_order':traking_order
     }
     return render(request, 'accounts/myOrder.html', context)
