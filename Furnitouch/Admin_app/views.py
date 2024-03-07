@@ -11,8 +11,33 @@ from Payment_app.models import Billing_address
 from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
+
+
+def is_admin_Check(request):
+    user = request.user
+    user_type = user.user_type
+    print(user_type)
+    if user_type != 'Admin':
+        return False
+    else:
+        return True
+    
+def is_admin_Staff_Check(request):
+    user = request.user
+    user_type = user.user_type
+    print(user_type)
+    if user_type not in ['Admin', 'Staff']:
+        return False
+    else:
+        return True
+
+
+
 @login_required
 def Admin_dashbord(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     total_order = Order.objects.filter(ordered=True)
     order_total_revinue = round(sum(order.get_totals() for order in total_order))
     order_count = total_order.count()
@@ -36,6 +61,9 @@ def Admin_dashbord(request):
 
 @login_required
 def Add_Staff(request):
+    if not is_admin_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     if request.method == 'POST':
         full_name = request.POST.get('full_name')
         profile_pic = request.FILES.get('profile_pic')
@@ -47,6 +75,9 @@ def Add_Staff(request):
             messages.error(request, 'Password Not Match!')
             return redirect('Admin_app:add_staff')
         
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'User Already Exist With This Email!')
+            return redirect('Admin_app:add_staff')
         user = User(
             email = email            
         )
@@ -67,6 +98,9 @@ def Add_Staff(request):
 
 @login_required
 def Staff_List(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     user_staff = User.objects.filter(user_type='Staff')
     context = {
         'user_staff':user_staff
@@ -75,13 +109,20 @@ def Staff_List(request):
 
 @login_required
 def View_user_info(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     profile = Profile.objects.get(id=id)
     context = {
         'profile':profile
     }
     return render(request, 'admin_app/admin_dashbord/user_details.html', context)
 
+@login_required
 def Delete_user(request, id):
+    if not is_admin_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     user = User.objects.get(profile=id)
     user.delete()
     messages.success(request, 'User Successfully Deleted!')
@@ -93,6 +134,9 @@ def Delete_user(request, id):
 
 @login_required
 def Add_New_Product(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     main_category = Main_Category.objects.all().order_by('-id')
     category = Category.objects.all().order_by('-id')
     try:
@@ -181,8 +225,11 @@ def Add_New_Product(request):
     }
     return render(request,'admin_app/admin_dashbord/add_product.html' , context)
 
-
+@login_required
 def UpdateProduct(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     product_object = Product.objects.get(slug=slug)
     mainCate = Main_Category.objects.all()
     Categoryy = Category.objects.all()
@@ -257,8 +304,11 @@ def UpdateProduct(request, slug):
     }
     return render(request, 'admin_app/admin_dashbord/updateProduct.html', context)
 
-
+@login_required
 def DeleteProduct(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     print('------------------Delete Request Send-------------------')
     product = Product.objects.get(slug=slug)
     if product:
@@ -269,8 +319,11 @@ def DeleteProduct(request, slug):
         messages.success(request, 'Product Not Delete, Something wrong!')
         return redirect('Admin_app:product_list')
 
-
+@login_required
 def ProductList(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     products = Product.objects.all().order_by('-id')
     
     context = {
@@ -285,6 +338,9 @@ def ProductList(request):
 
 @login_required
 def Add_main_category(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     try:
         if request.method == 'POST':
             category_name = request.POST.get('name')
@@ -304,13 +360,22 @@ def Add_main_category(request):
 
 @login_required
 def View_main_cat(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     main_cat = Main_Category.objects.all().order_by('-id')
     context = {
         'main_cat':main_cat
     }
     return render(request, 'admin_app/admin_dashbord/view_main_cat.html', context)
+
+
+
 @login_required
 def Update_main_cat(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     main_cat = Main_Category.objects.get(slug=slug)
     if request.method == 'POST':
         main_cats = Main_Category.objects.get(slug=slug)
@@ -324,8 +389,13 @@ def Update_main_cat(request, slug):
         'main_cat':main_cat
     }
     return render(request, 'admin_app/admin_dashbord/update_main_cat.html', context)
+
+
 @login_required
 def Del_main_cat(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     main_cat = Main_Category.objects.get(slug=slug)
     main_cat.delete()
     messages.success(request, 'Category Removed!')
@@ -335,6 +405,9 @@ def Del_main_cat(request, slug):
 
 @login_required
 def Add_category(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     if request.method == 'POST':
         cat_name = request.POST.get('name')
         category_pic = request.FILES.get('category_pic')
@@ -363,6 +436,9 @@ def Add_category(request):
 
 @login_required
 def View_Category(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     cat_list = Category.objects.all().order_by('-id')
     context = {
         'cat_list':cat_list
@@ -375,6 +451,9 @@ def View_Category(request):
 
 @login_required
 def Update_cat(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     instant_cat = Category.objects.get(slug=slug)
     if request.method == 'POST':
         cat_name = request.POST.get('name')
@@ -396,6 +475,9 @@ def Update_cat(request, slug):
 
 @login_required
 def Del_cat(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     category = Category.objects.get(slug=slug)
     if category:
         category.delete()
@@ -408,6 +490,9 @@ def Del_cat(request, slug):
     
 @login_required   
 def Add_sub_category(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     if request.method == 'POST':
         sub_cat_name = request.POST.get('name')
         cat_id       = request.POST.get('cat_id')
@@ -431,6 +516,9 @@ def Add_sub_category(request):
 
 @login_required
 def View_sub_Cat(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     sub_cat_list = SubCategory.objects.all().order_by('-id')
     print(sub_cat_list)
     context = {
@@ -442,6 +530,9 @@ def View_sub_Cat(request):
 
 @login_required
 def Update_sub_cat(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     instant_sub_cat = SubCategory.objects.get(slug=slug)
     if request.method == 'POST':
         sub_cat_name = request.POST.get('name')
@@ -457,6 +548,9 @@ def Update_sub_cat(request, slug):
 
 @login_required
 def Del_sub_cat(request, slug):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     sub_cat = SubCategory.objects.get(slug=slug)
     if sub_cat:
         sub_cat.delete()
@@ -467,7 +561,11 @@ def Del_sub_cat(request, slug):
         return redirect('Admin_app:view_sub_cat')
 
 # =====================================> Baner <===================================
+@login_required
 def HomePageBenner(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     if request.method == 'POST':
         offer_name = request.POST.get('offer_name')
         product_name = request.POST.get('product_name')
@@ -489,6 +587,9 @@ def HomePageBenner(request):
 
 @login_required
 def Banner_List(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     home_banner = Home_banner.objects.all().order_by('-id')
     context = {
         'home_banner':home_banner
@@ -497,6 +598,9 @@ def Banner_List(request):
 
 @login_required
 def Delete_banner(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     banner = Home_banner.objects.get(id=id)
     if banner:
         banner.delete()
@@ -507,6 +611,9 @@ def Delete_banner(request, id):
         return redirect('Admin_app:banner_list')
     
 def ProductPageBannerr(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     if request.method == 'POST':
         banner_pic = request.FILES.get('banner_pic')
         
@@ -526,20 +633,33 @@ def ProductPageBannerr(request):
 #=======================================> Order Details <====================================
 @login_required
 def Pending_Order_List(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     pending_order_list = Order.objects.filter(delivered=False, ordered=True).order_by('-id')
     context = {
         'pending_order_list':pending_order_list
     }
     return render(request, 'admin_app/admin_dashbord/pending_order_list.html', context)
 
+@login_required
 def Delivered_order_list(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     delivered_order_list = Order.objects.filter(delivered=True).order_by('-id')
     context = {
         'delivered_order_list':delivered_order_list
     }
     return render(request, 'admin_app/admin_dashbord/delivered_order_list.html', context)
 
+
+
+@login_required
 def Order_details(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     order_ditails = Order.objects.get(id=id, ordered=True)
     user = order_ditails.user
     order_shiping_address = Billing_address.objects.get(user=user)
@@ -553,9 +673,13 @@ def Order_details(request, id):
     else:
         messages.success(request, 'No Item Found. Something wrong!')
         return redirect('Admin_app:pending_order_list')
+    
 
 @login_required
 def Order_delivery(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     delivery_order = Order.objects.get(id=id, ordered=True)
     if delivery_order:
         delivery_order.delivered = True
@@ -569,8 +693,11 @@ def Order_delivery(request, id):
     
     
 # -----------------------------> Customar Report <-------------------------------
-
+@login_required
 def CustomarList(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     Customar = User.objects.filter(user_type='Customer')
     print(Customar)
     context = {
@@ -581,7 +708,11 @@ def CustomarList(request):
 
 # -------------------------------> Sales Report <----------------------------------
 
+@login_required
 def SalesReport(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     currentTime = datetime.now()
     saven_days_ago = currentTime - timedelta(days=7)
     one_month_ago = currentTime - timedelta(days=30)
@@ -607,14 +738,22 @@ def SalesReport(request):
 
 
 # ------------------------------> Order Tracking <----------------------------
+@login_required
 def TrackOrder(request, Orderid=None):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     orderTrakingList = OrderTraking.objects.all()
     context = {
         'orderTrakingList':orderTrakingList
     }
     return render(request, 'admin_app/admin_dashbord/orderTrack.html', context)
-    
+
+@login_required    
 def AddTrackingOrder(request, Orderid):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     order = Order.objects.get(id=Orderid)
     user = order.user
     try:
@@ -629,15 +768,24 @@ def AddTrackingOrder(request, Orderid):
         track.save()
         messages.success(request, f'{order.order_num} No Order Start Tracking')
         return redirect('Admin_app:track_order')
+    
+    
+@login_required
 def trakingDelete(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     orderTrack = OrderTraking.objects.get(id=id)
     orderTrack.delete()    
     messages.success(request, 'Successfully Deleted')
     return redirect('Admin_app:track_order')
 
 
-
+@login_required
 def TrackingUpdate(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     traking_status = None
     trakingId = OrderTraking.objects.get(id=id)
     
@@ -655,7 +803,11 @@ def TrackingUpdate(request, id):
 
 
 # ------------------------------> Product Review <-------------------------------
+@login_required
 def Reviews(request):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     product_review = ProductReview.objects.all().order_by('-id')
     print(product_review)
     context = {
@@ -663,7 +815,11 @@ def Reviews(request):
     }
     return render(request, 'admin_app/admin_dashbord/ProductReviewList.html', context)
 
+@login_required
 def ReviewApprove(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     review = ProductReview.objects.get(id=id)
     if review:
         review.reviewStatus = True
@@ -674,7 +830,11 @@ def ReviewApprove(request, id):
         messages.success(request, 'Review Not Approved, Something Wrong!')
         return redirect('Admin_app:product_review')
 
+@login_required
 def DeleteReview(request, id):
+    if not is_admin_Staff_Check(request):
+        messages.warning(request, 'You Are Not Allowed For This Access!')
+        return redirect('accounts:logout')
     review = ProductReview.objects.get(id=id)
     if review:
         review.delete()

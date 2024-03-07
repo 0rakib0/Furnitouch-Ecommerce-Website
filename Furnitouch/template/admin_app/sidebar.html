@@ -78,22 +78,6 @@
                         </ul>
                     </li>
 
-                    <!-- <li class="sidebar-list">
-                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                            <i class="ri-list-settings-line"></i>
-                            <span>Attributes</span>
-                        </a>
-                        <ul class="sidebar-submenu">
-                            <li>
-                                <a href="attributes.html">Attributes</a>
-                            </li>
-
-                            <li>
-                                <a href="add-new-attributes.html">Add Attributes</a>
-                            </li>
-                        </ul>
-                    </li> -->
-
                     <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title" href="javascript:void(0)">
                             <i class="ri-user-3-line"></i>
@@ -196,23 +180,6 @@
                             </li>
                         </ul>
                     </li>
-
-                    <!-- <li class="sidebar-list">
-                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                            <i class="ri-price-tag-3-line"></i>
-                            <span>Coupons</span>
-                        </a>
-                        <ul class="sidebar-submenu">
-                            <li>
-                                <a href="coupon-list.html">Coupon List</a>
-                            </li>
-
-                            <li>
-                                <a href="create-coupon.html">Create Coupon</a>
-                            </li>
-                        </ul>
-                    </li> -->                    
-
                     <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title link-nav" href="{% url 'Admin_app:product_review' %}">
                             <i class="ri-star-line"></i>
@@ -259,7 +226,7 @@
                         </a>
                         <ul class="sidebar-submenu">
                             <li>
-                                <a href="products.html">Prodcts</a>
+                                <a href="{% url 'Admin_app:product_list' %}">Prodcts</a>
                             </li>
 
                             <li>
@@ -290,10 +257,30 @@
                             </li>
                         </ul>
                     </li>
+
                     <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-                            <i class="ri-archive-line"></i>
-                            <span>Online Orders</span>
+                            <i class="ri-user-3-line"></i>
+                            <span>Staffs</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'Admin_app:staff_list' %}">All Staff List</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="{% url 'Admin_app:customar_list' %}">
+                            <i class="ri-group-line"></i>
+                            <span>Clients Data</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span> Online Orders</span>
                         </a>
                         <ul class="sidebar-submenu">
                             <li>
@@ -304,10 +291,10 @@
                             </li>
                         </ul>
                     </li>
-
+                    
                     <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-                            <i class="ri-archive-line"></i>
+                            <i class="ri-store-2-line"></i>
                             <span>Cusmize Order</span>
                         </a>
                         <ul class="sidebar-submenu">
@@ -321,8 +308,22 @@
                     </li>
 
                     <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="{% url 'Admin_app:sale_report' %}">
+                            <i class="ri-file-chart-line"></i>
+                            <span>Salse Repost</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="{% url 'Admin_app:track_order' %}">
+                            <i class="ri-map-pin-time-fill"></i>
+                            <span>Order Traking</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-                            <i class="ri-archive-line"></i>
+                            <i class="ri-archive-drawer-fill"></i>
                             <span>Expenses</span>
                         </a>
                         <ul class="sidebar-submenu">
@@ -337,7 +338,31 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-image-add-line"></i>
+                            <span>Banner</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'Admin_app:home_page_banner' %}">Home Page Banner</a>
+                            </li>
 
+                            <li>
+                                <a href="{% url 'Admin_app:banner_list' %}">Banner List</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'Admin_app:product_page_banner' %}">Product Page Banner</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="{% url 'Admin_app:product_review' %}">
+                            <i class="ri-star-line"></i>
+                            <span>Product Review</span>
+                        </a>
+                    </li>
                     <li class="sidebar-list">
                         <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                             <i class="ri-settings-line"></i>
