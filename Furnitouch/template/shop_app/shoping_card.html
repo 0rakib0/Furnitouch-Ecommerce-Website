@@ -42,7 +42,7 @@
                                   
                                 <tr>
                                     <td class="li-product-remove"><a href="{% url 'order_app:remove_card_item' id=i.id %}"><i class="fa fa-times"></i></a></td>
-                                    <td class="li-product-thumbnail"><a href="{% url 'Shop_app:single_product' slug=i.product.slug %}"><img src="/media/{{i.product.image}}" width="90px" alt="Li's Product Image"></a></td>
+                                    <td class="li-product-thumbnail"><a href="{% url 'Shop_app:single_product' slug=i.product.slug %}"><img src="{{i.product.image}}" width="90px" alt="Li's Product Image"></a></td>
                                     <td class="li-product-name"><a href="{% url 'Shop_app:single_product' slug=i.product.slug %}">{{i.product.product_name}}</a></td>
                                     {% if i.product.dic_price == 0 %}
                                     <td class="li-product-price"><span class="amount">{{i.product.main_price}} &#2547</del></span></td>

@@ -75,7 +75,7 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="{% url 'Shop_app:single_product' slug=i.slug %}">
-                                                    <img src="/media/{{i.image}}" alt="Li's Product Image">
+                                                    <img src="{{i.image}}" alt="Li's Product Image">
                                                 </a>
                                                 {% if i.is_newarival %}
                                                 <span class="sticker">New</span>
@@ -130,7 +130,7 @@
                                         <div class="col-lg-3 col-md-5 ">
                                             <div class="product-image">
                                                 <a href="{% url 'Shop_app:single_product' slug=i.slug %}">
-                                                    <img src="/media/{{i.image}}" alt="Li's Product Image">
+                                                    <img src="{{i.image}}" alt="Li's Product Image">
                                                 </a>
                                                 {% if i.is_newarival %}
                                                 <span class="sticker">New</span>
