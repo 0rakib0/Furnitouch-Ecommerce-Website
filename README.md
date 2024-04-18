@@ -1,2 +1,2 @@
 ## This is a Furniture Eccomerce shop
-## this project Under Developing--
+## This project under developing....
