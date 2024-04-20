@@ -1,17 +1,12 @@
-###Furnitouch- Furniture Online Shop
+### Furnitouch- Furniture Online Shop
 <hr>
 
 
-
-
-
-
- </div>
 <br>
-Clone the repository using the following command
+Fist clone the repository using the following command
 
 ```bash
-git clone github.com/yeazin/Zooming-cls.git
+git clone https://github.com/0rakib0/Furnitouch-Ecommerce-Website.git
 # After cloning, move into the directory having the project files using the change directory command
 cd Zooming-cls
 ```
