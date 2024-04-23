@@ -1,0 +1,6 @@
+INFO 2024-04-23 12:01:31,095 MainThread 9572                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3280 Watching for file changes with StatReloader
+INFO 2024-04-23 12:01:56,936 Thread-1 8688                 basehttp basehttp.py 187 django.server log_message 3280 "GET /shop-page/?main-category=bedroom-4b6eec0b-5898-4d32-8349-4cb240bca10e HTTP/1.1" 200 32875
+INFO 2024-04-23 12:01:57,033 Thread-1 8688                 basehttp basehttp.py 187 django.server log_message 3280 "GET /media/banner/dac8de183419987.653fbc5481110.jpg HTTP/1.1" 200 56361
+INFO 2024-04-23 12:01:58,893 Thread-3 3852                 basehttp basehttp.py 187 django.server log_message 3280 "GET /shop-page/?category=dining-table-d835484e-1d6d-4746-9d7e-9731186d59da HTTP/1.1" 200 32877
+INFO 2024-04-23 12:01:58,963 Thread-3 3852                 basehttp basehttp.py 187 django.server log_message 3280 "GET /media/products/DI-911.jpg HTTP/1.1" 200 573269
+INFO 2024-04-23 12:02:00,942 Thread-3 3852                 basehttp basehttp.py 187 django.server log_message 3280 "GET /single-product/ss-steel-new-dinning-table-ce9d5bc9-7ce4-453e-999a-cf933387a3e4/ HTTP/1.1" 200 44555
