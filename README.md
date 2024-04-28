@@ -50,11 +50,11 @@ python manage.py runserver
 
 ### Demo dotend 
 
-*SCR_KEY = 'secret key'
-*DEBUG_STATUS = True
-*ALLOWED_HOSTS='allow hosts'
-*DB_NAME = 'db name'
-*DB_USER = 'db user'
-*DB_PASSWORD = 'db password'
-*DB_HOST = 'db host'
-*DB_PORT = 'db port'
+###### SCR_KEY = 'secret key'
+###### DEBUG_STATUS = True
+###### ALLOWED_HOSTS='allow hosts'
+###### DB_NAME = 'db name'
+###### DB_USER = 'db user'
+###### DB_PASSWORD = 'db password'
+###### DB_HOST = 'db host'
+###### DB_PORT = 'db port'
