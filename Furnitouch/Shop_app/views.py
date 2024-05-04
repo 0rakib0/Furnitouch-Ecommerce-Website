@@ -7,6 +7,8 @@ from django.template import TemplateDoesNotExist
 from django.contrib import messages
 from .models import ProductMoreImage
 from django.db.models import Q
+from django.db.models import Prefetch
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 
@@ -16,41 +18,32 @@ def Shop_page(request):
         sort_value = request.GET.get('sort-value')
     main_category = request.GET.get('main-category')
     category_id = request.GET.get('category')
-    sub_category_id = request.GET.get('sub-category')
 
     
-    if main_category:
-        main_cat_id = Main_Category.objects.get(slug=main_category)
-    elif category_id:
-        category_id = Category.objects.get(slug=category_id)
-    elif sub_category_id:
-        subcategory_id = SubCategory.objects.get(slug=sub_category_id)
+    
+    product_query = Product.objects.select_related('product_main_category', 'product_category')
    
     
 
     if main_category !=None:
-        product = Product.objects.filter(product_main_category=main_cat_id)
+        product = product_query.filter(product_main_category__slug=main_category)
     elif category_id !=None:
-        product = Product.objects.filter(product_category=category_id)
-    elif sub_category_id !=None:
-        product = Product.objects.filter(product_sub_category=subcategory_id)
+        product = product_query.filter(product_category__slug=category_id)
     elif sort_value == 'a-z':
-        product = Product.objects.all().order_by('roduct_title')
+        product = product_query.all().order_by('roduct_title')
     elif sort_value == 'z-a':
-        product = Product.objects.all().order_by('-roduct_title')
+        product = product_query.all().order_by('-roduct_title')
     else:
-        product = Product.objects.all().order_by('-id')
+        product = product_query.all().order_by('-id')
     
 
     main_category = Main_Category.objects.all()
     category = Category.objects.all()
-    cub_category = SubCategory.objects.all()
     banner = ProductPageBanner.objects.all()
     
     print(banner)
     context = {
         'category':category,
-        'cub_category':cub_category,
         'main_category':main_category,
         'product':product,
         'banner':banner
@@ -62,9 +55,8 @@ def Single_Product(request, slug):
     save_money = None
     main_category = Main_Category.objects.all()
     category = Category.objects.all()
-    cub_category = SubCategory.objects.all()
     releted_product = Product.objects.filter()
-    product = Product.objects.get(slug=slug)
+    product = get_object_or_404(Product, slug=slug)
     
     
     if request.method == 'POST':
@@ -109,7 +101,6 @@ def Single_Product(request, slug):
 
     context = {
         'category':category,
-        'cub_category':cub_category,
         'main_category':main_category,
         'product':product,
         'productImages':productImages,
@@ -157,6 +148,7 @@ def Wish_list(request):
     }
     return render(request, 'shop_app/wishlist.html', context)
 
+@login_required
 def Remove_Wish_List(request, id):
     print(id)
     wishList = WishList.objects.get(id=id, user=request.user)
@@ -184,7 +176,7 @@ def Shopping_Card(request):
         }
         return render(request, 'shop_app/shoping_card.html', context)
     else:
-        messages.warning(request, "You don't have any iten in your cart!")
+        messages.warning(request, "You don't have any item in your cart!")
         return redirect('Home:home')
 
 

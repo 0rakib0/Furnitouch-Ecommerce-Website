@@ -21,7 +21,6 @@ def Home(request):
     profile = None
     main_category = Main_Category.objects.all()
     category = Category.objects.all()[:12]
-    cub_category = SubCategory.objects.all()
     if request.user.is_authenticated:
             profile = Profile.objects.get(user=request.user)
     new_product = Product.objects.filter(is_newarival=True).order_by('-id')[:5]
@@ -35,7 +34,6 @@ def Home(request):
     
     context = {
         'category':category,
-        'cub_category':cub_category,
         'main_category':main_category,
         'profile':profile,
         'new_product':new_product,

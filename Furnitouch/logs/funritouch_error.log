@@ -1,0 +1,207 @@
+ERROR 2024-05-04 17:50:37,656 log log.py 241 log_response Internal Server Error: /shop-page/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\fields\__init__.py", line 2018, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 34, in Shop_page
+    product = product_query.filter(product_category=category_id)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1439, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1446, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\fields\__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558'.
+WARNING 2024-05-04 17:50:37,888 log log.py 241 log_response Not Found: /favicon.ico
+ERROR 2024-05-04 17:52:38,982 log log.py 241 log_response Internal Server Error: /shop-page/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\fields\__init__.py", line 2018, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 34, in Shop_page
+    product = product_query.filter(product_category=category_id)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1439, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1446, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\fields\__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558'.
+ERROR 2024-05-04 18:03:47,135 log log.py 241 log_response Internal Server Error: /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 108, in Single_Product
+    'releted_product':releted_product,
+NameError: name 'releted_product' is not defined
+ERROR 2024-05-04 18:04:10,858 log log.py 241 log_response Internal Server Error: /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 113, in Single_Product
+    return render(request, 'shop_app/single_products.html', context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'Main_Category' object is not iterable
+ERROR 2024-05-04 18:04:46,231 log log.py 241 log_response Internal Server Error: /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 103, in Single_Product
+    'cub_category':cub_category,
+NameError: name 'cub_category' is not defined
+ERROR 2024-05-04 18:06:18,611 log log.py 241 log_response Internal Server Error: /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 59, in Single_Product
+    product = get_object_or_404(Product.objects.get(slug=slug))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\shortcuts.py", line 80, in get_object_or_404
+    raise ValueError(
+ValueError: First argument to get_object_or_404() must be a Model, Manager, or QuerySet, not 'Product'.
+ERROR 2024-05-04 18:06:19,600 log log.py 241 log_response Internal Server Error: /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 59, in Single_Product
+    product = get_object_or_404(Product.objects.get(slug=slug))
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\shortcuts.py", line 80, in get_object_or_404
+    raise ValueError(
+ValueError: First argument to get_object_or_404() must be a Model, Manager, or QuerySet, not 'Product'.
+ERROR 2024-05-04 18:07:11,692 log log.py 241 log_response Internal Server Error: /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 59, in Single_Product
+    product = get_object_or_404(slug=slug)
+TypeError: get_object_or_404() missing 1 required positional argument: 'klass'
+ERROR 2024-05-04 18:07:19,298 log log.py 241 log_response Internal Server Error: /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 59, in Single_Product
+    product = get_object_or_404(slug=slug)
+TypeError: get_object_or_404() missing 1 required positional argument: 'klass'
+WARNING 2024-05-04 18:17:06,725 log log.py 241 log_response Not Found: /Dashbord/profile_pic/99094220_WJWyfe7.jpg
+ERROR 2024-05-04 18:17:17,951 log log.py 241 log_response Internal Server Error: /shoping-card/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 168, in Shopping_Card
+    if shop_card.exists() and order.exists():
+AttributeError: 'Shoping_Card' object has no attribute 'exists'
+ERROR 2024-05-04 18:18:32,655 log log.py 241 log_response Internal Server Error: /shoping-card/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py", line 169, in Shopping_Card
+    orders = order[0]
+TypeError: 'Order' object is not subscriptable
+WARNING 2024-05-04 18:18:53,105 log log.py 241 log_response Not Found: /shoping-card/products/SF-1256-N.jpg
+WARNING 2024-05-04 18:19:05,772 log log.py 241 log_response Not Found: /shoping-card/products/SF-1256-N.jpg
+WARNING 2024-05-04 18:19:17,793 log log.py 241 log_response Not Found: /shoping-card/products/BD-1063.jpg
+WARNING 2024-05-04 18:19:17,802 log log.py 241 log_response Not Found: /shoping-card/products/SF-1256-N.jpg

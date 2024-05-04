@@ -5,3 +5,471 @@ INFO 2024-04-23 12:01:58,893 Thread-3 3852                 basehttp basehttp.py 
 INFO 2024-04-23 12:01:58,963 Thread-3 3852                 basehttp basehttp.py 187 django.server log_message 3280 "GET /media/products/DI-911.jpg HTTP/1.1" 200 573269
 INFO 2024-04-23 12:02:00,942 Thread-3 3852                 basehttp basehttp.py 187 django.server log_message 3280 "GET /single-product/ss-steel-new-dinning-table-ce9d5bc9-7ce4-453e-999a-cf933387a3e4/ HTTP/1.1" 200 44555
 INFO 2024-04-28 11:57:55,934 MainThread 8640                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 12032 Watching for file changes with StatReloader
+INFO 2024-04-28 11:58:03,116 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET / HTTP/1.1" 200 62472
+INFO 2024-04-28 11:58:03,178 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/fontawesome-stars.css HTTP/1.1" 200 979
+INFO 2024-04-28 11:58:03,193 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/font-awesome.min.css HTTP/1.1" 200 31024
+INFO 2024-04-28 11:58:03,198 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/material-design-iconic-font.min.css HTTP/1.1" 200 70827
+INFO 2024-04-28 11:58:03,256 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/meanmenu.css HTTP/1.1" 200 2621
+INFO 2024-04-28 11:58:03,259 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/owl.carousel.min.css HTTP/1.1" 200 2936
+INFO 2024-04-28 11:58:03,260 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/slick.css HTTP/1.1" 200 1729
+INFO 2024-04-28 11:58:03,284 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/venobox.css HTTP/1.1" 200 11453
+INFO 2024-04-28 11:58:03,297 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/jquery-ui.min.css HTTP/1.1" 200 17598
+INFO 2024-04-28 11:58:03,299 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/animate.css HTTP/1.1" 200 75599
+INFO 2024-04-28 11:58:03,316 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/nice-select.css HTTP/1.1" 200 4007
+INFO 2024-04-28 11:58:03,334 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/magnific-popup.css HTTP/1.1" 200 7686
+INFO 2024-04-28 11:58:03,354 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+INFO 2024-04-28 11:58:03,384 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/responsive.css HTTP/1.1" 200 19863
+INFO 2024-04-28 11:58:03,417 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/style.css HTTP/1.1" 200 128739
+INFO 2024-04-28 11:58:03,421 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/css/helper.css HTTP/1.1" 200 238911
+INFO 2024-04-28 11:58:03,432 Thread-4 8112                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/images/menu/logo/logo3.png HTTP/1.1" 200 15900
+INFO 2024-04-28 11:58:03,450 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/sofa_icon_1.png HTTP/1.1" 200 1240
+INFO 2024-04-28 11:58:03,491 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/vendor/modernizr-2.8.3.min.js HTTP/1.1" 200 15514
+INFO 2024-04-28 11:58:03,633 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/dressers.png HTTP/1.1" 200 3008
+INFO 2024-04-28 11:58:03,636 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/bed.png HTTP/1.1" 200 4628
+INFO 2024-04-28 11:58:03,669 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/wardrobe-units.png HTTP/1.1" 200 2928
+INFO 2024-04-28 11:58:03,692 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/my-order.js HTTP/1.1" 200 3092
+INFO 2024-04-28 11:58:03,749 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/vendor/popper.min.js HTTP/1.1" 200 19188
+INFO 2024-04-28 11:58:03,806 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/vendor/jquery-1.12.4.min.js HTTP/1.1" 200 97162
+INFO 2024-04-28 11:58:03,834 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 48944
+INFO 2024-04-28 11:58:03,862 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/ajax-mail.js HTTP/1.1" 200 1249
+INFO 2024-04-28 11:58:03,890 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery.meanmenu.min.js HTTP/1.1" 200 4019
+INFO 2024-04-28 11:58:03,920 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/wow.min.js HTTP/1.1" 200 8415
+INFO 2024-04-28 11:58:03,953 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/slick.min.js HTTP/1.1" 200 41953
+INFO 2024-04-28 11:58:03,973 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/owl.carousel.min.js HTTP/1.1" 200 42766
+INFO 2024-04-28 11:58:04,067 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery.magnific-popup.min.js HTTP/1.1" 200 20892
+INFO 2024-04-28 11:58:04,078 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/isotope.pkgd.min.js HTTP/1.1" 200 35313
+INFO 2024-04-28 11:58:04,115 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/imagesloaded.pkgd.min.js HTTP/1.1" 200 5559
+INFO 2024-04-28 11:58:04,194 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery.counterup.min.js HTTP/1.1" 200 1067
+INFO 2024-04-28 11:58:04,198 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery.mixitup.min.js HTTP/1.1" 200 28935
+INFO 2024-04-28 11:58:04,258 Thread-4 8112                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery.countdown.min.js HTTP/1.1" 200 5339
+INFO 2024-04-28 11:58:04,325 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery-ui.min.js HTTP/1.1" 200 22224
+INFO 2024-04-28 11:58:04,341 Thread-4 8112                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/fonts/fontawesome-webfont3e6e.woff2?v=4.7.0 HTTP/1.1" 200 77160
+INFO 2024-04-28 11:58:04,343 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/venobox.min.js HTTP/1.1" 200 9756
+INFO 2024-04-28 11:58:04,358 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery.nice-select.min.js HTTP/1.1" 200 2942
+INFO 2024-04-28 11:58:04,364 Thread-5 2856                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/waypoints.min.js HTTP/1.1" 200 8044
+INFO 2024-04-28 11:58:04,418 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/Chest-of-Drawers.png HTTP/1.1" 200 2846
+INFO 2024-04-28 11:58:04,419 Thread-6 5216                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/jquery.barrating.min.js HTTP/1.1" 200 5826
+INFO 2024-04-28 11:58:04,427 Thread-5 2856                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/side-tables.png HTTP/1.1" 200 3410
+INFO 2024-04-28 11:58:04,432 Thread-4 8112                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/tv-units.png HTTP/1.1" 200 4854
+INFO 2024-04-28 11:58:04,459 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/images/menu/li-bg-menu.jpg HTTP/1.1" 200 13572
+INFO 2024-04-28 11:58:04,473 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/shoe-rakes.png HTTP/1.1" 200 7580
+INFO 2024-04-28 11:58:04,484 Thread-6 5216                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/chairs.png HTTP/1.1" 200 9580
+INFO 2024-04-28 11:58:04,488 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/study-table.png HTTP/1.1" 200 5150
+INFO 2024-04-28 11:58:04,538 Thread-5 2856                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/book-cases.png HTTP/1.1" 200 5440
+INFO 2024-04-28 11:58:04,545 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/scrollUp.min.js HTTP/1.1" 200 2139
+INFO 2024-04-28 11:58:04,550 Thread-4 8112                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/category_Pic/Crockery-Units.png HTTP/1.1" 200 8064
+INFO 2024-04-28 11:58:04,551 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /static/js/main.js HTTP/1.1" 200 15887
+INFO 2024-04-28 11:58:04,562 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/BD-1063.jpg HTTP/1.1" 200 684710
+INFO 2024-04-28 11:58:04,632 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/CT-657.jpg HTTP/1.1" 200 941411
+INFO 2024-04-28 11:58:04,651 Thread-6 5216                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/SF-1256-N.jpg HTTP/1.1" 200 716873
+INFO 2024-04-28 11:58:04,660 Thread-4 8112                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/DI-921_n7nIcCx.jpg HTTP/1.1" 200 797588
+INFO 2024-04-28 11:58:04,709 Thread-5 2856                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/SF-1514.jpg HTTP/1.1" 200 942255
+INFO 2024-04-28 11:58:04,740 Thread-3 3676                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/SF-1510.jpg HTTP/1.1" 200 796913
+INFO 2024-04-28 11:58:04,753 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/SF-1517.jpg HTTP/1.1" 200 534253
+INFO 2024-04-28 11:58:04,763 Thread-6 5216                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/bannerImage/New_Project.png HTTP/1.1" 200 138840
+INFO 2024-04-28 11:58:04,763 Thread-4 8112                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/bannerImage/image-1.jpg HTTP/1.1" 200 49507
+INFO 2024-04-28 11:58:04,768 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/SF-1513.jpg HTTP/1.1" 200 610627
+INFO 2024-04-28 11:58:09,574 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /single-product/exclusive-design-godi-bed-b5316c0d-6b10-40c7-8b46-06e9e65eddd1/ HTTP/1.1" 200 48356
+INFO 2024-04-28 11:58:09,648 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/BD-1055.jpg HTTP/1.1" 200 513016
+INFO 2024-04-28 11:58:09,649 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/BD-1058.jpg HTTP/1.1" 200 514258
+INFO 2024-04-28 11:58:09,726 Thread-1 6528                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/BD-1053.jpg HTTP/1.1" 200 279159
+INFO 2024-04-28 11:58:09,732 Thread-6 5216                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/BD-1048_HXWshNS.jpg HTTP/1.1" 200 313904
+INFO 2024-04-28 11:58:09,775 Thread-2 9032                 basehttp basehttp.py 187 django.server log_message 12032 "GET /media/products/BD-1050.jpg HTTP/1.1" 200 322482
+INFO 2024-05-04 17:25:44,401 MainThread 2032                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13064 Watching for file changes with StatReloader
+INFO 2024-05-04 17:25:49,782 Thread-1 9952                 basehttp basehttp.py 187 django.server log_message 13064 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-05-04 17:25:49,913 Thread-1 9952                 basehttp basehttp.py 187 django.server log_message 13064 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2215
+INFO 2024-05-04 17:25:52,792 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET / HTTP/1.1" 200 62472
+INFO 2024-05-04 17:25:52,836 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/fontawesome-stars.css HTTP/1.1" 200 979
+INFO 2024-05-04 17:25:52,848 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/material-design-iconic-font.min.css HTTP/1.1" 200 70827
+INFO 2024-05-04 17:25:52,858 Thread-4 2824                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/font-awesome.min.css HTTP/1.1" 200 31024
+INFO 2024-05-04 17:25:52,896 Thread-4 2824                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/meanmenu.css HTTP/1.1" 200 2621
+INFO 2024-05-04 17:25:52,901 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/owl.carousel.min.css HTTP/1.1" 200 2936
+INFO 2024-05-04 17:25:52,910 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/slick.css HTTP/1.1" 200 1729
+INFO 2024-05-04 17:25:52,929 Thread-4 2824                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/animate.css HTTP/1.1" 200 75599
+INFO 2024-05-04 17:25:52,930 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/venobox.css HTTP/1.1" 200 11453
+INFO 2024-05-04 17:25:52,935 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/jquery-ui.min.css HTTP/1.1" 200 17598
+INFO 2024-05-04 17:25:52,956 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/nice-select.css HTTP/1.1" 200 4007
+INFO 2024-05-04 17:25:52,958 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/magnific-popup.css HTTP/1.1" 200 7686
+INFO 2024-05-04 17:25:52,988 Thread-4 2824                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/bootstrap.min.css HTTP/1.1" 200 144877
+INFO 2024-05-04 17:25:53,021 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/responsive.css HTTP/1.1" 200 19863
+INFO 2024-05-04 17:25:53,022 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/style.css HTTP/1.1" 200 128739
+INFO 2024-05-04 17:25:53,039 Thread-4 2824                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/css/helper.css HTTP/1.1" 200 238911
+INFO 2024-05-04 17:25:53,069 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/images/menu/logo/logo3.png HTTP/1.1" 200 15900
+INFO 2024-05-04 17:25:53,080 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/sofa_icon_1.png HTTP/1.1" 200 1240
+INFO 2024-05-04 17:25:53,105 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/bed.png HTTP/1.1" 200 4628
+INFO 2024-05-04 17:25:53,111 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/dressers.png HTTP/1.1" 200 3008
+INFO 2024-05-04 17:25:53,129 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/wardrobe-units.png HTTP/1.1" 200 2928
+INFO 2024-05-04 17:25:53,132 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/vendor/modernizr-2.8.3.min.js HTTP/1.1" 200 15514
+INFO 2024-05-04 17:25:53,173 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/my-order.js HTTP/1.1" 200 3092
+INFO 2024-05-04 17:25:53,215 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/vendor/popper.min.js HTTP/1.1" 200 19188
+INFO 2024-05-04 17:25:53,243 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/vendor/jquery-1.12.4.min.js HTTP/1.1" 200 97162
+INFO 2024-05-04 17:25:53,275 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/ajax-mail.js HTTP/1.1" 200 1249
+INFO 2024-05-04 17:25:53,300 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery.meanmenu.min.js HTTP/1.1" 200 4019
+INFO 2024-05-04 17:25:53,301 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/bootstrap.min.js HTTP/1.1" 200 48944
+INFO 2024-05-04 17:25:53,335 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/wow.min.js HTTP/1.1" 200 8415
+INFO 2024-05-04 17:25:53,351 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/slick.min.js HTTP/1.1" 200 41953
+INFO 2024-05-04 17:25:53,415 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery.magnific-popup.min.js HTTP/1.1" 200 20892
+INFO 2024-05-04 17:25:53,421 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/owl.carousel.min.js HTTP/1.1" 200 42766
+INFO 2024-05-04 17:25:53,461 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/imagesloaded.pkgd.min.js HTTP/1.1" 200 5559
+INFO 2024-05-04 17:25:53,469 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/isotope.pkgd.min.js HTTP/1.1" 200 35313
+INFO 2024-05-04 17:25:53,508 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery.mixitup.min.js HTTP/1.1" 200 28935
+INFO 2024-05-04 17:25:53,511 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery.countdown.min.js HTTP/1.1" 200 5339
+INFO 2024-05-04 17:25:53,540 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery.counterup.min.js HTTP/1.1" 200 1067
+INFO 2024-05-04 17:25:53,549 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/waypoints.min.js HTTP/1.1" 200 8044
+INFO 2024-05-04 17:25:53,581 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery.barrating.min.js HTTP/1.1" 200 5826
+INFO 2024-05-04 17:25:53,594 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery-ui.min.js HTTP/1.1" 200 22224
+INFO 2024-05-04 17:25:53,620 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/venobox.min.js HTTP/1.1" 200 9756
+INFO 2024-05-04 17:25:53,623 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/jquery.nice-select.min.js HTTP/1.1" 200 2942
+INFO 2024-05-04 17:25:53,628 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/scrollUp.min.js HTTP/1.1" 200 2139
+INFO 2024-05-04 17:25:53,643 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/Crockery-Units.png HTTP/1.1" 200 8064
+INFO 2024-05-04 17:25:53,654 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/js/main.js HTTP/1.1" 200 15887
+INFO 2024-05-04 17:25:53,660 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/Chest-of-Drawers.png HTTP/1.1" 200 2846
+INFO 2024-05-04 17:25:53,688 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/shoe-rakes.png HTTP/1.1" 200 7580
+INFO 2024-05-04 17:25:53,689 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/tv-units.png HTTP/1.1" 200 4854
+INFO 2024-05-04 17:25:53,690 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/study-table.png HTTP/1.1" 200 5150
+INFO 2024-05-04 17:25:53,794 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/fonts/fontawesome-webfont3e6e.woff2?v=4.7.0 HTTP/1.1" 200 77160
+INFO 2024-05-04 17:25:53,807 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /static/images/menu/li-bg-menu.jpg HTTP/1.1" 200 13572
+INFO 2024-05-04 17:25:53,807 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/bannerImage/image-1.jpg HTTP/1.1" 200 49507
+INFO 2024-05-04 17:25:53,822 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/bannerImage/New_Project.png HTTP/1.1" 200 138840
+INFO 2024-05-04 17:25:53,836 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/side-tables.png HTTP/1.1" 200 3410
+INFO 2024-05-04 17:25:53,837 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/book-cases.png HTTP/1.1" 200 5440
+INFO 2024-05-04 17:25:53,837 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/category_Pic/chairs.png HTTP/1.1" 200 9580
+INFO 2024-05-04 17:25:53,936 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/BD-1063.jpg HTTP/1.1" 200 684710
+INFO 2024-05-04 17:25:53,948 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/CT-657.jpg HTTP/1.1" 200 941411
+INFO 2024-05-04 17:25:53,976 Thread-6 14392                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/SF-1256-N.jpg HTTP/1.1" 200 716873
+INFO 2024-05-04 17:25:54,014 Thread-4 2824                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/DI-921_n7nIcCx.jpg HTTP/1.1" 200 797588
+INFO 2024-05-04 17:25:54,052 Thread-5 2428                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/SF-1513.jpg HTTP/1.1" 200 610627
+INFO 2024-05-04 17:25:54,076 Thread-7 14880                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/SF-1510.jpg HTTP/1.1" 200 796913
+INFO 2024-05-04 17:25:54,089 Thread-8 13764                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/SF-1514.jpg HTTP/1.1" 200 942255
+INFO 2024-05-04 17:25:54,119 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/SF-1517.jpg HTTP/1.1" 200 534253
+INFO 2024-05-04 17:25:59,670 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /shop-page/?main-category=bedroom-4b6eec0b-5898-4d32-8349-4cb240bca10e HTTP/1.1" 200 32875
+INFO 2024-05-04 17:25:59,742 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/banner/dac8de183419987.653fbc5481110.jpg HTTP/1.1" 200 56361
+INFO 2024-05-04 17:26:05,972 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:26:06,055 Thread-3 256                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/TV-534.jpg HTTP/1.1" 200 324086
+INFO 2024-05-04 17:26:06,062 Thread-8 13764                 basehttp basehttp.py 187 django.server log_message 13064 "GET /media/products/DI-911.jpg HTTP/1.1" 200 573269
+INFO 2024-05-04 17:26:18,851 Thread-8 13764                 basehttp basehttp.py 187 django.server log_message 13064 "GET /single-product/new-design-supersoft-sofa-new-design-supersoft-sofa-new-design-supersoft-sofa-a5d34d5b-6499-4ac3-b9c3-ef753d8d097f/ HTTP/1.1" 200 55920
+INFO 2024-05-04 17:26:36,576 Thread-8 13764                 basehttp basehttp.py 187 django.server log_message 13064 "GET /my-order/ HTTP/1.1" 302 0
+INFO 2024-05-04 17:26:36,583 Thread-8 13764                 basehttp basehttp.py 187 django.server log_message 13064 "GET /login/?next=/my-order/ HTTP/1.1" 302 0
+INFO 2024-05-04 17:26:36,624 Thread-8 13764                 basehttp basehttp.py 187 django.server log_message 13064 "GET /Account/ HTTP/1.1" 200 21224
+INFO 2024-05-04 17:28:20,541 MainThread 2032                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13064 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:28:21,979 MainThread 4392                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 10512 Watching for file changes with StatReloader
+INFO 2024-05-04 17:28:23,480 Thread-1 9760                 basehttp basehttp.py 187 django.server log_message 10512 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:28:25,638 Thread-1 9760                 basehttp basehttp.py 187 django.server log_message 10512 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:29:42,665 MainThread 4392                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10512 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 17:29:43,639 MainThread 6844                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11832 Watching for file changes with StatReloader
+INFO 2024-05-04 17:42:53,270 MainThread 6844                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11832 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:42:54,638 MainThread 2848                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14596 Watching for file changes with StatReloader
+INFO 2024-05-04 17:43:06,441 MainThread 2848                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14596 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:43:07,426 MainThread 10180                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13172 Watching for file changes with StatReloader
+INFO 2024-05-04 17:43:12,622 Thread-1 6048                 basehttp basehttp.py 187 django.server log_message 13172 "GET /shop-page/ HTTP/1.1" 200 21013
+INFO 2024-05-04 17:43:16,561 Thread-1 6048                 basehttp basehttp.py 187 django.server log_message 13172 "GET /shop-page/ HTTP/1.1" 200 21013
+INFO 2024-05-04 17:43:17,154 Thread-1 6048                 basehttp basehttp.py 187 django.server log_message 13172 "GET /shop-page/ HTTP/1.1" 200 21013
+INFO 2024-05-04 17:43:17,448 Thread-1 6048                 basehttp basehttp.py 187 django.server log_message 13172 "GET /shop-page/ HTTP/1.1" 200 21013
+INFO 2024-05-04 17:43:17,768 Thread-1 6048                 basehttp basehttp.py 187 django.server log_message 13172 "GET /shop-page/ HTTP/1.1" 200 21013
+INFO 2024-05-04 17:43:22,247 MainThread 10180                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13172 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:43:23,422 MainThread 5060                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11088 Watching for file changes with StatReloader
+INFO 2024-05-04 17:43:24,082 Thread-1 3956                 basehttp basehttp.py 187 django.server log_message 11088 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:47:15,382 MainThread 5060                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11088 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:47:16,292 MainThread 12584                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 5504 Watching for file changes with StatReloader
+INFO 2024-05-04 17:47:23,418 MainThread 12584                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 5504 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:47:24,285 MainThread 3900                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3460 Watching for file changes with StatReloader
+INFO 2024-05-04 17:47:32,383 MainThread 3900                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3460 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:47:33,294 MainThread 14468                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6472 Watching for file changes with StatReloader
+INFO 2024-05-04 17:47:37,579 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:47:40,078 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:47:41,692 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:47:43,017 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:47:43,719 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:47:44,485 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:48:04,184 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/?category=almira-63e4c4ea-a6ee-4692-91b0-502897399cf0 HTTP/1.1" 200 30720
+INFO 2024-05-04 17:48:07,604 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/?main-category=kichen-8ea5bbf1-6320-444b-9155-dbd1e48bf082 HTTP/1.1" 200 30720
+INFO 2024-05-04 17:48:10,759 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/?main-category=living-9e963b29-a770-44ec-85b5-516e7320e385 HTTP/1.1" 200 46694
+INFO 2024-05-04 17:48:13,040 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /shop-page/?category=tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558 HTTP/1.1" 200 32758
+INFO 2024-05-04 17:48:15,692 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET / HTTP/1.1" 200 62472
+INFO 2024-05-04 17:48:15,730 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/sofa_icon_1.png HTTP/1.1" 200 1240
+INFO 2024-05-04 17:48:15,735 Thread-2 13228                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/bed.png HTTP/1.1" 200 4628
+INFO 2024-05-04 17:48:15,748 Thread-2 13228                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/dressers.png HTTP/1.1" 200 3008
+INFO 2024-05-04 17:48:15,749 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/wardrobe-units.png HTTP/1.1" 200 2928
+INFO 2024-05-04 17:48:15,768 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/Crockery-Units.png HTTP/1.1" 200 8064
+INFO 2024-05-04 17:48:15,773 Thread-2 13228                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/Chest-of-Drawers.png HTTP/1.1" 200 2846
+INFO 2024-05-04 17:48:15,783 Thread-3 14620                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/tv-units.png HTTP/1.1" 200 4854
+INFO 2024-05-04 17:48:15,804 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/chairs.png HTTP/1.1" 200 9580
+INFO 2024-05-04 17:48:15,805 Thread-2 13228                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/side-tables.png HTTP/1.1" 200 3410
+INFO 2024-05-04 17:48:15,808 Thread-4 8500                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/shoe-rakes.png HTTP/1.1" 200 7580
+INFO 2024-05-04 17:48:15,810 Thread-6 11160                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/book-cases.png HTTP/1.1" 200 5440
+INFO 2024-05-04 17:48:15,818 Thread-5 5220                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/category_Pic/study-table.png HTTP/1.1" 200 5150
+INFO 2024-05-04 17:48:15,913 Thread-6 11160                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/bannerImage/New_Project.png HTTP/1.1" 200 138840
+INFO 2024-05-04 17:48:15,922 Thread-5 5220                 basehttp basehttp.py 187 django.server log_message 6472 "GET /media/bannerImage/image-1.jpg HTTP/1.1" 200 49507
+INFO 2024-05-04 17:49:56,817 MainThread 14468                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6472 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:49:57,688 MainThread 11472                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7796 Watching for file changes with StatReloader
+INFO 2024-05-04 17:49:59,546 MainThread 11472                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7796 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:50:00,516 MainThread 12004                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11520 Watching for file changes with StatReloader
+INFO 2024-05-04 17:50:20,419 MainThread 12004                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11520 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:50:21,406 MainThread 12028                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3132 Watching for file changes with StatReloader
+INFO 2024-05-04 17:50:25,253 Thread-1 6340                 basehttp basehttp.py 187 django.server log_message 3132 "GET / HTTP/1.1" 200 62472
+INFO 2024-05-04 17:50:29,703 Thread-1 6340                 basehttp basehttp.py 187 django.server log_message 3132 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:50:33,504 Thread-1 6340                 basehttp basehttp.py 187 django.server log_message 3132 "GET /shop-page/ HTTP/1.1" 200 51006
+ERROR 2024-05-04 17:50:37,660 Thread-1 6340                 basehttp basehttp.py 187 django.server log_message 3132 "GET /shop-page/?category=tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558 HTTP/1.1" 500 130748
+WARNING 2024-05-04 17:50:37,888 Thread-1 6340                 basehttp basehttp.py 187 django.server log_message 3132 "GET /favicon.ico HTTP/1.1" 404 14146
+INFO 2024-05-04 17:50:58,666 MainThread 12028                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3132 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:50:59,791 MainThread 2592                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 2512 Watching for file changes with StatReloader
+INFO 2024-05-04 17:51:00,302 Thread-2 11040                 basehttp basehttp.py 187 django.server log_message 2512 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:51:03,305 Thread-2 11040                 basehttp basehttp.py 187 django.server log_message 2512 "GET /shop-page/?category=tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558 HTTP/1.1" 200 32758
+INFO 2024-05-04 17:51:20,101 MainThread 2592                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 2512 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:51:20,996 MainThread 14840                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3924 Watching for file changes with StatReloader
+INFO 2024-05-04 17:51:22,669 MainThread 14840                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3924 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:51:23,519 MainThread 14688                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 4992 Watching for file changes with StatReloader
+INFO 2024-05-04 17:52:24,546 MainThread 14688                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4992 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:52:25,498 MainThread 14684                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14768 Watching for file changes with StatReloader
+INFO 2024-05-04 17:52:35,054 Thread-1 7440                 basehttp basehttp.py 187 django.server log_message 14768 "GET /shop-page/ HTTP/1.1" 200 51006
+ERROR 2024-05-04 17:52:38,985 Thread-1 7440                 basehttp basehttp.py 187 django.server log_message 14768 "GET /shop-page/?category=tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558 HTTP/1.1" 500 130750
+INFO 2024-05-04 17:53:21,608 MainThread 14684                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14768 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:53:22,649 MainThread 10528                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6608 Watching for file changes with StatReloader
+INFO 2024-05-04 17:53:30,761 MainThread 10528                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6608 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:53:31,753 MainThread 5336                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14556 Watching for file changes with StatReloader
+INFO 2024-05-04 17:53:33,404 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/ HTTP/1.1" 200 51006
+INFO 2024-05-04 17:53:35,786 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?main-category=living-9e963b29-a770-44ec-85b5-516e7320e385 HTTP/1.1" 200 46694
+INFO 2024-05-04 17:53:36,792 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558 HTTP/1.1" 200 32758
+INFO 2024-05-04 17:53:40,317 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=shoe-rack-5d92fc61-cdfb-49ca-9114-2e660e40da11 HTTP/1.1" 200 30720
+INFO 2024-05-04 17:53:46,070 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42773
+INFO 2024-05-04 17:53:50,076 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42773
+INFO 2024-05-04 17:56:01,569 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42773
+INFO 2024-05-04 17:56:03,665 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42773
+INFO 2024-05-04 17:56:05,807 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42773
+INFO 2024-05-04 17:56:07,573 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42773
+INFO 2024-05-04 17:56:09,710 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42773
+INFO 2024-05-04 17:56:15,701 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?sort-value=a-z HTTP/1.1" 200 51006
+INFO 2024-05-04 17:56:23,492 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?sort-value=z-a HTTP/1.1" 200 51006
+INFO 2024-05-04 17:56:27,344 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /shop-page/?main-category=bedroom-4b6eec0b-5898-4d32-8349-4cb240bca10e HTTP/1.1" 200 32875
+INFO 2024-05-04 17:56:30,937 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /single-product/exclusive-design-godi-bed-b5316c0d-6b10-40c7-8b46-06e9e65eddd1/ HTTP/1.1" 200 48356
+INFO 2024-05-04 17:56:31,038 Thread-3 6260                 basehttp basehttp.py 187 django.server log_message 14556 "GET /media/products/BD-1055.jpg HTTP/1.1" 200 513016
+INFO 2024-05-04 17:56:31,058 Thread-4 12020                 basehttp basehttp.py 187 django.server log_message 14556 "GET /media/products/BD-1053.jpg HTTP/1.1" 200 279159
+INFO 2024-05-04 17:56:31,059 Thread-1 14580                 basehttp basehttp.py 187 django.server log_message 14556 "GET /media/products/BD-1058.jpg HTTP/1.1" 200 514258
+INFO 2024-05-04 17:56:31,118 Thread-6 3904                 basehttp basehttp.py 187 django.server log_message 14556 "GET /media/products/BD-1048_HXWshNS.jpg HTTP/1.1" 200 313904
+INFO 2024-05-04 17:56:31,138 Thread-5 11960                 basehttp basehttp.py 187 django.server log_message 14556 "GET /media/products/BD-1050.jpg HTTP/1.1" 200 322482
+INFO 2024-05-04 17:56:35,333 Thread-5 11960                 basehttp basehttp.py 187 django.server log_message 14556 "GET / HTTP/1.1" 200 62472
+INFO 2024-05-04 17:57:06,994 MainThread 5336                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14556 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:57:07,825 MainThread 14184                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11868 Watching for file changes with StatReloader
+INFO 2024-05-04 17:57:53,647 MainThread 14184                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11868 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 17:57:54,487 MainThread 7412                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9668 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:17,075 MainThread 7412                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9668 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:18,053 MainThread 3468                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11404 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:26,279 MainThread 3468                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11404 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:27,168 MainThread 13756                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11568 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:30,719 MainThread 13756                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11568 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:31,710 MainThread 11160                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6048 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:34,036 MainThread 11160                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6048 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:35,058 MainThread 7744                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 10000 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:38,508 MainThread 7744                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10000 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:39,405 MainThread 14308                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8704 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:40,713 MainThread 14308                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8704 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:41,611 MainThread 10536                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11356 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:42,852 MainThread 10536                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11356 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:43,731 MainThread 4196                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3840 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:47,202 MainThread 4196                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3840 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:48,045 MainThread 6836                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7880 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:49,326 MainThread 6836                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7880 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:50,295 MainThread 8636                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 10028 Watching for file changes with StatReloader
+INFO 2024-05-04 18:01:58,363 MainThread 8636                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10028 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:01:59,546 MainThread 11188                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6880 Watching for file changes with StatReloader
+INFO 2024-05-04 18:02:16,200 MainThread 11188                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6880 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:02:17,081 MainThread 10396                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15120 Watching for file changes with StatReloader
+INFO 2024-05-04 18:02:18,745 MainThread 10396                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15120 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:02:20,204 MainThread 5084                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 4036 Watching for file changes with StatReloader
+INFO 2024-05-04 18:02:22,929 MainThread 5084                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4036 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:02:23,834 MainThread 5692                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15248 Watching for file changes with StatReloader
+INFO 2024-05-04 18:02:32,998 MainThread 5692                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15248 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:02:34,125 MainThread 5184                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15204 Watching for file changes with StatReloader
+INFO 2024-05-04 18:02:36,073 MainThread 5184                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15204 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:02:37,067 MainThread 4836                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3932 Watching for file changes with StatReloader
+INFO 2024-05-04 18:02:40,477 MainThread 4836                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3932 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:02:41,610 MainThread 4844                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 1240 Watching for file changes with StatReloader
+INFO 2024-05-04 18:03:21,982 MainThread 4844                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 1240 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:03:22,929 MainThread 14716                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3496 Watching for file changes with StatReloader
+INFO 2024-05-04 18:03:27,858 MainThread 14716                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3496 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:03:28,716 MainThread 4472                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14704 Watching for file changes with StatReloader
+INFO 2024-05-04 18:03:34,852 MainThread 4472                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14704 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:03:35,696 MainThread 7772                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7144 Watching for file changes with StatReloader
+ERROR 2024-05-04 18:03:47,137 Thread-1 5304                 basehttp basehttp.py 187 django.server log_message 7144 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 500 77511
+INFO 2024-05-04 18:04:04,950 MainThread 7772                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7144 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:04:05,915 MainThread 14892                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 448 Watching for file changes with StatReloader
+ERROR 2024-05-04 18:04:10,863 Thread-1 6808                 basehttp basehttp.py 187 django.server log_message 448 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 500 185824
+INFO 2024-05-04 18:04:26,130 MainThread 14892                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 448 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:04:27,190 MainThread 1740                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 5976 Watching for file changes with StatReloader
+INFO 2024-05-04 18:04:28,846 MainThread 1740                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 5976 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:04:29,730 MainThread 9756                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3088 Watching for file changes with StatReloader
+INFO 2024-05-04 18:04:31,367 MainThread 9756                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3088 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:04:32,298 MainThread 14576                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 10040 Watching for file changes with StatReloader
+INFO 2024-05-04 18:04:37,348 MainThread 14576                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10040 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:04:38,425 MainThread 9036                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 4856 Watching for file changes with StatReloader
+INFO 2024-05-04 18:04:43,002 MainThread 9036                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4856 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:04:43,871 MainThread 5632                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11752 Watching for file changes with StatReloader
+ERROR 2024-05-04 18:04:46,233 Thread-1 11968                 basehttp basehttp.py 187 django.server log_message 11752 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 500 78371
+INFO 2024-05-04 18:04:56,356 MainThread 5632                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11752 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:04:57,280 MainThread 7292                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8888 Watching for file changes with StatReloader
+INFO 2024-05-04 18:04:57,690 Thread-1 2852                 basehttp basehttp.py 187 django.server log_message 8888 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 200 55992
+INFO 2024-05-04 18:05:56,497 MainThread 7292                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8888 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:05:57,415 MainThread 4308                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 12336 Watching for file changes with StatReloader
+INFO 2024-05-04 18:06:08,773 MainThread 4308                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12336 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:06:10,204 MainThread 2992                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8032 Watching for file changes with StatReloader
+INFO 2024-05-04 18:06:11,644 MainThread 2992                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8032 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:06:12,528 MainThread 15024                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9768 Watching for file changes with StatReloader
+INFO 2024-05-04 18:06:14,150 MainThread 15024                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9768 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:06:15,042 MainThread 7468                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7376 Watching for file changes with StatReloader
+ERROR 2024-05-04 18:06:18,613 Thread-1 7276                 basehttp basehttp.py 187 django.server log_message 7376 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 500 81537
+ERROR 2024-05-04 18:06:19,601 Thread-1 7276                 basehttp basehttp.py 187 django.server log_message 7376 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 500 81537
+INFO 2024-05-04 18:06:56,199 MainThread 7468                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7376 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:06:57,200 MainThread 9604                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 4480 Watching for file changes with StatReloader
+INFO 2024-05-04 18:07:06,330 MainThread 9604                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4480 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:07:07,391 MainThread 9400                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9780 Watching for file changes with StatReloader
+INFO 2024-05-04 18:07:09,752 Thread-1 14856                 basehttp basehttp.py 187 django.server log_message 9780 "GET / HTTP/1.1" 200 62472
+ERROR 2024-05-04 18:07:11,693 Thread-1 14856                 basehttp basehttp.py 187 django.server log_message 9780 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 500 76943
+ERROR 2024-05-04 18:07:19,299 Thread-1 14856                 basehttp basehttp.py 187 django.server log_message 9780 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 500 77080
+INFO 2024-05-04 18:07:59,434 MainThread 9400                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9780 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:08:00,379 MainThread 14692                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14968 Watching for file changes with StatReloader
+INFO 2024-05-04 18:08:02,052 MainThread 14692                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14968 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:08:03,154 MainThread 6348                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8876 Watching for file changes with StatReloader
+INFO 2024-05-04 18:08:05,803 Thread-1 8480                 basehttp basehttp.py 187 django.server log_message 8876 "GET /single-product/ss-steel-exclusive-center-table-0f0077a2-2704-4cf4-8fe6-9222b20b99fa/ HTTP/1.1" 200 55992
+INFO 2024-05-04 18:08:08,653 Thread-1 8480                 basehttp basehttp.py 187 django.server log_message 8876 "GET / HTTP/1.1" 200 62472
+INFO 2024-05-04 18:08:10,409 Thread-1 8480                 basehttp basehttp.py 187 django.server log_message 8876 "GET /single-product/clasic-sofa-set-design-727aef33-dee0-4445-8a0e-572dd435a15a/ HTTP/1.1" 200 55007
+INFO 2024-05-04 18:14:12,891 MainThread 6348                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8876 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:14:13,811 MainThread 3900                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9924 Watching for file changes with StatReloader
+INFO 2024-05-04 18:14:16,595 MainThread 3900                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9924 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:14:17,451 MainThread 7788                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13044 Watching for file changes with StatReloader
+INFO 2024-05-04 18:16:39,463 MainThread 7788                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13044 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:16:40,330 MainThread 8228                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 120 Watching for file changes with StatReloader
+INFO 2024-05-04 18:16:49,576 MainThread 8228                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 120 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:16:50,524 MainThread 8388                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6184 Watching for file changes with StatReloader
+INFO 2024-05-04 18:16:53,863 MainThread 8388                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6184 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:16:54,859 MainThread 15356                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 4972 Watching for file changes with StatReloader
+INFO 2024-05-04 18:16:58,884 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /my-order/ HTTP/1.1" 302 0
+INFO 2024-05-04 18:16:58,888 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /login/?next=/my-order/ HTTP/1.1" 302 0
+INFO 2024-05-04 18:16:58,917 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /Account/ HTTP/1.1" 200 21224
+INFO 2024-05-04 18:17:06,314 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-05-04 18:17:06,497 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /Dashbord/ HTTP/1.1" 200 28786
+INFO 2024-05-04 18:17:06,575 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vendors/feather-icon.css HTTP/1.1" 200 2307
+INFO 2024-05-04 18:17:06,582 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/ratio.css HTTP/1.1" 200 1023
+INFO 2024-05-04 18:17:06,590 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/linearicon.css HTTP/1.1" 200 9149
+INFO 2024-05-04 18:17:06,615 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/remixicon.css HTTP/1.1" 200 110492
+INFO 2024-05-04 18:17:06,617 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vendors/animate.css HTTP/1.1" 200 68740
+INFO 2024-05-04 18:17:06,619 Thread-3 1404                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vendors/themify.css HTTP/1.1" 200 17591
+INFO 2024-05-04 18:17:06,637 Thread-2 9968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vendors/font-awesome.css HTTP/1.1" 200 79039
+INFO 2024-05-04 18:17:06,649 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vendors/slick.css HTTP/1.1" 200 3734
+INFO 2024-05-04 18:17:06,654 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vendors/scrollbar.css HTTP/1.1" 200 3589
+INFO 2024-05-04 18:17:06,659 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vector-map.css HTTP/1.1" 200 6228
+INFO 2024-05-04 18:17:06,700 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/images/logo/1.png HTTP/1.1" 200 4997
+INFO 2024-05-04 18:17:06,701 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/images/logo/1-white.png HTTP/1.1" 200 5393
+WARNING 2024-05-04 18:17:06,735 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /Dashbord/profile_pic/99094220_WJWyfe7.jpg HTTP/1.1" 404 14236
+INFO 2024-05-04 18:17:06,738 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/vendors/bootstrap.css HTTP/1.1" 200 340711
+INFO 2024-05-04 18:17:06,766 Thread-3 1404                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/css/style.css HTTP/1.1" 200 1175676
+INFO 2024-05-04 18:17:06,783 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/icons/feather-icon/feather-icon.js HTTP/1.1" 200 17
+INFO 2024-05-04 18:17:06,800 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/bootstrap/bootstrap.bundle.min.js HTTP/1.1" 200 109777
+INFO 2024-05-04 18:17:06,804 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/icons/feather-icon/feather.min.js HTTP/1.1" 200 90755
+INFO 2024-05-04 18:17:06,840 Thread-2 9968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/jquery-3.6.0.min.js HTTP/1.1" 200 405361
+INFO 2024-05-04 18:17:06,876 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/config.js HTTP/1.1" 200 246
+INFO 2024-05-04 18:17:06,908 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/scrollbar/custom.js HTTP/1.1" 200 104
+INFO 2024-05-04 18:17:06,940 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/tooltip-init.js HTTP/1.1" 200 417
+INFO 2024-05-04 18:17:06,954 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/scrollbar/simplebar.js HTTP/1.1" 200 178273
+INFO 2024-05-04 18:17:06,986 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/notify/index.js HTTP/1.1" 200 491
+INFO 2024-05-04 18:17:07,003 Thread-3 1404                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/notify/bootstrap-notify.min.js HTTP/1.1" 200 15943
+INFO 2024-05-04 18:17:07,174 Thread-2 9968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/sidebar-menu.js HTTP/1.1" 200 14832
+INFO 2024-05-04 18:17:07,190 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/chart/apex-chart/stock-prices.js HTTP/1.1" 200 6009
+INFO 2024-05-04 18:17:07,193 Thread-3 1404                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/chart/apex-chart/chart-custom1.js HTTP/1.1" 200 14783
+INFO 2024-05-04 18:17:07,238 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/chart/apex-chart/moment.min.js HTTP/1.1" 200 74047
+INFO 2024-05-04 18:17:07,268 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/chart/apex-chart/apex-chart1.js HTTP/1.1" 200 933979
+INFO 2024-05-04 18:17:07,282 Thread-2 9968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/fonts/remixicon.woff2?t=1590207869815 HTTP/1.1" 200 125268
+INFO 2024-05-04 18:17:07,298 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/custom-slick.js HTTP/1.1" 200 1713
+INFO 2024-05-04 18:17:07,306 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/fonts/fa-solid-900.woff2 HTTP/1.1" 200 75440
+INFO 2024-05-04 18:17:07,326 Thread-3 1404                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/slick.min.js HTTP/1.1" 200 42863
+INFO 2024-05-04 18:17:07,371 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/chart/apex-chart/apex-chart.js HTTP/1.1" 200 850898
+INFO 2024-05-04 18:17:07,381 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/customizer.js HTTP/1.1" 200 827
+INFO 2024-05-04 18:17:07,384 Thread-2 9968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/ratio.js HTTP/1.1" 200 928
+INFO 2024-05-04 18:17:07,393 Thread-6 4568                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/sidebareffect.js HTTP/1.1" 200 3727
+INFO 2024-05-04 18:17:07,421 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/images/logo/logo-white.png HTTP/1.1" 200 682
+INFO 2024-05-04 18:17:07,425 Thread-2 9968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/images/logo/logo.png HTTP/1.1" 200 448
+INFO 2024-05-04 18:17:07,434 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/js/script.js HTTP/1.1" 200 12129
+INFO 2024-05-04 18:17:07,687 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /static/admin_filse/assets/images/favicon.png HTTP/1.1" 200 416
+INFO 2024-05-04 18:17:12,720 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET / HTTP/1.1" 200 62400
+INFO 2024-05-04 18:17:15,500 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /single-product/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 200 57172
+INFO 2024-05-04 18:17:15,579 Thread-1 2992                 basehttp basehttp.py 187 django.server log_message 4972 "GET /media/products/SF-1465.jpg HTTP/1.1" 200 577673
+INFO 2024-05-04 18:17:15,594 Thread-2 9968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /media/products/SF-1485.jpg HTTP/1.1" 200 598817
+INFO 2024-05-04 18:17:15,600 Thread-4 1400                 basehttp basehttp.py 187 django.server log_message 4972 "GET /media/products/SF-1284-N.jpg HTTP/1.1" 200 727218
+INFO 2024-05-04 18:17:15,610 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /media/products/SF-1484.jpg HTTP/1.1" 200 653434
+INFO 2024-05-04 18:17:17,896 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /add_shopping-card-product/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 302 0
+ERROR 2024-05-04 18:17:17,952 Thread-5 11968                 basehttp basehttp.py 187 django.server log_message 4972 "GET /shoping-card/ HTTP/1.1" 500 81459
+INFO 2024-05-04 18:18:25,686 MainThread 15356                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4972 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:18:26,710 MainThread 7796                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7692 Watching for file changes with StatReloader
+INFO 2024-05-04 18:18:28,265 Thread-1 14348                 basehttp basehttp.py 187 django.server log_message 7692 "GET /single-product/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 200 57306
+ERROR 2024-05-04 18:18:32,656 Thread-1 14348                 basehttp basehttp.py 187 django.server log_message 7692 "GET /shoping-card/ HTTP/1.1" 500 80907
+INFO 2024-05-04 18:18:48,405 MainThread 7796                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7692 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\views.py changed, reloading.
+INFO 2024-05-04 18:18:49,354 MainThread 3736                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 1544 Watching for file changes with StatReloader
+INFO 2024-05-04 18:18:50,020 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /single-product/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 200 57172
+INFO 2024-05-04 18:18:51,415 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /single-product/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 200 57172
+INFO 2024-05-04 18:18:53,050 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/ HTTP/1.1" 200 31460
+WARNING 2024-05-04 18:18:53,106 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/products/SF-1256-N.jpg HTTP/1.1" 404 14218
+INFO 2024-05-04 18:18:58,836 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /single-product/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 200 57172
+INFO 2024-05-04 18:19:05,695 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /increase-quintity/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 302 0
+INFO 2024-05-04 18:19:05,730 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/ HTTP/1.1" 200 31573
+WARNING 2024-05-04 18:19:05,773 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/products/SF-1256-N.jpg HTTP/1.1" 404 14218
+INFO 2024-05-04 18:19:13,925 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shop-page/?main-category=bedroom-4b6eec0b-5898-4d32-8349-4cb240bca10e HTTP/1.1" 200 32803
+INFO 2024-05-04 18:19:13,972 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /media/banner/dac8de183419987.653fbc5481110.jpg HTTP/1.1" 200 56361
+INFO 2024-05-04 18:19:17,622 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /add_shopping-card-product/exclusive-design-godi-bed-b5316c0d-6b10-40c7-8b46-06e9e65eddd1/ HTTP/1.1" 302 0
+INFO 2024-05-04 18:19:17,723 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/ HTTP/1.1" 200 33301
+WARNING 2024-05-04 18:19:17,803 Thread-1 14776                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/products/BD-1063.jpg HTTP/1.1" 404 14212
+WARNING 2024-05-04 18:19:17,803 Thread-2 1552                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/products/SF-1256-N.jpg HTTP/1.1" 404 14218
+INFO 2024-05-04 18:20:08,965 Thread-2 1552                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/ HTTP/1.1" 200 33179
+INFO 2024-05-04 18:20:10,914 Thread-2 1552                 basehttp basehttp.py 187 django.server log_message 1544 "GET /shoping-card/ HTTP/1.1" 200 33179
+INFO 2024-05-04 18:20:22,564 Thread-2 1552                 basehttp basehttp.py 187 django.server log_message 1544 "GET / HTTP/1.1" 200 62400
+INFO 2024-05-04 18:21:29,699 MainThread 3736                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 1544 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Home\views.py changed, reloading.
+INFO 2024-05-04 18:21:30,614 MainThread 10912                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15280 Watching for file changes with StatReloader
+INFO 2024-05-04 18:21:32,262 MainThread 10912                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15280 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Home\views.py changed, reloading.
+INFO 2024-05-04 18:21:33,118 MainThread 13496                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14768 Watching for file changes with StatReloader
+INFO 2024-05-04 18:23:14,867 Thread-1 11536                 basehttp basehttp.py 187 django.server log_message 14768 "GET /?fined_product=Bed HTTP/1.1" 200 29110
+INFO 2024-05-04 18:23:18,755 Thread-1 11536                 basehttp basehttp.py 187 django.server log_message 14768 "GET / HTTP/1.1" 200 62400
+INFO 2024-05-04 18:23:24,707 Thread-1 11536                 basehttp basehttp.py 187 django.server log_message 14768 "GET / HTTP/1.1" 200 62400
+INFO 2024-05-04 18:23:28,503 Thread-1 11536                 basehttp basehttp.py 187 django.server log_message 14768 "GET /single-product/exclusive-furnitouch-sofa-set-design-d33f8a03-359e-4e1b-bbf1-4f9be0fe249c/ HTTP/1.1" 200 57172
+INFO 2024-05-04 18:24:02,430 MainThread 13496                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14768 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:24:03,655 MainThread 15336                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11036 Watching for file changes with StatReloader
+INFO 2024-05-04 18:24:06,516 MainThread 15336                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11036 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:24:07,367 MainThread 12736                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13412 Watching for file changes with StatReloader
+INFO 2024-05-04 18:24:11,758 MainThread 12736                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13412 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:24:12,832 MainThread 10424                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14096 Watching for file changes with StatReloader
+INFO 2024-05-04 18:24:40,520 MainThread 10424                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14096 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:24:41,482 MainThread 5736                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14208 Watching for file changes with StatReloader
+INFO 2024-05-04 18:24:47,303 MainThread 5736                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14208 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:24:48,342 MainThread 14768                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13496 Watching for file changes with StatReloader
+INFO 2024-05-04 18:24:51,068 MainThread 14768                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13496 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:24:52,074 MainThread 4636                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8020 Watching for file changes with StatReloader
+INFO 2024-05-04 18:24:58,701 MainThread 4636                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8020 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:24:59,579 MainThread 15344                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8628 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:02,298 MainThread 15344                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8628 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:03,168 MainThread 4536                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6368 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:07,956 MainThread 4536                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6368 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:08,994 MainThread 6340                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9608 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:16,727 MainThread 6340                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9608 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:17,508 MainThread 8176                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6260 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:19,875 MainThread 8176                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6260 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:21,087 MainThread 14688                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11340 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:24,597 MainThread 14688                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11340 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:25,646 MainThread 14968                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13412 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:28,053 MainThread 14968                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13412 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:29,128 MainThread 14928                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14920 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:31,045 MainThread 14928                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14920 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:32,100 MainThread 6452                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3484 Watching for file changes with StatReloader
+INFO 2024-05-04 18:25:34,801 MainThread 6452                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3484 F:\Furnitouch_Website\rakib\Final Website Project\Furnitouch\Furnitouch\Shop_app\models.py changed, reloading.
+INFO 2024-05-04 18:25:35,743 MainThread 1172                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14708 Watching for file changes with StatReloader
+INFO 2024-05-04 18:26:02,212 MainThread 15356                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 6344 Watching for file changes with StatReloader
+INFO 2024-05-04 18:26:05,912 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET / HTTP/1.1" 200 62400
+INFO 2024-05-04 18:26:07,100 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?main-category=living-9e963b29-a770-44ec-85b5-516e7320e385 HTTP/1.1" 200 46622
+INFO 2024-05-04 18:26:07,134 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /media/products/TV-534.jpg HTTP/1.1" 200 324086
+INFO 2024-05-04 18:26:08,190 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?category=sofa-0d69cda5-1a3e-413d-a4b9-87df897fd3fb HTTP/1.1" 200 42701
+INFO 2024-05-04 18:26:08,865 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?main-category=living-9e963b29-a770-44ec-85b5-516e7320e385 HTTP/1.1" 200 46622
+INFO 2024-05-04 18:26:12,258 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?category=tv-tolly-969f6da3-9c18-4770-b51d-df80e569d558 HTTP/1.1" 200 32686
+INFO 2024-05-04 18:26:18,208 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?main-category=interior-c945fafa-53dc-4947-aacb-cfdef64888b3 HTTP/1.1" 200 30648
+INFO 2024-05-04 18:26:20,568 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?main-category=kichen-8ea5bbf1-6320-444b-9155-dbd1e48bf082 HTTP/1.1" 200 30648
+INFO 2024-05-04 18:26:23,099 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?main-category=dinning-f2fc22f7-97ea-4b8c-a466-84a01dd0e469 HTTP/1.1" 200 32805
+INFO 2024-05-04 18:26:23,137 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /media/products/DI-911.jpg HTTP/1.1" 200 573269
+INFO 2024-05-04 18:26:25,811 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?main-category=bedroom-4b6eec0b-5898-4d32-8349-4cb240bca10e HTTP/1.1" 200 32803
+INFO 2024-05-04 18:26:29,720 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET / HTTP/1.1" 200 62400
+INFO 2024-05-04 18:26:44,419 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET /shop-page/?category=book-shelf-eef3a0fe-8666-4265-92c6-c939c896fa27 HTTP/1.1" 200 30648
+INFO 2024-05-04 18:26:47,091 Thread-1 14096                 basehttp basehttp.py 187 django.server log_message 6344 "GET / HTTP/1.1" 200 62400
