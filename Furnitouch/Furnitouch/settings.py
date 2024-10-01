@@ -29,7 +29,9 @@ SECRET_KEY = os.getenv('SCR_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG_STATUS')
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
+ALLOWED_HOSTS = ['furnitouchbd.com', 'www.furnitouchbd.com', '143.110.244.135', 'localhost']
+
+CSRF_TRUSTED_ORIGINS = ['https://furnitouchbd.com', 'https://www.furnitouchbd.com']
 
 
 # Application definition
