@@ -145,6 +145,7 @@ def Add_New_Product(request):
             productTitle = request.POST.get('product_title')
             productImage = request.FILES.get('product_image')
             productMoreImages = request.FILES.getlist('product_more_image')
+            videoId = request.POST.get('video_id')
             productCode = request.POST.get('product_code')
             productQuentity = request.POST.get('product_quentity')
             productColors = request.POST.get('product_colors')
@@ -191,7 +192,8 @@ def Add_New_Product(request):
                 deepth = productDepth,
                 height = productHeight,
                 main_price = regularPrice,
-                dic_price = discountPrice
+                dic_price = discountPrice,
+                product_video_id = videoId
             )
             
             if isNew:
@@ -238,8 +240,9 @@ def UpdateProduct(request, slug):
         productName = request.POST.get('product_name')
         productTitle = request.POST.get('product_title')
         productImage = request.FILES.get('product_image')
+        videoId = request.POST.get('videoId')
         productCode = request.POST.get('product_code')
-        productQuentity = request.POST.get('product_quentity')
+        productQuentity = request.POST.get('product_quentity')  
         productColors = request.POST.get('product_colors')
         productKeywords = request.POST.get('product_keyword')
         productFabrics = request.POST.get('product_fabrics')
@@ -281,6 +284,7 @@ def UpdateProduct(request, slug):
         product_object.height = productHeight
         product_object.main_price = regularPrice
         product_object.dic_price = discountPrice
+        product_object.product_video_id = videoId
         
         if productImage != None:
             product_object.image = productImage

@@ -12,7 +12,7 @@
         {% include "include/message.html" %}
         <div class="breadcrumb-content">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="active">{{product.product_name}}</li>
             </ul>
         </div>
@@ -39,19 +39,47 @@
 
                     </div>
                     <div class="product-details-thumbs slider-thumbs-1">
-                        <div class="sm-image"><img src="{{product.image.url}}" alt="product image thumb"></div>
-                        
+
+                        {% if product.product_video_id %}
+                        <div class="sm-image videoLogo">
+                            <button href="#" class="d-block sk-thumbnail rounded mb-6" data-toggle="modal" data-target="#videoModal">
+                                
+                                <svg width="40" height="42" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.73 4.01a2.002 2.002 0 0 0-1.41-1.41C13.03 2.19 8 2.19 8 2.19s-5.03 0-6.32.41A2.002 2.002 0 0 0 .27 4.01 20.048 20.048 0 0 0 0 8a20.048 20.048 0 0 0 .27 3.99 2.002 2.002 0 0 0 1.41 1.41C2.97 13.81 8 13.81 8 13.81s5.03 0 6.32-.41a2.002 2.002 0 0 0 1.41-1.41A20.048 20.048 0 0 0 16 8a20.048 20.048 0 0 0-.27-3.99zM6.75 11.02V4.98L11.5 8 6.75 11.02z" fill="red"/>
+                                </svg>
+                                
+                            </button>
+                            <img src="{{product.image.url}}" alt="product image thumb">
+                        </div>
+                        {% else %}
+                        <div class="sm-image">
+                            <img src="{{product.image.url}}" alt="product image thumb">
+                        </div>
+                        {% endif %}
                         {% for i in productImages %}
-                        <div class="sm-image"><img src="{{i.images.url}}"
-                            alt="product image thumb"></div>
-                        {% endfor %}
-                        {% for i in productImages %}
-                        <div class="sm-image"><img src="{{i.images.url}}"
-                            alt="product image thumb"></div>
+                        <div class="sm-image">
+                            <img src="{{i.images.url}}" alt="product image thumb"></div>
                         {% endfor %}
                         
                     </div>
                 </div>
+
+                <!-- Video Modal  -->
+
+                <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <!-- YouTube Video -->
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe id="videoIframe" class="embed-responsive-item" src="https://www.youtube.com/embed/{{product.product_video_id}}" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>                                                                                        
+                    </div>
+                </div>
+
+
                 <!--// Product Details Left -->
             </div>
             <div class="col-lg-7 col-md-6">
@@ -240,6 +268,11 @@
         Write Your Review
     </button>
 </div>
+
+
+
+
+
 
 <div class="container mt-4">
     <h5 class="">Product Review</h5>
