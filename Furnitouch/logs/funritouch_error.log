@@ -283,3 +283,6 @@ WARNING 2024-08-21 17:04:20,508 log log.py 241 log_response Not Found: /product-
 WARNING 2024-08-21 17:04:24,173 log log.py 241 log_response Not Found: /product-review-list/profile_pic/833dcb8b53b79c94e72af840c313e16a.jpg
 WARNING 2024-08-21 17:04:45,714 log log.py 241 log_response Not Found: /product-review-list/profile_pic/833dcb8b53b79c94e72af840c313e16a.jpg
 WARNING 2024-08-21 17:04:50,240 log log.py 241 log_response Not Found: /Dashbord/profile_pic/833dcb8b53b79c94e72af840c313e16a.jpg
+WARNING 2024-10-10 00:27:01,683 log log.py 241 log_response Bad Request: /
+WARNING 2024-10-10 00:27:02,092 log log.py 241 log_response Bad Request: /
+WARNING 2024-10-10 00:27:02,601 log log.py 241 log_response Bad Request: /favicon.ico

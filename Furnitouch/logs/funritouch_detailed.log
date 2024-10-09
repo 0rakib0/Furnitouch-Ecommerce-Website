@@ -2976,3 +2976,44 @@ INFO 2024-08-21 17:04:45,657 Thread-8 5448                 basehttp basehttp.py 
 WARNING 2024-08-21 17:04:45,715 Thread-8 5448                 basehttp basehttp.py 187 django.server log_message 6604 "GET /product-review-list/profile_pic/833dcb8b53b79c94e72af840c313e16a.jpg HTTP/1.1" 404 14317
 INFO 2024-08-21 17:04:50,193 Thread-8 5448                 basehttp basehttp.py 187 django.server log_message 6604 "GET /Dashbord/ HTTP/1.1" 200 28981
 WARNING 2024-08-21 17:04:50,241 Thread-8 5448                 basehttp basehttp.py 187 django.server log_message 6604 "GET /Dashbord/profile_pic/833dcb8b53b79c94e72af840c313e16a.jpg HTTP/1.1" 404 14284
+INFO 2024-10-10 00:26:39,718 MainThread 13900                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18028 Watching for file changes with StatReloader
+ERROR 2024-10-10 00:27:01,234 Thread-1 6888                 exception exception.py 124 django.security.DisallowedHost response_for_exception 18028 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-10-10 00:27:01,726 Thread-1 6888                 basehttp basehttp.py 187 django.server log_message 18028 "GET / HTTP/1.1" 400 77481
+ERROR 2024-10-10 00:27:01,926 Thread-3 20292                 exception exception.py 124 django.security.DisallowedHost response_for_exception 18028 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-10-10 00:27:02,092 Thread-3 20292                 basehttp basehttp.py 187 django.server log_message 18028 "GET / HTTP/1.1" 400 77207
+ERROR 2024-10-10 00:27:02,498 Thread-2 7252                 exception exception.py 124 django.security.DisallowedHost response_for_exception 18028 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Rakib\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-10-10 00:27:02,601 Thread-2 7252                 basehttp basehttp.py 187 django.server log_message 18028 "GET /favicon.ico HTTP/1.1" 400 77051
+INFO 2024-10-10 00:27:39,493 MainThread 13900                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18028 F:\FurnitouchWeb\Furnitouch-Ecommerce-Website\Furnitouch\Furnitouch\settings.py changed, reloading.
+INFO 2024-10-10 00:27:40,852 MainThread 16316                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8492 Watching for file changes with StatReloader
+INFO 2024-10-10 00:27:45,043 MainThread 16316                 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8492 F:\FurnitouchWeb\Furnitouch-Ecommerce-Website\Furnitouch\Furnitouch\settings.py changed, reloading.
+INFO 2024-10-10 00:27:46,414 MainThread 4148                 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11988 Watching for file changes with StatReloader
