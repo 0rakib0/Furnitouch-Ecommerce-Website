@@ -28,9 +28,7 @@
                                                 <tr>
                                                     <th colspan="2">Items</th>
                                                     <th class="text-end" colspan="2">
-                                                        <a href="javascript:void(0)"
-                                                            class="theme-color">Edit
-                                                            Items</a>
+                                                       
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -133,9 +131,15 @@
                                                 <button href="" disabled class="btn btn-danger">Canceled</button>
                                             </div>
                                             {% else %}
+                                            {% if order_ditails.delivered %}
+                                            <div class="delivery-sec">
+                                                <button disabled class="btn btn-primary">Delivered</button>
+                                            </div>
+                                            {% else %}
                                             <div class="delivery-sec">
                                                 <a href="{% url 'Admin_app:order_delivery' id=order_ditails.id %}" class="btn btn-primary">Delivery</a>
                                             </div>
+                                            {% endif %}
                                             {% endif %}
                                         </div>
                                     </div>
