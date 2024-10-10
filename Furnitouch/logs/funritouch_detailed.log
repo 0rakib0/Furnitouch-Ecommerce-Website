@@ -4324,3 +4324,6 @@ WARNING 2024-10-11 00:57:34,907 Thread-87 19100                 basehttp basehtt
 WARNING 2024-10-11 00:57:35,484 Thread-92 19212                 basehttp basehttp.py 187 django.server log_message 3920 "GET /static/js/vendor/popper.min.js.map HTTP/1.1" 404 1941
 WARNING 2024-10-11 00:57:35,500 Thread-95 1444                 basehttp basehttp.py 187 django.server log_message 3920 "GET /static/js/bootstrap.min.js.map HTTP/1.1" 404 1929
 WARNING 2024-10-11 00:57:36,043 Thread-93 4508                 basehttp basehttp.py 187 django.server log_message 3920 "GET /static/js/jquery.barrating.min.js.map HTTP/1.1" 404 1950
+INFO 2024-10-11 01:03:42,367 Thread-96 8096                 basehttp basehttp.py 187 django.server log_message 3920 "GET /my-order/ HTTP/1.1" 200 23170
+INFO 2024-10-11 01:03:42,446 Thread-96 8096                 basehttp basehttp.py 187 django.server log_message 3920 "GET /media/profile_pic/4.jpeg HTTP/1.1" 304 0
+INFO 2024-10-11 01:03:42,586 Thread-96 8096                 basehttp basehttp.py 187 django.server log_message 3920 "GET /static/js/main.js HTTP/1.1" 304 0
