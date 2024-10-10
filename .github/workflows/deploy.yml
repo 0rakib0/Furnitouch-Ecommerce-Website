@@ -21,6 +21,6 @@ jobs:
           git pull
           cd /home/morshed/production/Furnitouch-Ecommerce-Website/Furnitouch
           docker build -t furnitouch:latest .
-          docker container rm -f furnitouch
+          docker container rm -f furnitouch || true
           docker container run -itd --name furnitouch -p 1000:8080 furnitouch:latest 
 
