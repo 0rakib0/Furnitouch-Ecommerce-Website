@@ -16,7 +16,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: /
+        script: |
           cd /home/morshed/production/Furnitouch-Ecommerce-Website
           git pull
           cd /home/morshed/production/Furnitouch-Ecommerce-Website/Furnitouch
