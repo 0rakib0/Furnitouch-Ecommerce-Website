@@ -1,0 +1,26 @@
+name: deploy to server
+on:
+  push:
+    branches:
+      - production
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.1.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: /
+          cd /home/morshed/production/Furnitouch-Ecommerce-Website
+          git pull
+          cd /home/morshed/production/Furnitouch-Ecommerce-Website/Furnitouch
+          docker build -t furnitouch:latest .
+          docker container rm -f furnitouch
+          docker contaner run -itd --name furnitouch -p 1000:8080 furnitouch:latest 
+
