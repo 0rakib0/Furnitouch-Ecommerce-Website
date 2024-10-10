@@ -1,2 +1,2 @@
 .env
-Furnitouch/*logs
+Furnitouch/logs/*.log
