@@ -775,7 +775,7 @@ textarea:focus {
 .mobile-menu-area .mobile-menu .mean-bar .meanmenu-reveal, 
 .mobile-menu-area-4 .mobile-menu .mean-bar .meanmenu-reveal {
 	position: absolute;
-	top: -75px;
+	top: -50px;
 	left: auto !important;
 	right: -12px !important;
 }
@@ -1378,7 +1378,7 @@ textarea:focus {
 }
 /*Header Middle*/
 .header-middle {
-	padding: 30px;
+	/* padding: 30px; */
 }
 .hm-searchbox {
 	display: flex;
