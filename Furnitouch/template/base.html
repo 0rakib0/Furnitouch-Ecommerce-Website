@@ -57,13 +57,38 @@
             {% block body %}
               
             {% endblock%}
+
+
+            
+
             <!-- Li's Trending Product | Home V2 Area End Here -->
             <!-- Begin Footer Area -->
             {% include "include/footer.html" %}
             <!-- Footer Area End Here -->
             <!-- Begin Quick View | Modal Area -->
-              
-            <!-- Quick View | Modal Area End Here -->
+           <!-- hanging nav bar -->
+
+           <div class="position-fixed d-block d-md-none" style="z-index: 9999; bottom: 0; left: 0;width: 100%;">
+            <div class="py-2" style="background: rgb(241, 241, 241);">
+               <div class="container d-flex justify-content-around">
+                <div>
+                    <a href="{% url 'Home:home' %}">
+                        <i class="fa fa-home" style="font-size: 25px;" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'Shop_app:wishlist' %}">
+                        <i class="fa fa-heart-o" style="font-size: 25px;" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'accounts:my_order' %}">
+                        <i class="fa fa-user" style="font-size: 25px;" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
         </div>
         <!-- Body Wrapper End Here -->
         <!-- jQuery-V1.12.4 -->

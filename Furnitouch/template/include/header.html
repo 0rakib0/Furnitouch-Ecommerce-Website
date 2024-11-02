@@ -189,8 +189,8 @@
             </button>
             </div>
             <div class="modal-body">
-                <form class="form-inline my-2 my-lg-0" style="width: 100%;position: relative;">
-                    <input class="form-control mr-sm-2" type="search" style="width: 100%;" placeholder="Search" aria-label="Search">
+                <form action="{% url 'Home:home' %}" method="GET" class="form-inline my-2 my-lg-0" style="width: 100%;position: relative;">
+                    <input class="form-control mr-sm-2" type="search" style="width: 100%;" name="fined_product" placeholder="Search Product here" aria-label="Search">
                     <button class="btn my-2 my-sm-0" type="submit" style="position: absolute;top: -3px;right: 5px; border: none;background: none;outline: white;"><i class="fa fa-search"></i></button>
                 </form>
             </div>

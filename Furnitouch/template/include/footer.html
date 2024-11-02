@@ -1,111 +1,32 @@
 {% load static %}
 <div class="footer">
-    <!-- Begin Footer Static Middle Area -->
-    <div class="footer-static-middle">
-        <div class="container">
-            <div class="footer-logo-wrap pt-50 pb-35">
-                <div class="row">
-                    <!-- Begin Footer Logo Area -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-logo">
-                            <img src="{% static 'images/menu/logo/logo3.png' %}" height="100px" alt="Footer Logo">
-                        </div>
-                        <ul class="des">
-                            <li>
-                                <span>Address: </span>
-                                6688Princess Road, London, Greater London BAS 23JK, UK
-                            </li>
-                            <li>
-                                <span>Phone: </span>
-                                <a href="#">(+123) 123 321 345</a>
-                            </li>
-                            <li>
-                                <span>Email: </span>
-                                <a href="mailto://info@yourdomain.com">info@yourdomain.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Footer Logo Area End Here -->
-                    <!-- Begin Footer Block Area -->
-                    <div class="col-lg-2 col-md-3 col-sm-6">
-                        <div class="footer-block">
-                            <h3 class="footer-block-title">Product</h3>
-                            <ul>
-                                <li><a href="#">Prices drop</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Best sales</a></li>
-                                <li><a href="#">Contact us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Block Area End Here -->
-                    <!-- Begin Footer Block Area -->
-                    <div class="col-lg-2 col-md-3 col-sm-6">
-                        <div class="footer-block">
-                            <h3 class="footer-block-title">Our company</h3>
-                            <ul>
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="#">Legal Notice</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Contact us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Block Area End Here -->
-                    <!-- Begin Footer Block Area -->
-                    <div class="col-lg-4">
-                        <div class="footer-block">
-                            <h3 class="footer-block-title">Follow Us</h3>
-                            <ul class="social-link">
-                                <li class="twitter">
-                                    <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="rss">
-                                    <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="RSS">
-                                        <i class="fa fa-rss"></i>
-                                    </a>
-                                </li>
-                                <li class="google-plus">
-                                    <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google +">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li class="facebook">
-                                    <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li class="youtube">
-                                    <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank" title="Youtube">
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li class="instagram">
-                                    <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank" title="Instagram">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Begin Footer Newsletter Area -->
-                        <div class="footer-newsletter">
-                            <h4>Sign up to newsletter</h4>
-                            <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="footer-subscribe-form validate" target="_blank" novalidate>
-                               <div id="mc_embed_signup_scroll">
-                                  <div id="mc-form" class="mc-form subscribe-form form-group" >
-                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Enter your email" />
-                                    <button  class="btn" id="mc-submit">Subscribe</button>
-                                  </div>
-                               </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- Footer Block Area End Here -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 py-3">
+            <p class="h5 text-center">About Furnitouch</p>
+            <div class="pb-5" style="text-align: center;">
+                <div class="logo pb-sm-30 pb-xs-3">
+                    <a href="{% url 'Home:home' %}">
+                        <img src="{% static 'images/menu/logo/logo3.png' %}" height="70px" alt="">
+                    </a>
                 </div>
             </div>
+            <p>We are manufacturer and supplier of many kind of home and office furniture. We make all kind of wood.Our slogan-BRING YOUR DREAM HOME INTO REALITY AT AFORTABLE PRICE.</p>
+          </div>
+          <div class="col-md-4 py-3">
+            <p class="h5 text-center">Contact With Us</p>
+            <ul>
+                <li class="d-flex align-items-center mb-2 border p-2"><i class="fa fa-phone mr-3"></i>+8801748463524</li>
+                <li class="d-flex align-items-center mb-2 border p-2"><i class="fa fa-envelope mr-3"></i>furnitouch24@gmail.com</li>
+                <li class="d-flex align-items-center mb-2 border p-2"><i class="fa fa-facebook mr-3"></i>https://www.facebook.com/furnitouch.21</li>
+                <li class="d-flex align-items-center mb-2 border p-2"><i class="fa fa-instagram mr-3"></i>https://www.instagram.com/furnitouch24</li>
+                <!-- <li class="d-flex align-items-center mb-2 border p-2"><i class="fa fa-linkedin mr-3"></i>https://www.linkedin.com/in/furni-touch-a5a6b2286/</li> -->
+            </ul>
+          </div>
+          <div class="col-md-4 py-3">
+            <p class="h5 text-center">Visit Us</p>
+            <p>প্লট-২১/২৩, রোড-১১, ব্লক- জে, বারিধারা, ( সাউথ পয়েন্ট স্কুল এর অপর পাশে), ঢাকা-১২১২</p>
+          </div>
         </div>
-    </div>
-    <!-- Footer Static Middle Area End Here -->
+      </div>
 </div>
