@@ -369,3 +369,5 @@ WARNING 2024-10-10 01:09:34,412 log log.py 241 log_response Not Found: /product-
 WARNING 2024-10-10 01:09:43,932 log log.py 241 log_response Not Found: /Dashbord/profile_pic/4.jpeg
 WARNING 2024-11-03 02:51:33,318 log log.py 241 log_response Not Found: /Dashbord/profile_pic/4.jpeg
 WARNING 2024-11-03 02:52:59,511 log log.py 241 log_response Not Found: /Dashbord/profile_pic/4.jpeg
+WARNING 2024-11-04 01:48:30,414 log log.py 241 log_response Not Found: /www.facebook.com
+WARNING 2024-11-04 01:48:30,747 log log.py 241 log_response Not Found: /favicon.ico
