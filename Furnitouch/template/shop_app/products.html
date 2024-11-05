@@ -59,8 +59,10 @@ shop-page
                                     {% for i in product %}
                                     <div class="col-lg-3 col-6 my-2 shadow overflow-hidden overlyZoom">
                                         <div class="imgScal">
+                                            <a href="{% url 'Shop_app:single_product' slug=i.slug %}">
                                             <img src="{{i.image.url}}" class="rounded-lg mb-2 p-2 zoominn rounded" width="100%"
                                             style="transition: transform 0.5s ease-in-out; border: 0.5px solid #ffc107;" alt="Image not found">
+                                            </a>
                                         </div>
                                         <a href="{% url 'Shop_app:single_product' slug=i.slug %}"
                                             class="font-weight-bold mt-2" style="color: #3e3c3c;"
